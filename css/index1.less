@@ -1,0 +1,2486 @@
+@charset "UTF-8";
+// 变量
+@bgImg_url:'../images/bg.png';
+
+@border_color: #ecedef;
+@main_color: #2f77f8;
+@font_color:#252834;
+@gray_color:#797991;
+.bg(@w, @h, @l, @t) {
+    width: @w;
+    height: @h;
+    background: url(@bgImg_url) @l @t no-repeat;
+}
+.bg_n(@w, @h,@img) {
+    @img_link:'../images/';
+    width: @w;
+    height: @h;
+    background: url('@{img_link}@{img}') no-repeat;
+    background-size: @w @h;
+}
+
+.wrap {
+    min-width: 1366px;
+    height: 100%;
+    font-size: 16px;
+    background-color: #f6f7fc;
+    input{
+        font-size: 14px;
+    }
+    .main {
+        width: 100%;
+        overflow-y: auto;
+        .sideBar {
+            width: 200px;
+            position: fixed;
+            top:0;
+            bottom: 0;
+            left: 0;
+            // background-image: -webkit-linear-gradient(#3e79f4 0%, #134bbe 100%);
+            // background-image: -webkit-linear-gradient(#0051ad 0%, #0b1f67 98%);
+            background-image: -webkit-linear-gradient(#0153AD 0%, #003C9E 98%);
+            box-shadow: 4px 0px 12px 0px 
+                rgba(47, 118, 248, 0.4);
+            border-radius: 2px;
+            z-index: 5;
+            .logo {
+                width: 200px;
+                height: 80px;
+                line-height: 80px;
+                text-align: center;
+                // background-color: #034595;
+                img{
+                    width:150px;
+                    margin: 26px auto;
+                }
+            }
+            .menuList{
+                height:800px;
+                ul {
+                    height: 100%;
+                    li.navItem {
+                        a {
+                            display: block;
+                            height: 40px;
+                            line-height: 40px;
+                            overflow-y: hidden;
+                            white-space: nowrap;
+                            text-overflow: ellipsis;
+                            // color:#99BAFF;
+                            // color:#80A5D3;
+                            color:rgba(255,255,255,0.6);
+                            position: relative;
+                            overflow: hidden;
+                            padding: 0 0 0 46px;
+                            &.firstNav {
+                                margin-top: 10px;
+                                cursor: default;
+                                &.active{
+                                    color:#fff;
+                                }
+                            }
+                            &.secondNav {
+                                // margin-top: 10px;
+                                // font-size: 16px;
+                                position: relative;
+                                i{
+                                    width: 20px;
+                                    height: 20px;
+                                    position: absolute;
+                                    top:13px;
+                                    right:8px;
+                                    img{
+                                        display: block;
+                                        width: 11px;
+                                        height: 5px;
+                                        margin:6px auto;
+                                        transform: rotate(-90deg);
+                                    }
+                                }
+                                &.active.isLink {
+                                    color:#fff;
+                                    background-color: #00368E;
+                                    position: relative;
+                                    &:before{
+                                        content: '';
+                                        position: absolute;
+                                        top:0;
+                                        left:0;
+                                        height: 40px;
+                                        width: 4px;
+                                        background-color: #3077F9;
+                                    }
+                                }
+                                &.active:hover,
+                                &.active {
+                                    position: relative;
+                                    color:#fff;
+                                    &.open{
+                                        i{
+                                            img{
+                                                transform: rotate(0);
+                                            }
+                                        }
+                                    }
+                                    
+                                }
+                            }
+                            &.thirdNav {
+                                font-size: 14px;
+                                text-indent: 1em;
+                                &.active.isLink {
+                                    color:#fff;
+                                    background-color: #00368E;
+                                    position: relative;
+                                    &:before{
+                                        content: '';
+                                        position: absolute;
+                                        top:0;
+                                        left:0;
+                                        height: 40px;
+                                        width: 4px;
+                                        background-color: #3077F9;
+                                    }
+                                }
+                            }
+                            .icon {
+                                width: 18px;
+                                height: 18px;
+                                background-repeat: no-repeat;
+                                background-position: 0 center;
+                                background-size: 18px 18px;
+                                color:#fff;
+                                position: absolute;
+                                left: 20px;
+                                top: 11px;
+                            }
+                        }
+                        ul {
+                            &.third{
+                                display: none;
+                            }
+                            li {
+                                padding: 0;
+                            }
+                        }
+                        &:nth-child(2){
+                            .icon{
+                                width: 20px;
+                                background-size: 20px 20px;
+                            }
+                        }
+                    }
+                }
+            }
+            .userArea{
+                height: 60px;
+                line-height: 60px;
+                color:#fff;
+                // border-top: 1px solid #1246b2;
+                border-top: 1px solid #013993;
+                text-align: center;
+                font-size: 14px;
+                ul{
+                    display: inline-block;
+                    margin:0 auto;
+                    li{
+                        float: left;
+                        &.line{
+                            width: 2px;
+                            height: 10px;
+                            background-color: #99BAFF;
+                            margin:24px 10px;
+                        }
+                        a{
+                            color:#fff;
+                        }
+                    }
+                }
+                
+            }
+        }
+        .content {
+            height: 100%;
+            margin-left: 200px;
+            padding: 0 40px;
+            overflow: hidden;
+            .contenter {
+                .searchWrapper {
+                    height: 80px;
+                    position: fixed;
+                    top:0;
+                    left:200px;
+                    right:0px;
+                    z-index: 4;
+                    padding: 20px 0  20px 40px;
+                    font-size: 14px;
+                    background-color: #fff;
+                    border-bottom: 1px solid @border_color;
+                    box-sizing:border-box;
+                    -moz-box-sizing:border-box; /* Firefox */
+                    -webkit-box-sizing:border-box; /* Safari */
+                    li{
+                        margin-right: 35px;
+                        &:last-child{
+                            margin-right: 0;
+                        }
+                        .text {
+                            margin-right: 10px;
+                            line-height: 40px;
+                            color:#797991;
+                        }
+                        .selectBox {
+                            float: left;
+                            width: 180px;
+                            height: 40px;
+                            cursor: pointer;
+                            position: relative;
+
+                            .selectText {
+                                display: block;
+                                width:154px;
+                                height: 38px;
+                                line-height: 40px;
+                                padding:0 12px;
+                                border-radius: 4px;
+                                border: 1px solid @border_color;
+                                overflow: hidden;
+                                white-space: nowrap;
+                                text-overflow: ellipsis;
+                                outline: 0 none;
+                                cursor: pointer;
+                                background: transparent;
+                                color:#252834;
+                            }
+                            &.selectDateBox{
+                                width: 208px;
+                                input{
+                                    width: 180px;
+                                }
+                            }
+                            &.w160{
+                                width: 160px;
+                                .selectText{
+                                    width: 134px;
+                                }
+                            }
+                            &.mr5{
+                                margin-right: 10px;
+                            }
+                            &:hover {
+                                .icon {
+                                    // background-position: -30px 0;
+                                }
+                            }
+                            .icon {
+                                position: absolute;
+                                top: 16px;
+                                right: 10px;
+                                .bg_n(12px,8px,'iocn-dropdown.svg');
+                            }
+                            .slimScrollDiv{
+                                display: none;
+                                z-index: 10;
+                                top:4px;
+                                .brandList,
+                                .carTypeList_compete,
+                                .carTypeList1,
+                                .brandList1,
+                                .userBrandList,
+                                .brandList2,
+                                .marketList,
+                                .cardBrandList{
+                                    display: block;
+                                    border:0 none;
+                                    top:0;
+                                    left:0;
+                                }
+                            }
+                            .selectList {
+                                display: none;
+                                width: 100%;
+                                max-height: 200px;
+                                overflow-x: hidden;
+                                position: absolute;
+                                left: -1px;
+                                top: 44px;
+                                border: 1px solid @border_color;
+                                border-radius: 4px;
+                                background-color: #fff;
+                                font-size: 14px;
+                                z-index: 10;
+                                box-shadow: 0px 0px 10px 0px 
+                                    rgba(37, 40, 52, 0.15), 
+                                    0px 0px 10px 0px 
+                                    rgba(37, 40, 52, 0.1);
+                                li {
+                                    box-sizing:border-box;
+                                    -moz-box-sizing:border-box; /* Firefox */
+                                    -webkit-box-sizing:border-box; /* Safari */
+                                    width: 100%;
+                                    height: 40px;
+                                    padding: 0 10px;
+                                    line-height: 40px;
+                                    margin-right: 0;
+                                    white-space: nowrap;
+                                    overflow: hidden;
+                                    text-overflow: ellipsis;
+                                    &:hover{
+                                        color: @main_color;
+                                        background:#f0f5ff;
+                                    }
+                                     &.hover{
+                                        color: @main_color;
+                                        background:#f0f5ff;
+                                    }
+                                }
+                            }
+                        }
+                        .addArea {
+                            width: 154px;
+                            height: 38px;
+                            line-height: 40px;
+                            padding:0 12px;
+                            border: 1px solid @border_color;
+                            border-radius: 4px;
+                            cursor: pointer;
+                            position: relative;
+                            i {
+                                position: absolute;
+                                right:12px;
+                                top:12px;
+                                .bg(12px,12px,0px,-25px);
+                                background-size: 20px;
+                            }
+                            .areas {
+                                width: 158px;
+                                height:40px;
+                                overflow: hidden;
+                                white-space: nowrap;
+                                text-overflow: ellipsis;
+                                line-height: 40px;
+                                i {
+                                    position: absolute;
+                                    right:12px;
+                                    top:12px;
+                                    .bg_n(12px,12px,'icon-add.svg');
+                                }
+                            }
+                            &.w160{
+                                width: 134px;
+                                .areas{
+                                    width: 134px;
+                                }
+                            }
+                        }
+                        .selectUnit {
+                            width: auto;
+                            height:42px;
+                            padding: 0;
+                            border: 0 none;
+                            overflow: hidden;
+                            span {
+                                float: left;
+                                width: 30px;
+                                padding:0 10px;
+                                height: 38px;
+                                line-height: 38px;
+                                text-align: center;
+                                border: 1px solid @border_color;
+                                border-right: 0 none;
+                                cursor: pointer;
+                                &:first-child{
+                                    border-radius: 4px 0 0 4px;
+                                }
+                                &:last-child {
+                                    border-right: 1px solid @border_color;
+                                    border-radius: 0 4px 4px 0;
+                                }
+                                &.active {
+                                    background-color: @main_color;
+                                    border-color: @main_color;
+                                    color: #fff;
+                                    cursor: default;
+                                    &+span{
+                                        border-left: 0 none;
+                                    }
+                                }
+                                &.detailClass{
+                                    // background-color: #ccc;
+                                    color:#797991;
+                                    cursor: default;
+                                }
+                            }
+                            .borderClear {
+                                border: 0 none;
+                            }
+                        }
+                        .timeBox {
+                            float: left;
+                            width: 149px;
+                            height: 45px;
+                            margin-left: 37px;
+                            line-height: 45px;
+                            text-align: center;
+                            // color: @main_color;
+                            background-color: #e8f5fe;
+                        }
+                        &.fr{
+                            margin-right: 0;
+                            color: #797991;
+                            line-height: 40px;
+                            font-size: 14px;
+                            .closeDate{
+                                display: none;
+                                height: 40px;
+                                margin-right: 40px;
+                            }
+                            .pdf{
+                                margin:0 40px 0 30px;
+                                line-height: 40px;
+                                padding-left: 25px;
+                                cursor: pointer;
+                                position: relative;
+                                i{
+                                    position: absolute;
+                                    left:0;
+                                    top:13px;
+                                    .bg_n(18px,14px,'icon-download.svg');
+                                }
+                                &.isExport{
+                                    i{
+                                        .bg_n(18px,14px,'loading-1.gif');
+                                    }
+                                }
+                            }
+                            .load{
+                                position: relative;
+                                cursor: pointer;
+                                padding-left: 25px;
+                                margin-right: 40px;
+                                i{
+                                    position: absolute;
+                                    left:0;
+                                    top:13px;
+                                    .bg_n(18px,14px,'icon-download.svg');
+                                }
+                            }
+                            .btns {
+                                position: relative;
+                                margin:4px 10px 0;
+                                .btn {
+                                    display: inline-block;
+                                    margin-left: 20px;
+                                    cursor: pointer;
+                                    &.Doubt {
+                                        margin-left: 0;
+                                        z-index: 2;
+                                        .bg_n(16px,16px,'icon-Prompt.svg');
+                                        &:hover{
+                                            background-image: url('../images/icon-Prompt-hover.svg');
+                                        }
+                                    }
+                                }
+                                .tootip {
+                                    display: none;
+                                    width: 310px;
+
+                                    padding: 10px 15px;
+                                    position: absolute;
+                                    top: 35px;
+                                    right: -40px;
+                                    z-index: 3;
+                                    background: #353940;
+                                    border-radius: 4px;
+                                    p {
+                                        color: #fff;
+                                        font-size: 12px;
+                                        line-height: 20px;
+                                        margin-bottom: 10px;
+                                        span {
+                                            display: inline;
+                                            width: auto;
+                                            margin: 0;
+                                            background: none;
+                                            color: #fff;
+                                            line-height: 20px;
+                                            &.title {
+                                                // color: @main_color;
+                                            }
+                                        }
+                                    }
+                                    .Triangle {
+                                        width: 15px;
+                                        height: 15px;
+                                        position: absolute;
+                                        top: -5px;
+                                        right: 40px;
+                                        background-color: #353940;
+                                        transform: rotate(45deg);
+                                    }
+                                }
+                            }
+                        } 
+                    }
+                }
+                .titleCard{
+                    height: 290px;
+                    margin:112px 0 0;
+                    border-radius: 6px;
+                    background-color: #fff;
+                    // background-image: url('../images/title.svg');
+                    // background-position: center;
+                    position: relative;
+                    overflow: hidden;
+                    h1{
+                        position: absolute;
+                        left:0;
+                        top:0;
+                        z-index: 2;
+                        width: 100%;
+                        height: 290px;
+                        font-size: 34px;
+                        color:@main_color;
+                        line-height: 340px;   
+                        text-align: center;
+                    }
+                    i.middle{
+                        position: absolute;
+                        top:0;
+                        left:0;
+                        right:0;
+                        margin:auto;
+                        width: 100%;
+                        height: 290px;
+                        background-image: url('../images/title.png');
+                        background-position: center center;
+                    }
+                    i.bottom{
+                        position: absolute;
+                        right:0;
+                        bottom: 0;
+                        .bg_n(140px,62px,'title2.svg');
+                    }
+                    i.top{
+                        position: absolute;
+                        left:0;
+                        top: 0;
+                        .bg_n(140px,62px,'title3.svg');
+                    }
+                }
+                .chooseList{
+                    max-width: 1623px;
+                    padding:10px 32px;
+                    background-color: #fff;
+                    border-bottom: solid 1px @border_color;
+                    position: fixed;
+                    top:0px;
+                    left:200px;
+                    right:0px;
+                    z-index: 3;
+                    .fl:first-child{
+                        width: 80px;
+                        text-align: left;
+                        position: absolute;
+                        left:32px;
+                        top:25px;
+                    }
+                    .fl:nth-child(2){
+                        margin-left: 80px;
+                        margin-right: 30px;
+                        height:50px;
+                        overflow: hidden;
+                        transition:height .5s;
+                        span{
+                            float: left;
+                            padding:0 16px;
+                            margin:5px 10px;
+                            height:40px;
+                            line-height: 40px;
+                            border: solid 1px @border_color;
+                            cursor: pointer;
+                            &.active{
+                                color:#fff;
+                                background-color: @main_color;
+                                border-color: @main_color;
+                            }
+                        } 
+                    }
+                    .openBtn{
+                        line-height: 40px;
+                        position: absolute;
+                        right:0px;
+                        top:15px;
+                        padding-right: 20px;
+                        cursor: pointer;
+                        i{
+                            display: inline-block;
+                            margin-left: 5px;
+                            .bg_n(12px,8px,'iocn-dropdown.svg');
+                        }
+                        &.open{
+                            i{
+                                transform: rotate(180deg);
+                            }
+                        }
+                    }
+                }
+                .mainContent,.detailContent{
+                    margin-top: 120px;
+                    &.preference{
+                        margin-top: 110px;
+                    }
+                    .chartWrapper {
+                        border-radius: 6px;
+                        border: solid 1px @border_color;
+                        background-color: #fff;
+                        margin-bottom: 40px;
+                        position: relative;
+                        .chartHeader {
+                            height: 70px;
+                            .tabMenu {
+                                height: 38px;
+                                line-height: 22px;
+                                position: absolute;
+                                left:12px;
+                                top: 32px;
+                                text-align: center;
+                                color:#797991;
+                                .tabItem {
+                                    float: left;
+                                    width:auto;
+                                    padding: 0  20px;
+                                    cursor: pointer;
+                                    &.active {
+                                        color: #20203a;
+                                        span{
+                                            padding-bottom: 16px;
+                                            position: relative;
+                                            display: inline-block;
+                                            &:after{
+                                                content: '';
+                                                position: absolute;
+                                                bottom: 0;
+                                                left:0;
+                                                width: 100%;
+                                                height:4px;
+                                                background-color: #2f76f9;
+                                                // box-shadow: 0px 7px 11px 0px 
+                                                //     rgba(47, 119, 248, 0.8);
+                                            }
+                                        }
+                                        
+                                    }
+                                }
+                            }
+                            .closeDate {
+                                display: none;
+                                height: 48px;
+                                position: absolute;
+                                right: 32px;
+                                top: 2px;
+                                line-height: 48px;
+                                color: #797991;
+                            }
+                        }
+                        .chartReturn {
+                            height: 36px;
+                            //margin-top: 10px;
+                            line-height: 36px;
+                            //padding-left: 10px;
+                            position: absolute;
+                            z-index: 1;
+                            top: 11%;
+                            left: 30px;
+                            .return {
+                                padding-left: 15px;
+                                color:@main_color;
+                                cursor: pointer;
+                                position: relative;
+                                .less_icon{
+                                    position: absolute;
+                                    left:2px;
+                                    top:-7px;
+                                    width: 7px;
+                                    overflow: hidden;
+                                    i{
+                                        display: inline-block;
+                                        width: 8px;
+                                        height: 8px;
+                                        margin-left: 2px;
+                                        border:1px solid @main_color;
+                                        transform:rotate(-45deg);
+                                    }
+                                }
+                                &:hover{
+                                    .less_icon{
+                                        i{
+                                            border-color: @main_color;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        &.user{
+                            border:0 none;
+                            border-radius: 0;
+                            background-color: #f6f7fd;
+                            .chartBox{
+                                // height:650px;
+                                background-color: #fff;
+                                border: solid 1px @border_color;
+                                position: relative;
+                                border-radius: 6px;
+                                #Ranking{
+                                    margin-right: 425px;
+                                    box-sizing: border-box;
+                                    -webkit-box-sizing: border-box;
+                                    -moz-box-sizing: border-box;
+                                    
+                                }
+                                .chartTable{
+                                    .con{
+                                        width: 400px;
+                                        border-top:1px solid #d0d2dd;
+                                        color:@font_color;
+                                        .tab{
+                                            position: relative;
+                                            li{
+                                                float: left;
+                                                line-height: 60px;
+                                                width: 50%;
+                                                text-align: center;
+                                                box-shadow: 1px 0px 0 0 #d0d2dd;
+                                                border-bottom: 1px solid #d0d2dd;
+                                                cursor: pointer;
+                                                color:@gray_color;
+                                                background-color:#f0f1f6;
+                                                box-sizing: border-box;
+                                                -webkit-box-sizing: border-box;
+                                                -moz-box-sizing: border-box;
+
+                                                &:first-child{
+                                                    border-right: 1px solid #d0d2dd;
+                                                    border-left: 1px solid #d0d2dd;
+                                                }
+                                                &.active{
+                                                    color:@font_color;
+                                                    background-color: #fff;
+                                                    // border-bottom: 0 none;
+                                                }
+                                            }
+                                            .tabItembar{
+                                                position: absolute;
+                                                bottom:0;
+                                                left:0;
+                                                width: 50%;
+                                                height:2px;
+                                                background-color: @main_color;
+                                                transform: translateX(0);
+                                                transition: transform .6s;
+                                            }
+                                            &+div{
+                                                width: 401px;
+                                            }
+                                        }
+                                        .title{
+                                            line-height: 50px;
+                                            border-left:1px solid #d0d2dd;
+                                            border-right:1px solid #d0d2dd;
+                                            li{
+                                                float: left;
+                                                width: 33%;
+                                                text-align: center;
+                                                color:#333;
+                                                &:first-child{
+                                                    width: 20%;
+                                                }
+                                                &:nth-child(2){
+                                                    width: 46%;
+                                                }
+                                            }
+                                        }
+                                        .list{
+                                            height: 370px;
+                                            overflow: hidden;
+                                            line-height: 40px;
+                                            overflow: hidden;
+                                            p{
+                                                overflow: hidden;
+                                                cursor:pointer;
+                                                &.active{
+                                                    background-color: #f0f5ff;
+                                                    color:@main_color;
+                                                }
+                                                &:hover{
+                                                    background-color: #f0f5ff;
+                                                    color:@main_color;
+                                                }
+                                                span{
+                                                    float: left;
+                                                    width: 33%;
+                                                    text-align: center;
+                                                    &:first-child{
+                                                        width: 20%;
+                                                    }
+                                                    &:nth-child(2){
+                                                        width: 46%;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                    .slimScrollDiv{
+                                        box-shadow: 0 0 #fff;
+                                    }
+                                }
+                                .chartTitle{
+                                    height: 24px;
+                                    padding-left:20px;
+                                    font-weight: bold;
+                                }
+                            }
+                            h2{
+                                margin: 55px 0 10px;
+                                position: relative;
+                                font-size: 22px;
+                                height: 36px;
+                                line-height: 36px;
+                                &:after{
+                                    content: '';
+                                    .bg_n(148px,36px,'Combined.svg');
+                                    position: absolute;
+                                    left:0;
+                                    top:0; 
+                                }
+                                
+                            }
+                        }
+                        .subMenu {
+                            position: absolute;
+                            top: 75px;
+                            left: 50%;
+                            transform: translateX(-50%); 
+                            border-right: 0 none;
+                            span {
+                                float: left;
+                                height: 40px;
+                                line-height: 40px;
+                                padding: 0 20px;
+                                font-size: 14px;
+                                border: 1px solid @border_color;
+                                border-right: 0 none;
+                                cursor: pointer;
+                                &:first-child {
+                                    border-radius: 4px 0 0 4px ;
+                                }
+                                &:last-child {
+                                    border-right: 1px solid @border_color;
+                                    border-radius: 0 4px 4px 0;
+                                }
+                                &.active {
+                                    background-color: @main_color;
+                                    border-color: @main_color;
+                                    color: #fff;
+                                    &+span{
+                                        border-left: 0 none;
+                                    }
+                                }
+                            }
+                        }
+                        .chartBox {
+                            position: relative;
+                            height: 522px;
+                            //margin-top: 1.8%;
+                            overflow: hidden;
+                            .mapTitle{
+                                .china{
+                                    position: absolute;
+                                    left:20px;
+                                    top:20px;
+                                    color:#999;
+                                    font-size: 12px;
+                                    z-index: 2;
+                                    &.clicked{
+                                       color:@main_color; 
+                                        cursor: pointer;
+                                    }
+                                }
+                                .province{
+                                    font-size: 12px;
+                                    color:#999;
+                                    font-weight: 900;
+                                    position: absolute;
+                                    left:50px;
+                                    top:20px;
+                                }
+                            }
+                            .legend{
+                                position: absolute;
+                                left:20px;
+                                bottom: 50px;
+                                li{
+                                    margin-bottom: 10px;
+                                    height: 20px;
+                                    .icon{
+                                        float: left;
+                                        width: 40px;
+                                        height: 20px;
+                                        // border-radius: 4px;
+                                        background: #57a2e5;
+                                        margin-right: 5px;
+                                    }
+                                    .name{
+                                        float: left;
+                                        height: 20px;
+                                        line-height: 20px;
+                                        font-size: 12px;
+                                    }
+                                }
+                                
+                            }
+                            .chartTable{
+                                width: 400px;
+                                // margin-right: 70px;
+                                // margin-top: 10px;
+                                position: absolute;
+                                right:32px;
+                                top:0;
+                                &+div{
+                                    margin-right: 435px;
+                                    box-sizing: border-box;
+                                    -webkit-box-sizing: border-box;
+                                    -moz-box-sizing: border-box;
+                                }
+                                .chartTableTitle{
+                                    margin-bottom: 10px;
+                                    color:#000;
+                                    span{
+                                        float: left;
+                                    }
+                                }
+                                .chartData{
+                                    span{
+                                        display: inline-block;
+                                        width: 50%;
+                                        line-height: 26px;
+                                    }
+                                    .chartDataTitle{
+                                        font-size: 14px;
+                                        color:@font_color;
+                                        span:last-child{
+                                            text-align: right;
+                                        }
+                                    }
+                                    .chartDataNum{
+                                        font-size: 14px;
+                                        color:@main_color;
+                                        span:last-child{
+                                            text-align: right;
+                                        }
+                                    }
+                                }
+                                .chartList{
+                                    margin-top: 20px;
+                                    font-size: 14px;
+                                    .chartListTitle{
+                                        font-size: 16px;
+                                        color:@font_color;
+                                        margin-bottom: 10px;
+                                    }
+                                    ul{
+                                        li{
+                                            display: block;
+                                            width: 100%;
+                                            height:34px;
+                                            line-height: 34px;
+                                            .chartTableText{
+                                                float: left;
+                                                text-align: left;
+                                            }
+                                            .chartTableNum{
+                                                float: right;
+                                                text-align: right;
+                                                color:#333;
+                                            }
+                                        }
+                                    }
+                                }
+                                .slimScrollDiv{
+                                    box-shadow: 0 0 #fff;
+                                }
+                            }
+                        }
+                        .modelCardRel{
+                            width:1541px;
+                            height:522px;
+                            margin: auto;
+                        }
+                        .chartCanvas{
+                            width: 1323px;
+                            height: 100%;
+                            margin:0 auto;
+                        }
+                        .btns {
+                            position: absolute;
+                            right:33px;
+                            top:3px;
+                            .btn {
+                                display: inline-block;
+                                margin-left: 20px;
+                                cursor: pointer;
+                                &.Doubt {
+                                    margin-left: 0;
+                                    z-index: 2;
+                                    .bg_n(16px,16px,'icon-Prompt.svg');
+                                    &:hover{
+                                        background-image: url('../images/icon-Prompt-hover.svg');
+                                    }
+                                }
+                            }
+                            .tootip {
+                                display: none;
+                                width: 310px;
+                                padding: 10px 15px;
+                                position: absolute;
+                                top: 27px;
+                                right: -34px;
+                                z-index: 3;
+                                background: #353940;
+                                border-radius: 4px;
+                                p {
+                                    color: #fff;
+                                    font-size: 12px;
+                                    line-height: 20px;
+                                    margin-bottom: 10px;
+                                    span {
+                                        display: inline;
+                                        width: auto;
+                                        margin: 0;
+                                        background: none;
+                                        &.title {
+                                            // color: @main_color;
+                                        }
+                                    }
+                                }
+                                .Triangle {
+                                    width: 15px;
+                                    height: 15px;
+                                    position: absolute;
+                                    top: -5px;
+                                    right: 40px;
+                                    background-color: #353940;
+                                    transform: rotate(45deg);
+                                }
+                            }
+                        }
+                        .competeRelationBtns{
+                            top:22px;
+                        }
+                        .chartLoading{
+                            width: 100%;
+                            height: 100%;
+                            position: absolute;
+                            left:0;
+                            top:0;
+                            background-color: #fff;
+                            z-index: 2;
+                            .loadingBox{
+                                img{
+                                    width: 120px;
+                                    height: 120px;
+                                    position: absolute;
+                                    top:0;
+                                    bottom: 0;
+                                    left:0;
+                                    right:0;
+                                    margin:auto;
+                                }
+                            }
+                            .noDataBox,.errorBox{
+                                width: 100px;
+                                height: 120px;
+                                position: absolute;
+                                top:0;
+                                bottom: 0;
+                                left:0;
+                                right:0;
+                                margin:auto;
+                                img{
+                                    width: 90px;
+                                    height: 90px;
+                                }
+                                .info{
+                                    color:#cdd5d8;
+                                    line-height: 50px;
+                                    text-align: center;
+                                }
+                            }
+                        }
+                    }
+                    .tableWrapper {
+                        background-color: #fff;
+                        padding: 0 32px 0px;
+                        border-radius: 6px;
+                        border: solid 1px @border_color;
+                        .tableTitle {
+                            height: 62px;
+                            line-height: 62px;
+                            color:#252834;
+                            font-weight: bold;
+                            .title {
+                                float: left;
+                                .count {
+                                    display: inline;
+                                    margin: 15px 0;
+                                    text-align: center;
+                                    color: #797991;
+                                    font-weight: normal;
+                                }
+                            }
+                            .load {
+                                float: right;
+                                padding-left: 20px;
+                                font-weight: normal;
+                                position: relative;
+                                cursor: pointer;
+                                color: #797991;
+                                .icon {;
+                                    position: absolute;
+                                    left: 0;
+                                    top: 24px;
+                                    .bg_n(18px,14px,'icon-download.svg');
+                                }
+                                &:hover {
+                                    // color: @main_color;
+                                    .icon {
+                                    }
+                                }
+                            }
+                        }
+                        .tableBox {
+                            position: relative;
+                            border-bottom: 1px solid #fff;
+                            .tableRight_con{
+                                width: 100%;
+                                overflow-x: hidden;
+                                overflow-y: hidden;
+                                border-right:1px solid #e0e0e0;
+                                .tableLeft{
+                                    position: absolute;
+                                    top:0;
+                                    left:0;
+                                    z-index: 1;
+                                    text-align: center;
+                                    // float: left;
+                                    .th{
+                                        height:52px;
+                                        line-height: 52px;
+                                        font-weight: bold;
+                                        background-color: #f9f9f9;
+                                        border-bottom:1px solid #e0e0e0;
+                                        border-top:1px solid #e0e0e0;
+                                        border-left:1px solid #e0e0e0;
+                                    }
+                                    .td{
+                                        height:52px;
+                                        line-height: 52px;
+                                        border-bottom:1px solid #e0e0e0;
+                                        border-left:1px solid #e0e0e0;
+                                        background-color: #fff;
+                                        &:last-child{
+                                            border-bottom: 0 none;
+                                        }
+                                    }
+                                }
+                                .tableRight{
+                                    float: left;
+                                    text-align: center;
+                                    position: relative;
+                                    overflow: hidden;
+                                    .tableHeader{
+                                        // transform: translateX(-10%);
+                                        position: absolute;
+                                        left:0;
+                                        top:0;
+                                        // transition: left .5s;
+                                        border-bottom:1px solid #e0e0e0;
+                                        border-top:1px solid #e0e0e0;
+                                        background-color: #f9f9f9;
+                                        .th{
+                                            float: left;
+                                            height:52px;
+                                            line-height: 52px;
+                                            font-weight: bold;
+                                        }
+                                    }
+                                    .listContent{
+                                        // transform: translateX(0);
+                                        position: absolute;
+                                        top:54px;
+                                        left:0;
+                                        // transition: left .5s;
+                                        ul{
+                                            border-bottom:1px solid #e0e0e0;
+                                            .td{
+                                                float: left;
+                                                height:52px;
+                                                line-height: 52px;
+                                                background-color: #fff;
+                                            }
+                                            &:last-child{
+                                                // border-bottom: 0 none;
+                                            }
+                                        }
+                                    }
+                                    .bar{
+                                        width: 100%;
+                                        height: 10px;
+                                        background-color: #fff;
+                                        border:1px solid #d8d9e2;
+                                        border-top-color:#fff;
+                                        position: absolute;
+                                        bottom: 0;
+                                        left:0;
+                                        z-index: 2;
+                                        .barBtn{
+                                            height: 10px;
+                                            width: 50px;
+                                            background-color: #d8d9e2;
+                                            border-radius: 5px;
+                                            cursor: pointer;
+                                            position: absolute;
+                                            top:0px;
+                                            left:0;
+                                        }
+                                    }
+                                }
+                            }
+                            table {
+                                width: 100%;
+                                border: 1px solid #d0d2dd;
+                                color:#252834;
+                                tr:last-child{
+                                    td{
+                                        border-bottom: 0 none;
+                                    }
+                                }
+                                th,
+                                td {
+                                    background-color: #F0F1F7;
+                                    font-weight: bold;
+                                    height: 52px;
+                                    text-align: center;
+                                    font-weight: bold;
+                                    border-bottom: 1px solid #f4f5f7;
+                                    font-size: 16px;
+                                }
+                                th{
+                                    border-bottom: 1px solid #d0d2dd;
+                                }
+                                td {
+                                    background-color: #fff;
+                                    font-weight: normal;
+                                    &.tdName {
+                                        cursor: pointer;
+                                        color: @main_color;
+                                        &:hover {
+                                            color: @main_color;
+                                        }
+                                    }
+                                }
+                            }
+                            .green-black {
+                                height:32px;
+                                margin: 40px auto;
+                                text-align: center;
+                                span{
+                                    display: inline-block;
+                                    height:30px;
+                                    line-height: 30px;
+                                    border-radius: 50%;
+                                    margin-right: 20px;
+                                }
+                                #pagevalue+span{
+                                   border:0 none;
+                                   margin-right: 0; 
+                                }
+                                #pagevalue {
+                                    width: 60px;
+                                    height: 28px;
+                                    margin: 0 5px;
+                                    text-align: center;
+                                    vertical-align: middle;
+                                    border-radius: 6px;
+                                    border:1px solid @border_color;
+                                    font-size: 14px;
+                                }
+                                .current {
+                                    display: inline-block;
+                                    width: 30px;
+                                    text-align: center;
+                                    border-radius: 50%;
+                                    background-color: @main_color;
+                                    border:1px solid @main_color;
+                                    color: #fff;
+                                    margin-right: 15px;
+                                }
+                                .prev,
+                                .next {
+                                    display: inline-block;
+                                    width: 64px;
+                                    padding:0 10px;
+                                    height: 28px;
+                                    line-height: 28px;
+                                    margin-right: 15px;
+                                    text-align: center;
+                                    border-radius: 4px;
+                                    cursor: pointer;
+                                    border:0 none;
+                                    &.current{
+                                        background-color: #fff;
+                                        color:#333;
+                                        cursor: default;
+                                    }
+                                    &:hover{
+                                        background-color:@main_color;
+                                        color:#fff;
+                                    }
+                                    &.current:hover{ 
+                                        background-color: #fff;
+                                        color:#333;
+                                    }
+                                }
+                                .NormalText{
+                                    margin:0;
+                                    padding:0;
+                                    color:#999;
+                                    border:0 none;
+                                    outline: 0 none;
+                                }
+                                a {
+                                    display: inline-block;
+                                    padding:0 10px;
+                                    height: 30px;
+                                    line-height: 30px;
+                                    margin-right: 15px;
+                                    text-align: center;
+                                    border-radius: 4px;
+                                    cursor: pointer;
+                                    &#search {
+                                        height: 28px;
+                                        line-height: 28px;
+                                        margin-left: 5px;
+                                        &:hover{
+                                            // color:#fff;
+                                            // background-color: @main_color;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                
+            }
+            .footer {
+                height: 83px;
+                margin-top: 15px;
+                padding-top: 20px;
+                color:#797991;
+                a{
+                   color:#797991; 
+                }
+                p {
+                    line-height: 30px;
+                    text-align: center;
+                }
+            }
+        }
+    }
+    .loading {
+        display: none;
+        position: fixed;
+        left: 240px;
+        right: 40px;
+        top: 210px;
+        bottom: 0;
+        z-index: 3;
+        // background: rgba(0, 0, 0, 0.5);
+        background-color: #fff;
+        .loadBox {
+            display: none;
+            width: 120px;
+            height: 120px;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+        }
+        .errBox {
+            display: block;
+            width: 300px;
+            height: 160px;
+            padding: 25px 5px;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+            // background-color: #f1f1f1;
+            border-radius: 4px;
+            text-align: center;
+            .info {
+                padding: 10px;
+                color:#666;
+            }
+            .reload {
+                display: block;
+                width: 108px;
+                height: 40px;
+                margin: 10px auto 0;
+                color: #fff;
+                background-color: @main_color;
+                text-align: center;
+                line-height: 40px;
+                border-radius: 4px;
+                cursor: pointer;
+            }
+        }
+    }
+    .layer {
+        display: none;
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 4;
+        background: rgba(0, 0, 0, 0.5);
+        font-size: 14px;
+    }
+    .layerCon {
+        position: absolute;
+        top:35%;
+        left:50%;
+        transform:translateX(-50%);
+        background-color: #fff;
+        border-radius: 4px;
+        overflow: hidden;
+        z-index:5;
+        font-size: 14px;
+        &.layer1 {
+            position: fixed;
+            width: 510px;
+        }
+        &.layer3 {
+            position: fixed;
+            width: 510px;
+        }
+        &.layer4 {
+            width: 510px;
+            position: fixed;
+            .selectProduct{
+                div{
+                width:108px;
+                float: left;
+                label{
+                    margin-right: 26px;
+                }
+             }
+            }
+        }
+        .layerTitle {
+            height: 46px;
+            padding: 0 20px;
+            line-height: 46px;
+            background-color: #f8f8f8;
+            color: #333;
+            .close {
+                margin-top: 15px;
+                .bg(12px, 12px, 0, -133px);
+                cursor: pointer;
+            }
+        }
+        .selected {
+            margin: 0 38px;
+            padding: 15px 0;
+            border-bottom: 1px solid @border_color;
+            color: @main_color;
+            min-height:38px;
+            line-height: 26px;
+            div {
+                width: 330px;
+                .selectItem {
+                    display: inline-block;
+                    // width: 72px;
+                    padding:0 10px;
+                    height: 26px;
+                    padding: 0 5px;
+                    margin: 5px 8px;
+                    color: #333;
+                    border: 1px solid @border_color;
+                    border-radius: 4px;
+                    cursor: pointer;
+                    &:hover {
+                        border-color: red;
+                        i {
+                            .bg(10px, 10px, 0, -164px);
+                        }
+                    }
+                    i {
+                        float: right;
+                        margin-top: 10px;
+                        .bg(10px, 10px, -30px, -164px);
+                    }
+                }
+            }
+            .btn {
+                width: 48px;
+                height: 26px;
+                margin-top:6px;
+                line-height: 26px;
+                text-align: center;
+                color: #fff;
+                background-color: @main_color;
+                cursor: pointer;
+                border-radius: 4px;
+            }
+        }
+        .options {
+            padding: 20px 38px 40px;
+            // max-height: 630px;
+            // overflow-y: auto;
+            label {
+                margin-right: 32px;
+                padding-left: 22px;
+                position: relative;
+                cursor: pointer;
+                height:35px;
+                line-height: 35px;
+                text-align: left;
+                white-space: nowrap;
+                overflow: hidden;
+                tetx-overflow:ellipsis;
+                &:before {
+                    content: '';
+                    width: 16px;
+                    height: 16px;
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    background: #fff;
+                    border-radius: 4px;
+                    border: 1px solid @border_color;
+                }
+                &:after {
+                    content: '';
+                    color: #fff;
+                    font-weight: bold;
+                    position: absolute;
+                    left: 3px;
+                    top: 5px;
+                    .bg(10px, 8px, 0, -193px);
+                }
+                &.half:before{
+                    border: 1px solid @main_color;
+                    background: @main_color ;
+                }
+                &.half:after{
+                    content: '';
+                    width: 12px;
+                    height: 2px;    
+                    background-color: #fff;
+                    left:3px;
+                    top:7px;
+
+                }
+            }
+            input[type=checkbox]{
+                 display: none;   
+            }
+            input[type=checkbox]:checked + label:before{
+                border: 1px solid @main_color;
+                background: @main_color ;
+            }
+            input[type=checkbox]:checked{
+                color:red;
+            }
+            .selectProvince{
+                color: #199df8;
+            }
+        }
+        &.layer2 {
+            width: 700px;
+            top:50px;
+            .selected {
+                // max-height: 200px;
+                // overflow-y: auto;
+                div {
+                    width: 510px;
+                }
+            }
+            .options {
+                padding: 20px 20px 40px;
+                .subOptions {
+                    display: none;
+                    position: relative;
+                    width: 640px;
+                    // padding: 10px 0 0 18px;
+                    padding: 0 0 0 18px;
+                    margin-top: 0;
+                    // border: 1px solid @border_color;
+                    // box-shadow: 0px 0px 0px 1px @border_color;
+                    border-radius: 4px;
+                    background: #f5f5f5;
+                    .optionItem {
+                        width: 160px;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow:ellipsis;
+                        margin: 10px 0 0 0; 
+                    }
+                }
+                div.clearfix{
+                    padding-left: 20px;
+                    .optionItem {
+                        float: left;
+                        width: 160px;
+                        margin: 10px 0 0 0;
+                        line-height: 16px;
+                        position: relative;
+                        i {
+                            margin:4px 0 0 2px;
+                            .bg(11px, 6px, 0, 0);
+                            cursor:pointer;
+                        }
+                        span{
+                            cursor:pointer;
+                        }
+                        .triggleCon{
+                            height:15px;
+                            padding:0;
+                            overflow: hidden;
+                            .triggle {
+                                display: none;
+                                position: absolute;
+                                top: 27px;
+                                left: 0;
+                                z-index: 0;
+                                width: 20px;
+                                height: 27px;
+                                // box-shadow: -1px -1px @border_color;
+                                background: #f8f8f8;
+                                transform: rotate(45deg);
+                            }
+                        }
+                        label{
+                            margin-right: 5px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:1440px) {
+   .wrap {
+        .main {
+            .sideBar {
+                .menuList{
+                    height:664px;
+                    ul {
+                        li.navItem {
+                            a {
+                                height: 34px;
+                                line-height: 34px;
+                            }
+                        }
+                    }
+                }
+                .userArea{
+                    height: 50px;
+                    line-height: 50px;
+                    ul{
+                        li{
+                            &.line{
+                                margin:20px 10px;
+                            }
+                        }
+                    }   
+                }
+            }
+            .content{
+                .contenter{
+                    .chooseList{
+                        .fl:nth-child(2){
+                            span{
+                                margin:5px 12px;
+                            } 
+                        }
+                    }
+                    .mainContent,.detailContent{
+                        .chartWrapper {
+                            .chartBox{
+                                .modelCardRel{
+                                    width:1063px;
+                                    height:522px;
+                                    margin: auto;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+        }
+    }
+}    
+@media screen and (max-width:1366px) {
+   .wrap {
+        font-size: 14px;
+        input{
+            font-size: 12px;
+        }
+        .main {
+            .sideBar {
+                width: 144px;
+                .logo {
+                    width: 144px;
+                    height: 58px;
+                    line-height: 58px;
+                    img{
+                        width: 120px;
+                        margin: 17px auto;
+                    }
+                }
+                .menuList{
+                    height:540px;
+                    ul {
+                        li.navItem {
+                            a {
+                                height: 28px;
+                                line-height: 28px;
+                                padding: 0 0 0 32px;
+                                &.firstNav {
+                                    margin-top: 7px;
+                                }
+                                &.secondNav {
+                                    i{
+                                        width: 14px;
+                                        height: 14px;
+                                        top:9px;
+                                        right:6px;
+                                        img{
+                                            width: 11px;
+                                            height: 5px;
+                                            margin:4px auto;
+                                        }
+                                    }
+                                    
+                                }
+                                &.thirdNav {
+                                    font-size: 12px;
+                                }
+                                .icon {
+                                    width: 12px;
+                                    height: 12px;
+                                    background-size: 12px 12px;
+                                    left: 14px;
+                                    top: 8px;
+                                }
+                            }
+                            ul {
+                                li {
+                                    padding: 0;
+                                }
+                            }
+                            &:nth-child(2){
+                                .icon{
+                                    width: 14px;
+                                    background-size: 14px 14px;
+                                }
+                            }
+                        }
+                    }
+                }
+                .userArea{
+                    height: 30px;
+                    line-height: 30px;
+                    font-size: 12px;
+                    ul{
+                        li{
+                            &.line{
+                                width: 2px;
+                                height: 10px;
+                                margin:14px 10px;
+                            }
+                        }
+                    }   
+                }
+            }
+            .content {
+                margin-left: 144px;
+                padding: 0 28px;
+                .contenter {
+                    .searchWrapper {
+                        height: 58px;
+                        left:144px;
+                        padding: 12px 0  5px 28px;
+                        font-size: 12px;
+                        li{
+                            .text {
+                                line-height: 32px;
+                            }
+                            .selectBox {
+                                width: 166px;
+                                height: 34px;
+                                .selectText {
+                                    width:154px;
+                                    height: 32px;
+                                    line-height: 34px;
+                                    padding:0 5px;
+                                }
+                                &.selectDateBox{
+                                    width: 180px;
+                                    input{
+                                        width: 168px;
+                                    }
+                                }
+                                &.w160{
+                                    width: 130px;
+                                    .selectText{
+                                        width: 118px;
+                                    }
+                                }
+                                .icon {
+                                    top: 13px;
+                                    right: 10px;
+                                }
+                                .selectList {
+                                    top: 40px;
+                                    li {
+                                        height: 34px;
+                                        padding: 0 5px;
+                                        line-height: 34px;
+                                    }
+                                }
+                            }
+                            .addArea {
+                                width: 154px;
+                                height: 32px;
+                                line-height: 32px;
+                                padding:0 12px;
+                                i {
+                                    right:12px;
+                                    top:12px;
+                                    .bg(12px,12px,0px,-25px);
+                                    background-size: 20px;
+                                }
+                                .areas {
+                                    width: 104px;
+                                    height:34px;
+                                    line-height: 34px;
+                                    i {
+                                        right:10px;
+                                        top:10px;
+                                    }
+                                }
+                                &.w160{
+                                    width: 104px;
+                                    .areas{
+                                        width: 104px;
+                                    }
+                                }
+                            }
+                            .selectUnit {
+                                width: auto;
+                                height:34px;
+                                span {
+                                    width: 30px;
+                                    padding:0 5px;
+                                    height: 32px;
+                                    line-height: 32px; 
+                                }
+                            }
+                            .timeBox {
+                                width: 149px;
+                                height: 40px;
+                                margin-left: 37px;
+                                line-height: 40px;
+                            }
+                            &.fr{
+                                line-height: 32px;
+                                font-size: 12px;
+                                .closeDate{
+                                    height: 32px;
+                                }
+                                .pdf{
+                                    margin-left: 30px;
+                                    line-height: 32px;
+                                    padding-left: 25px;
+                                    i{
+                                        left:0;
+                                        top:10px;
+                                    }
+                                    &.isExport{
+                                        i{
+                                        }
+                                    }
+                                }
+                                .load{
+                                    padding-left: 25px;
+                                    i{
+                                        left:0;
+                                        top:10px;
+                                    }
+                                }
+                            } 
+                        }
+                    }
+                    .titleCard{
+                        height: 208px;
+                        margin:92px 0 0;
+                        h1{
+                            height: 208px;
+                            font-size: 26px;
+                            line-height: 248px;
+                        }
+                        i.middle{
+                            height: 208px;
+                            background-size: 1166px 208px;
+                        }
+                        i.bottom{
+                        }
+                        i.top{
+                        }
+                    }
+                    .chooseList{
+                        min-width: 1100px;
+                        left:144px;
+                        .fl:first-child{
+                            width: 70px;
+                        }
+                        .fl:nth-child(2){
+                            margin-left: 70px;
+                            height:40px;
+                            span{
+                                padding:0 12px;
+                                margin:5px 7px;
+                                height:30px;
+                                line-height: 30px;
+                            } 
+                        }
+                        .openBtn{
+                            line-height: 30px;
+                            top:15px;
+                            i{
+                            }
+                        }
+                    }
+                    .mainContent,.detailContent{
+                        margin-top: 84px;
+                        &.preference{
+                            margin-top: 90px;
+                        }
+                        .chartWrapper {
+                            margin-bottom: 28px;
+                            .chartHeader {
+                                height: 50px;
+                                .tabMenu {
+                                    height: 28px;
+                                    line-height: 16px;
+                                    top: 18px;
+                                    .tabItem {
+                                        padding: 0  14px;
+                                    }
+                                }
+                                .closeDate {
+                                    height: 34px;
+                                    right: 32px;
+                                    top: 2px;
+                                    line-height:34px;
+                                    font-size: 12px;
+                                }
+                            }
+                            .chartReturn {
+                                height: 36px;
+                                line-height: 36px;
+                                .return {
+                                    padding-left: 15px;
+                                    font-size: 12px;
+                                    .less_icon{
+                                        top:-10px;
+                                        i{
+                                            width: 7px;
+                                            height: 6px;
+                                        }
+                                    }
+                                }
+                            }
+                            &.user{
+                                .chartBox{
+                                    #Ranking{
+                                        margin-right: 312px;
+                                    }
+                                    .chartTable{
+                                        .con{
+                                            width: 286px;
+                                            .tab{
+                                                li{
+                                                    line-height: 42px;
+                                                }
+                                                &+div{
+                                                    width: 287px;
+                                                }
+                                            }
+                                            .title{
+                                                line-height: 42px;
+                                                li{
+                                                }
+                                            }
+                                            .list{
+                                                height: 290px;
+                                                line-height: 30px;
+                                                p{
+                                                    
+                                                }
+                                            }
+                                        }
+                                    }
+                                    .chartTitle{
+                                    }
+                                }
+                                h2{
+                                    margin: 40px 0 8px;
+                                    font-size: 18px;
+                                    height: 26px;
+                                    line-height: 26px;
+                                    &:after{
+                                    }
+                                    
+                                }
+                            }
+                            .subMenu {
+                                top: 52px;
+                                span {
+                                    height: 30px;
+                                    line-height: 30px;
+                                    padding: 0 14px;
+                                    font-size: 12px;
+                                }
+                            }
+                            .chartBox {
+                                height: 400px;;
+                                .mapTitle{
+                                    .china{
+                                        left:20px;
+                                        top:20px;
+                                        font-size: 12px;
+                                    }
+                                    .province{
+                                        left:50px;
+                                        top:20px;
+                                    }
+                                }
+                                .legend{
+                                    left:20px;
+                                    bottom: 50px;
+                                    li{
+                                        margin-bottom: 10px;
+                                        height: 20px;
+                                        .icon{
+                                            width: 30px;
+                                            height: 14px;
+                                        }
+                                        .name{
+                                            height: 14px;
+                                            line-height: 14px;
+                                        }
+                                    }
+                                }
+                                .chartTable{
+                                    width: 286px;
+                                    right:32px;
+                                    top:0;
+                                    &+div{
+                                        margin-right: 360px;
+                                    }
+                                    .chartTableTitle{
+                                        margin-bottom: 10px;
+                                    }
+                                    .chartData{
+                                        .chartDataTitle{
+                                            font-size: 12px;
+                                        }
+                                        .chartDataNum{
+                                            font-size: 12px;
+                                        }
+                                        span{
+                                            width: 50%;
+                                            line-height: 26px;
+                                        }
+                                    }
+                                    .chartList{
+                                        font-size: 12px;
+                                        margin-top: 20px;
+                                        .chartListTitle{
+                                            font-size: 14px;
+                                        }
+                                        ul{
+                                            li{
+                                                height:26px;
+                                                line-height: 26px;
+                                            }
+                                        }
+                                    }
+                                }
+                                .modelCardRel{
+                                    width:1084px;
+                                    height:400px;
+                                    margin: auto;
+                                }
+                            }
+                            .btns {
+                                right:33px;
+                                top:4px;
+                                .btn {
+                                    &.Doubt {
+                                    }
+                                }
+                            }
+                            .chartLoading{
+                                .loadingBox{
+                                    img{
+                                        width: 86px;
+                                        height: 86px; 
+                                    }
+                                }
+                                .noDataBox,.errorBox{
+                                    width: 70px;
+                                    height: 86px;
+                                    img{
+                                        width: 64px;
+                                        height: 64px;
+                                    }
+                                    .info{
+                                        line-height:36px;
+                                    }
+                                }
+                            }
+                        }
+                        .tableWrapper {
+                            padding: 0 22px 0px;
+                            .tableTitle {
+                                height: 44px;
+                                line-height: 44px;
+                                .title {
+                                    .count {
+                                    }
+                                }
+                                .load {
+                                    font-size: 12px;
+                                    .icon {
+                                        top:16px;
+                                    }
+                                }
+                            }
+                            .tableBox {
+                                table {
+                                    th,
+                                    td {
+                                        height: 38px;
+                                        font-size: 14px;
+                                    }
+                                }
+                                .green-black {
+                                    height:22px;
+                                    margin: 28px auto;
+                                    span{
+                                        height:20px;
+                                        line-height: 20px;
+                                    }
+                                    #pagevalue {
+                                        width: 42px;
+                                        height: 22px;
+                                        font-size: 12px;
+                                    }
+                                    .current {
+                                        width: 20px;
+                                    }
+                                    .prev,
+                                    .next {
+                                        width: 46px;
+                                        padding:0 5px;
+                                        height: 28px;
+                                        line-height: 28px;
+                                    }
+                                    a {
+                                        padding:0 5px;
+                                        height: 22px;
+                                        line-height: 22px;
+                                        &#search {
+                                            height: 20px;
+                                            line-height: 20px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    
+                }
+                .footer {
+                    height: 60px;
+                    p {
+                        line-height: 22px;
+                    }
+                }
+            }
+        }
+        .loading {
+            left: 172px;
+            right: 28px;
+            .loadBox {
+                width: 86px;
+                height: 86px;
+            }
+            .errBox {
+                width: 214px;
+                height: 114px;
+                padding: 18px 5px;
+                .info {
+                    padding: 5px;
+                }
+                .reload {
+                    width: 78px;
+                    height: 30px;
+                    margin: 10px auto 0;
+                    line-height: 30px;
+                }
+            }
+        }
+        .layer {
+            font-size: 12px;
+        }
+        .layerCon {
+            font-size: 12px;
+            &.layer1 {
+                position: fixed;
+                width: 510px;
+            }
+            &.layer3 {
+                position: fixed;
+                width: 510px;
+            }
+            &.layer4 {
+                width: 510px;
+                position: fixed;
+                .selectProduct{
+                    div{
+                    width:108px;
+                    float: left;
+                    label{
+                        margin-right: 26px;
+                    }
+                 }
+                }
+            }
+            .layerTitle {
+                height: 46px;
+                padding: 0 20px;
+                line-height: 46px;
+                background-color: #f8f8f8;
+                color: #333;
+                .close {
+                    margin-top: 15px;
+                    .bg(12px, 12px, 0, -133px);
+                    cursor: pointer;
+                }
+            }
+            .selected {
+                margin: 0 38px;
+                padding: 15px 0;
+                border-bottom: 1px solid @border_color;
+                color: @main_color;
+                min-height:38px;
+                line-height: 26px;
+                div {
+                    width: 330px;
+                    .selectItem {
+                        display: inline-block;
+                        // width: 72px;
+                        padding:0 10px;
+                        height: 26px;
+                        padding: 0 5px;
+                        margin: 5px 8px;
+                        color: #333;
+                        border: 1px solid @border_color;
+                        border-radius: 4px;
+                        cursor: pointer;
+                        &:hover {
+                            border-color: red;
+                            i {
+                                .bg(10px, 10px, 0, -164px);
+                            }
+                        }
+                        i {
+                            float: right;
+                            margin-top: 10px;
+                            .bg(10px, 10px, -30px, -164px);
+                        }
+                    }
+                }
+                .btn {
+                    width: 48px;
+                    height: 26px;
+                    margin-top:6px;
+                    line-height: 26px;
+                    text-align: center;
+                    color: #fff;
+                    background-color: @main_color;
+                    cursor: pointer;
+                    border-radius: 4px;
+                }
+            }
+            .options {
+                padding: 20px 38px 40px;
+                // max-height: 630px;
+                // overflow-y: auto;
+                label {
+                    margin-right: 32px;
+                    padding-left: 22px;
+                    position: relative;
+                    cursor: pointer;
+                    height:35px;
+                    line-height: 35px;
+                    text-align: left;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    tetx-overflow:ellipsis;
+                    &:before {
+                        content: '';
+                        width: 16px;
+                        height: 16px;
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                        background: #fff;
+                        border-radius: 4px;
+                        border: 1px solid @border_color;
+                    }
+                    &:after {
+                        content: '';
+                        color: #fff;
+                        font-weight: bold;
+                        position: absolute;
+                        left: 3px;
+                        top: 5px;
+                        .bg(10px, 8px, 0, -193px);
+                    }
+                    &.half:before{
+                        border: 1px solid @main_color;
+                        background: @main_color ;
+                    }
+                    &.half:after{
+                        content: '';
+                        width: 12px;
+                        height: 2px;    
+                        background-color: #fff;
+                        left:3px;
+                        top:7px;
+
+                    }
+                }
+                input[type=checkbox]{
+                     display: none;   
+                }
+                input[type=checkbox]:checked + label:before{
+                    border: 1px solid @main_color;
+                    background: @main_color ;
+                }
+                input[type=checkbox]:checked{
+                    color:red;
+                }
+                .selectProvince{
+                    color: #199df8;
+                }
+            }
+            &.layer2 {
+                width: 700px;
+                top:50px;
+                .selected {
+                    // max-height: 200px;
+                    // overflow-y: auto;
+                    div {
+                        width: 510px;
+                    }
+                }
+                .options {
+                    padding: 20px 20px 40px;
+                    .subOptions {
+                        display: none;
+                        position: relative;
+                        width: 640px;
+                        // padding: 10px 0 0 18px;
+                        padding: 0 0 0 18px;
+                        margin-top: 0;
+                        // border: 1px solid @border_color;
+                        // box-shadow: 0px 0px 0px 1px @border_color;
+                        border-radius: 4px;
+                        background: #f5f5f5;
+                        .optionItem {
+                            width: 160px;
+                            white-space: nowrap;
+                            overflow: hidden;
+                            text-overflow:ellipsis;
+                            margin: 10px 0 0 0; 
+                        }
+                    }
+                    div.clearfix{
+                        padding-left: 20px;
+                        .optionItem {
+                            float: left;
+                            width: 160px;
+                            margin: 10px 0 0 0;
+                            line-height: 16px;
+                            position: relative;
+                            i {
+                                margin:4px 0 0 2px;
+                                .bg(11px, 6px, 0, 0);
+                                cursor:pointer;
+                            }
+                            span{
+                                cursor:pointer;
+                            }
+                            .triggleCon{
+                                height:15px;
+                                padding:0;
+                                overflow: hidden;
+                                .triggle {
+                                    display: none;
+                                    position: absolute;
+                                    top: 27px;
+                                    left: 0;
+                                    z-index: 0;
+                                    width: 20px;
+                                    height: 27px;
+                                    // box-shadow: -1px -1px @border_color;
+                                    background: #f8f8f8;
+                                    transform: rotate(45deg);
+                                }
+                            }
+                            label{
+                                margin-right: 5px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

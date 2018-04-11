@@ -1,0 +1,177 @@
+<!-- 车型排名 -->
+<script src="http://glog.qcdqcdn.com" type="text/javascript"></script>
+<div class="searchWrapper">
+    <ul class='clearfix'>
+        <li class='fl clearfix'>
+            <div class="fl text">日期：</div>
+            <div class="selectBox selectUnit chooseDateFormat" style=" margin-right: 10px;">
+                <span>日</span>
+                <span class="active">月</span>
+            </div>
+            <div class='fl selectBox selectDateBox'>
+                <i class='icon'></i>
+                <input type="text" class='selectText selectDate' id="time1" readonly value="最近12个月"/>
+                <ul class='selectList dateList'>
+                    <li data-id="2" date-num="1month" >最近1个月</li>
+                    <li data-id="2" date-num="3month" >最近3个月</li>
+                    <li data-id="2" date-num="6month" >最近6个月</li>
+                    <li data-id="2" date-num="12month">最近12个月</li>
+                    <li data-id="4" id="custom">自定义</li>
+                </ul>
+                <input type="text" class="dateControl" placeholder="" style="position: relative;top: -22px;left:-10px;opacity: 0;z-index: -1;" id="selectDateControl">
+                <input type="text" class="dateControl2" placeholder="" style="position: relative;top: -22px;left:-10px;opacity: 0;z-index: -1;display: none;" id="selectDateControl1">
+            </div>
+        </li>
+        <li class='fl clearfix'>
+            <div class="fl text">细分市场：</div>
+            <div class="fl selectBox dis_select" style='margin-right: 15px;'>
+                <i class='icon'></i>
+                <input type="text" class='selectText selectProduct'  readonly value="全部产地类型" placeholder="" />
+                <ul class='selectList productTypeList'>
+                    <li data-id="1">全部产地类型</li>
+                    <li data-id="2">自主品牌</li>
+                    <li data-id="3">合资品牌</li>
+                    <li data-id="4">进口车</li>
+                </ul>
+            </div>
+            <div class="fl selectBox dis_select" style='margin-right: 15px;'>
+                <i class='icon'></i>
+                <input type="text" class='selectText selectCar'  readonly value="全部车型级别" placeholder="" />
+                <ul class='selectList carTypeList' style="max-height: 224px;">
+                    <li data-id="1">全部车型级别</li>
+                    <li data-id="1">微型车</li>
+                    <li data-id="1">小型车</li>
+                    <li data-id="1">紧凑型车</li>
+                    <li data-id="2">中型车</li>
+                    <li data-id="2">中大型车</li>
+                    <li data-id="2">豪华车</li>
+                    <li data-id="2">跑车</li>
+                    <li data-id="2">SUV</li>
+                    <li data-id="2">MPV</li>
+                </ul>
+            </div>
+            <div class="fl selectBox dis_select" style='margin-right: 15px;'>
+                <i class='icon'></i>
+                <input type="text" class='selectText selectPrice' readonly value="全部价格段" placeholder="" />
+                <ul class='selectList priceList'>
+                    <li data-id="all">全部价格段</li>
+                    <li data-id="1">8万元以下</li>
+                    <li data-id="1">8-12万元</li>
+                    <li data-id="1">12-18万元</li>
+                    <li data-id="1">18-25万元</li>
+                    <li data-id="2">25-40万元</li>
+                    <li data-id="2">40万元以上</li>
+                </ul>
+            </div>
+        </li>
+    </ul>
+</div>
+<div class='mainContent'>
+    <div class="chartWrapper">
+        <div class='chartHeader'>
+            <div class="tabMenu">
+                <li class='tabItem active'><span>关注排名</span></li>
+                <li class='tabItem'><span>预购排名</span></li>
+                <li class='tabItem'><span>销量排名</span></li>
+                <span class="tabItembar"></span>
+                <span class="tabBottom"></span>
+            </div>
+            <div class="closeDate">(数据截止<span class="lastDate"></span>)</div>
+        </div>
+
+        <div class="chartBox">
+            <div id="Ranking" style="width:100%;height: 100%;"></div>
+
+            <div class="btns">
+                <div class='btn Doubt'>
+                    <div class="tootip">
+                        <i class='Triangle'></i>
+                        <p><span class="title">关注走势：</span><span class="text">关注指数是基于用户在不同渠道触点对汽车各类内容的浏览关注行为数据综合计算，反映不同厂商/品牌/车型在潜客市场的受关注热度</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="tableWrapper clearfix">
+        <div class="tableTitle">
+            <div class="title">明细数据&nbsp;<span class="count">(共 <i class="num"></i> 条数据)</span></div>
+            <span class='load'><i class='icon'></i>下载明细</span>
+            <iframe id="ifile" src="" style="display:none"></iframe>
+        </div>
+        <div class="tableBox">
+            <table>
+                <thead class="tableHeader"></thead>
+                <tbody class="listContent"></tbody>
+            </table>
+            <div class="green-black pageContainer" id='pageContainer1'  onselectstart="return false;" style="-moz-user-select:none;"></div>
+        </div>
+    </div>
+</div>
+<div class="detailContent" style='display: none;'>
+    <div class="chartWrapper">
+        <div class='chartHeader'>
+            <div class="tabMenu">
+                <li class='tabItem active'><span>关注排名</span></li>
+                <li class='tabItem'><span>预购排名</span></li>
+                <li class='tabItem'><span>销量排名</span></li>
+                <span class="tabItembar"></span>
+                <span class="tabBottom"></span>
+            </div>
+            <div class="closeDate">(数据截止<span class="lastDate"></span>)</div>
+        </div>
+        <div class="chartReturn">
+            <span class='return'><i class="less_icon"><i></i></i>返回</span>
+            <span class="detailName"></span>
+        </div>
+
+        <div class="chartBox">
+            <div id="RankingDetail"  style="width:100%;height: 100%;"></div>
+            <!--<div id="barLine" style="height: 100%;"><img src="images/chart1.png" alt="" style='width: 100%;'></div>-->
+            <div class="btns">
+                <div class='btn Doubt'>
+                    <div class="tootip"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="tableWrapper clearfix">
+        <div class="tableTitle">
+            <div class="title">明细数据&nbsp;<span class="count">(共 <i class="num"></i> 条数据)</span></div>
+            <span class='load'><i class='icon'></i>下载明细</span>
+            <iframe id="detailFile" src="" style="display:none"></iframe>
+        </div>
+        <div class="tableBox">
+            <table>
+                <thead class="tableHeader"></thead>
+                <tbody class="listContent"></tbody>
+            </table>
+            <div class="green-black pageContainer" id='pageContainer2'  onselectstart="return false;" style="-moz-user-select:none;"></div>
+        </div>
+    </div>
+</div>
+<script type='text/template' id='tableTpl'>
+    {@each values as item}
+        <tr>
+            <td>${item[0]}</td>
+            <td class='tdName'>${item[1]}</td>
+            <td>${item[2]}</td>
+        </tr>
+    {@/each}
+</script>
+<script type='text/template' id='detailTableTpl'>
+    {@each values as item}
+        <tr>
+            {@each item as it}
+            <td>${it}</td>
+            {@/each}
+        </tr>
+    {@/each}
+
+</script>
+<script type='text/template' id='tableHeaderTpl'>
+    <tr>
+        {@each Header as item}
+        <th width="${parseInt(100/Header.length)}%">${item}</th>
+        {@/each}
+    </tr>
+</script>

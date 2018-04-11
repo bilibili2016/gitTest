@@ -1,0 +1,115 @@
+<!-- 细分市场走势 -->
+<script src="http://glog.qcdqcdn.com" type="text/javascript"></script>
+<div class="searchWrapper division">
+    <ul class='clearfix'>
+        <li class='fl clearfix'>
+            <div class="fl text">日期：</div>
+            <div class="selectBox selectUnit chooseDateFormat" style=" margin-right: 10px;">
+                <span>日</span>
+                <span class="active">月</span>
+            </div>
+            <div class='fl selectBox selectDateBox'>
+                <i class='icon'></i>
+                <input type="text" class='selectText selectDate' id="time1" readonly value="最近12个月"/>
+                <ul class='selectList dateList'>
+                    <li data-id="2" date-num="6month" >最近6个月</li>
+                    <li data-id="2" date-num="12month">最近12个月</li>
+                    <li data-id="4" id="custom" >自定义</li>
+                </ul>
+               <!-- <input type="text" class="dateControl2" placeholder="" style="position: relative;top: -22px;left:-10px;opacity: 0;z-index: -1;display: none;" id="selectDateControl1">-->
+            </div>
+        </li>
+        <li class='fl clearfix'>
+            <div class="fl text">细分指标：</div>
+            <div class="selectBox w160">
+                <i class='icon'></i>
+                <input type="text" class='selectText marketName' readonly value="整体市场" />
+                <ul class='selectList marketList'>
+                    <li data-id="global">整体市场</li>
+                    <li data-id="country_series">产地类型</li>
+                    <li data-id="carlevel">车型级别</li>
+                    <li data-id="suv_level">SUV细分级别</li>
+                    <li data-id="country_extend">品牌国别</li>
+                    <li data-id="msrp_min_extend">价格段</li>
+                </ul>
+            </div>
+        </li>
+        <li class='fl clearfix'>
+            <div class="fl text">区域：</div>
+            <div class="fl selectBox w160" style='margin-right: 15px;'>
+                <i class='icon'></i>
+                <input type="text" class='selectText selectRegion' id="" readonly value="全国" />
+                <ul class='selectList regionList'>
+                    <li data-id="1">全国</li>
+                    <li data-id="2">大区</li>
+                    <li data-id="3">城市级别</li>
+                    <li data-id="4">省份/城市</li>
+                </ul>
+            </div>
+            <div class="fl addArea w160">
+                <div class='areaIcon' style='display: none;'>
+                    <i class="add_more"></i> 选择区域
+                </div>
+                <div class="areas">全国</div>
+            </div>
+        </li>
+    </ul>
+</div>
+<div class="mainContent">
+    <div class="chartWrapper">
+        <div class='chartHeader'>
+            <div class="tabMenu">
+                <li class='tabItem active'><span>关注走势</span></li>
+                <li class='tabItem'><span>预购走势</span></li>
+                <li class='tabItem'><span>销量走势</span></li>
+                <span class="tabItembar"></span>
+                <span class="tabBottom"></span>
+            </div>
+            <div class="subMenu clearfix"></div>
+            <div class="closeDate">(数据截止<span class="lastDate"></span>)</div>
+        </div>
+
+        <div class="chartBox">
+            <div id="divisionMarket" style="width:100%;height: 100%;"></div>
+            <div class="btns">
+                <div class='btn Doubt'>
+                    <div class="tootip"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="tableWrapper clearfix">
+        <div class="tableTitle">
+            <div class="title">明细数据&nbsp;<span class="count">(共 <i class="num"></i> 条数据)</span></div>
+            <span class='load'><i class='icon'></i>下载明细</span>
+            <iframe id="ifile" src="" style="display:none"></iframe>
+        </div>
+        <div class="tableBox">
+            <table>
+                <thead class="tableHeader"></thead>
+                <tbody class="listContent"></tbody>
+            </table>
+            <div class="green-black pageContainer" id='pageContainer1'  onselectstart="return false;" style="-moz-user-select:none;"></div>
+        </div>
+    </div>
+</div>
+<script type='text/template' id='tableHeaderTpl'>
+    <tr>
+        {@each Header as item}
+        <th width="${parseInt(100/Header.length)}%">${item}</th>
+        {@/each}
+    </tr>
+</script>
+<script type='text/template' id='tableTpl'>
+   {@each values as item}
+        <tr>
+            {@each item as it}
+            <td>${it}</td>
+            {@/each}
+        </tr>
+    {@/each} 
+</script>
+
+<script>
+    $('.marketList').slimScroll({height:'200px',width:'160px'})
+</script>

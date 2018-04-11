@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>icon-Navigation-Pie chart</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="基础属性" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-18.000000, -127.000000)" opacity="0.5">
+        <g id="侧边导航" fill="#FFFFFF" fill-rule="nonzero">
+            <g id="Group-3" transform="translate(0.000000, 124.000000)">
+                <g id="icon-Navigation-Pie-chart" transform="translate(18.000000, 3.000000)">
+                    <path d="M15.1160109,4.43493761 C15.6573948,5.51871658 15.9565807,6.73083779 15.9565807,8.01426025 C15.9565807,12.4206774 12.380597,16 7.97829037,16 C3.57598372,16 0,12.4206774 0,8.01426025 C0,3.60784314 3.56173677,0.0285204991 7.97829037,0.0285204991 L7.97829037,8.55614973 L15.1160109,4.43493761 Z M9.11804613,0 L9.11804613,6.4741533 L14.531886,3.35115865 C13.2924016,1.5828877 11.3548168,0.32798574 9.11804613,0 Z" id="Shape"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

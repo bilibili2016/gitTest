@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="139px" height="62px" viewBox="0 0 139 62" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>Oval 8 Copy 2</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="50%" y1="5.05875425%" x2="50%" y2="105.069564%" id="linearGradient-1">
+            <stop stop-color="#FFFFFF" stop-opacity="0" offset="0%"></stop>
+            <stop stop-color="#266CFD" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="车型卡片" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-1742.000000, -424.000000)">
+        <g id="标题" transform="translate(241.000000, 195.000000)" stroke="url(#linearGradient-1)" stroke-width="24">
+            <g id="Oval-8-Copy-2">
+                <circle transform="translate(1588.000000, 321.000000) rotate(-180.000000) translate(-1588.000000, -321.000000) " cx="1588" cy="321" r="80"></circle>
+            </g>
+        </g>
+    </g>
+</svg>

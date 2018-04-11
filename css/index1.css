@@ -1,0 +1,2502 @@
+@charset "UTF-8";
+.wrap {
+  min-width: 1366px;
+  height: 100%;
+  font-size: 16px;
+  background-color: #f6f7fc;
+}
+.wrap input {
+  font-size: 14px;
+}
+.wrap .main {
+  width: 100%;
+  overflow-y: auto;
+}
+.wrap .main .sideBar {
+  width: 200px;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  background-image: -webkit-linear-gradient(#0153AD 0%, #003C9E 98%);
+  box-shadow: 4px 0px 12px 0px rgba(47, 118, 248, 0.4);
+  border-radius: 2px;
+  z-index: 5;
+}
+.wrap .main .sideBar .logo {
+  width: 200px;
+  height: 80px;
+  line-height: 80px;
+  text-align: center;
+}
+.wrap .main .sideBar .logo img {
+  width: 150px;
+  margin: 26px auto;
+}
+.wrap .main .sideBar .menuList {
+  height: 800px;
+}
+.wrap .main .sideBar .menuList ul {
+  height: 100%;
+}
+.wrap .main .sideBar .menuList ul li.navItem a {
+  display: block;
+  height: 40px;
+  line-height: 40px;
+  overflow-y: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  color: rgba(255, 255, 255, 0.6);
+  position: relative;
+  overflow: hidden;
+  padding: 0 0 0 46px;
+}
+.wrap .main .sideBar .menuList ul li.navItem a.firstNav {
+  margin-top: 10px;
+  cursor: default;
+}
+.wrap .main .sideBar .menuList ul li.navItem a.firstNav.active {
+  color: #fff;
+}
+.wrap .main .sideBar .menuList ul li.navItem a.secondNav {
+  position: relative;
+}
+.wrap .main .sideBar .menuList ul li.navItem a.secondNav i {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 13px;
+  right: 8px;
+}
+.wrap .main .sideBar .menuList ul li.navItem a.secondNav i img {
+  display: block;
+  width: 11px;
+  height: 5px;
+  margin: 6px auto;
+  transform: rotate(-90deg);
+}
+.wrap .main .sideBar .menuList ul li.navItem a.secondNav.active.isLink {
+  color: #fff;
+  background-color: #00368E;
+  position: relative;
+}
+.wrap .main .sideBar .menuList ul li.navItem a.secondNav.active.isLink:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 40px;
+  width: 4px;
+  background-color: #3077F9;
+}
+.wrap .main .sideBar .menuList ul li.navItem a.secondNav.active:hover,
+.wrap .main .sideBar .menuList ul li.navItem a.secondNav.active {
+  position: relative;
+  color: #fff;
+}
+.wrap .main .sideBar .menuList ul li.navItem a.secondNav.active:hover.open i img,
+.wrap .main .sideBar .menuList ul li.navItem a.secondNav.active.open i img {
+  transform: rotate(0);
+}
+.wrap .main .sideBar .menuList ul li.navItem a.thirdNav {
+  font-size: 14px;
+  text-indent: 1em;
+}
+.wrap .main .sideBar .menuList ul li.navItem a.thirdNav.active.isLink {
+  color: #fff;
+  background-color: #00368E;
+  position: relative;
+}
+.wrap .main .sideBar .menuList ul li.navItem a.thirdNav.active.isLink:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 40px;
+  width: 4px;
+  background-color: #3077F9;
+}
+.wrap .main .sideBar .menuList ul li.navItem a .icon {
+  width: 18px;
+  height: 18px;
+  background-repeat: no-repeat;
+  background-position: 0 center;
+  background-size: 18px 18px;
+  color: #fff;
+  position: absolute;
+  left: 20px;
+  top: 11px;
+}
+.wrap .main .sideBar .menuList ul li.navItem ul.third {
+  display: none;
+}
+.wrap .main .sideBar .menuList ul li.navItem ul li {
+  padding: 0;
+}
+.wrap .main .sideBar .menuList ul li.navItem:nth-child(2) .icon {
+  width: 20px;
+  background-size: 20px 20px;
+}
+.wrap .main .sideBar .userArea {
+  height: 60px;
+  line-height: 60px;
+  color: #fff;
+  border-top: 1px solid #013993;
+  text-align: center;
+  font-size: 14px;
+}
+.wrap .main .sideBar .userArea ul {
+  display: inline-block;
+  margin: 0 auto;
+}
+.wrap .main .sideBar .userArea ul li {
+  float: left;
+}
+.wrap .main .sideBar .userArea ul li.line {
+  width: 2px;
+  height: 10px;
+  background-color: #99BAFF;
+  margin: 24px 10px;
+}
+.wrap .main .sideBar .userArea ul li a {
+  color: #fff;
+}
+.wrap .main .content {
+  height: 100%;
+  margin-left: 200px;
+  padding: 0 40px;
+  overflow: hidden;
+}
+.wrap .main .content .contenter .searchWrapper {
+  height: 80px;
+  position: fixed;
+  top: 0;
+  left: 200px;
+  right: 0px;
+  z-index: 4;
+  padding: 20px 0  20px 40px;
+  font-size: 14px;
+  background-color: #fff;
+  border-bottom: 1px solid #ecedef;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  /* Firefox */
+  -webkit-box-sizing: border-box;
+  /* Safari */
+}
+.wrap .main .content .contenter .searchWrapper li {
+  margin-right: 35px;
+}
+.wrap .main .content .contenter .searchWrapper li:last-child {
+  margin-right: 0;
+}
+.wrap .main .content .contenter .searchWrapper li .text {
+  margin-right: 10px;
+  line-height: 40px;
+  color: #797991;
+}
+.wrap .main .content .contenter .searchWrapper li .selectBox {
+  float: left;
+  width: 180px;
+  height: 40px;
+  cursor: pointer;
+  position: relative;
+}
+.wrap .main .content .contenter .searchWrapper li .selectBox .selectText {
+  display: block;
+  width: 154px;
+  height: 38px;
+  line-height: 40px;
+  padding: 0 12px;
+  border-radius: 4px;
+  border: 1px solid #ecedef;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  outline: 0 none;
+  cursor: pointer;
+  background: transparent;
+  color: #252834;
+}
+.wrap .main .content .contenter .searchWrapper li .selectBox.selectDateBox {
+  width: 208px;
+}
+.wrap .main .content .contenter .searchWrapper li .selectBox.selectDateBox input {
+  width: 180px;
+}
+.wrap .main .content .contenter .searchWrapper li .selectBox.w160 {
+  width: 160px;
+}
+.wrap .main .content .contenter .searchWrapper li .selectBox.w160 .selectText {
+  width: 134px;
+}
+.wrap .main .content .contenter .searchWrapper li .selectBox.mr5 {
+  margin-right: 10px;
+}
+.wrap .main .content .contenter .searchWrapper li .selectBox .icon {
+  position: absolute;
+  top: 16px;
+  right: 10px;
+  width: 12px;
+  height: 8px;
+  background: url('../images/iocn-dropdown.svg') no-repeat;
+  background-size: 12px 8px;
+}
+.wrap .main .content .contenter .searchWrapper li .selectBox .slimScrollDiv {
+  display: none;
+  z-index: 10;
+  top: 4px;
+}
+.wrap .main .content .contenter .searchWrapper li .selectBox .slimScrollDiv .brandList,
+.wrap .main .content .contenter .searchWrapper li .selectBox .slimScrollDiv .carTypeList_compete,
+.wrap .main .content .contenter .searchWrapper li .selectBox .slimScrollDiv .carTypeList1,
+.wrap .main .content .contenter .searchWrapper li .selectBox .slimScrollDiv .brandList1,
+.wrap .main .content .contenter .searchWrapper li .selectBox .slimScrollDiv .userBrandList,
+.wrap .main .content .contenter .searchWrapper li .selectBox .slimScrollDiv .brandList2,
+.wrap .main .content .contenter .searchWrapper li .selectBox .slimScrollDiv .marketList,
+.wrap .main .content .contenter .searchWrapper li .selectBox .slimScrollDiv .cardBrandList {
+  display: block;
+  border: 0 none;
+  top: 0;
+  left: 0;
+}
+.wrap .main .content .contenter .searchWrapper li .selectBox .selectList {
+  display: none;
+  width: 100%;
+  max-height: 200px;
+  overflow-x: hidden;
+  position: absolute;
+  left: -1px;
+  top: 44px;
+  border: 1px solid #ecedef;
+  border-radius: 4px;
+  background-color: #fff;
+  font-size: 14px;
+  z-index: 10;
+  box-shadow: 0px 0px 10px 0px rgba(37, 40, 52, 0.15), 0px 0px 10px 0px rgba(37, 40, 52, 0.1);
+}
+.wrap .main .content .contenter .searchWrapper li .selectBox .selectList li {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  /* Firefox */
+  -webkit-box-sizing: border-box;
+  /* Safari */
+  width: 100%;
+  height: 40px;
+  padding: 0 10px;
+  line-height: 40px;
+  margin-right: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.wrap .main .content .contenter .searchWrapper li .selectBox .selectList li:hover {
+  color: #2f77f8;
+  background: #f0f5ff;
+}
+.wrap .main .content .contenter .searchWrapper li .selectBox .selectList li.hover {
+  color: #2f77f8;
+  background: #f0f5ff;
+}
+.wrap .main .content .contenter .searchWrapper li .addArea {
+  width: 154px;
+  height: 38px;
+  line-height: 40px;
+  padding: 0 12px;
+  border: 1px solid #ecedef;
+  border-radius: 4px;
+  cursor: pointer;
+  position: relative;
+}
+.wrap .main .content .contenter .searchWrapper li .addArea i {
+  position: absolute;
+  right: 12px;
+  top: 12px;
+  width: 12px;
+  height: 12px;
+  background: url('../images/bg.png') 0px -25px no-repeat;
+  background-size: 20px;
+}
+.wrap .main .content .contenter .searchWrapper li .addArea .areas {
+  width: 158px;
+  height: 40px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  line-height: 40px;
+}
+.wrap .main .content .contenter .searchWrapper li .addArea .areas i {
+  position: absolute;
+  right: 12px;
+  top: 12px;
+  width: 12px;
+  height: 12px;
+  background: url('../images/icon-add.svg') no-repeat;
+  background-size: 12px 12px;
+}
+.wrap .main .content .contenter .searchWrapper li .addArea.w160 {
+  width: 134px;
+}
+.wrap .main .content .contenter .searchWrapper li .addArea.w160 .areas {
+  width: 134px;
+}
+.wrap .main .content .contenter .searchWrapper li .selectUnit {
+  width: auto;
+  height: 42px;
+  padding: 0;
+  border: 0 none;
+  overflow: hidden;
+}
+.wrap .main .content .contenter .searchWrapper li .selectUnit span {
+  float: left;
+  width: 30px;
+  padding: 0 10px;
+  height: 38px;
+  line-height: 38px;
+  text-align: center;
+  border: 1px solid #ecedef;
+  border-right: 0 none;
+  cursor: pointer;
+}
+.wrap .main .content .contenter .searchWrapper li .selectUnit span:first-child {
+  border-radius: 4px 0 0 4px;
+}
+.wrap .main .content .contenter .searchWrapper li .selectUnit span:last-child {
+  border-right: 1px solid #ecedef;
+  border-radius: 0 4px 4px 0;
+}
+.wrap .main .content .contenter .searchWrapper li .selectUnit span.active {
+  background-color: #2f77f8;
+  border-color: #2f77f8;
+  color: #fff;
+  cursor: default;
+}
+.wrap .main .content .contenter .searchWrapper li .selectUnit span.active + span {
+  border-left: 0 none;
+}
+.wrap .main .content .contenter .searchWrapper li .selectUnit span.detailClass {
+  color: #797991;
+  cursor: default;
+}
+.wrap .main .content .contenter .searchWrapper li .selectUnit .borderClear {
+  border: 0 none;
+}
+.wrap .main .content .contenter .searchWrapper li .timeBox {
+  float: left;
+  width: 149px;
+  height: 45px;
+  margin-left: 37px;
+  line-height: 45px;
+  text-align: center;
+  background-color: #e8f5fe;
+}
+.wrap .main .content .contenter .searchWrapper li.fr {
+  margin-right: 0;
+  color: #797991;
+  line-height: 40px;
+  font-size: 14px;
+}
+.wrap .main .content .contenter .searchWrapper li.fr .closeDate {
+  display: none;
+  height: 40px;
+  margin-right: 40px;
+}
+.wrap .main .content .contenter .searchWrapper li.fr .pdf {
+  margin: 0 40px 0 30px;
+  line-height: 40px;
+  padding-left: 25px;
+  cursor: pointer;
+  position: relative;
+}
+.wrap .main .content .contenter .searchWrapper li.fr .pdf i {
+  position: absolute;
+  left: 0;
+  top: 13px;
+  width: 18px;
+  height: 14px;
+  background: url('../images/icon-download.svg') no-repeat;
+  background-size: 18px 14px;
+}
+.wrap .main .content .contenter .searchWrapper li.fr .pdf.isExport i {
+  width: 18px;
+  height: 14px;
+  background: url('../images/loading-1.gif') no-repeat;
+  background-size: 18px 14px;
+}
+.wrap .main .content .contenter .searchWrapper li.fr .load {
+  position: relative;
+  cursor: pointer;
+  padding-left: 25px;
+  margin-right: 40px;
+}
+.wrap .main .content .contenter .searchWrapper li.fr .load i {
+  position: absolute;
+  left: 0;
+  top: 13px;
+  width: 18px;
+  height: 14px;
+  background: url('../images/icon-download.svg') no-repeat;
+  background-size: 18px 14px;
+}
+.wrap .main .content .contenter .searchWrapper li.fr .btns {
+  position: relative;
+  margin: 4px 10px 0;
+}
+.wrap .main .content .contenter .searchWrapper li.fr .btns .btn {
+  display: inline-block;
+  margin-left: 20px;
+  cursor: pointer;
+}
+.wrap .main .content .contenter .searchWrapper li.fr .btns .btn.Doubt {
+  margin-left: 0;
+  z-index: 2;
+  width: 16px;
+  height: 16px;
+  background: url('../images/icon-Prompt.svg') no-repeat;
+  background-size: 16px 16px;
+}
+.wrap .main .content .contenter .searchWrapper li.fr .btns .btn.Doubt:hover {
+  background-image: url('../images/icon-Prompt-hover.svg');
+}
+.wrap .main .content .contenter .searchWrapper li.fr .btns .tootip {
+  display: none;
+  width: 310px;
+  padding: 10px 15px;
+  position: absolute;
+  top: 35px;
+  right: -40px;
+  z-index: 3;
+  background: #353940;
+  border-radius: 4px;
+}
+.wrap .main .content .contenter .searchWrapper li.fr .btns .tootip p {
+  color: #fff;
+  font-size: 12px;
+  line-height: 20px;
+  margin-bottom: 10px;
+}
+.wrap .main .content .contenter .searchWrapper li.fr .btns .tootip p span {
+  display: inline;
+  width: auto;
+  margin: 0;
+  background: none;
+  color: #fff;
+  line-height: 20px;
+}
+.wrap .main .content .contenter .searchWrapper li.fr .btns .tootip .Triangle {
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  top: -5px;
+  right: 40px;
+  background-color: #353940;
+  transform: rotate(45deg);
+}
+.wrap .main .content .contenter .titleCard {
+  height: 290px;
+  margin: 112px 0 0;
+  border-radius: 6px;
+  background-color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+.wrap .main .content .contenter .titleCard h1 {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 2;
+  width: 100%;
+  height: 290px;
+  font-size: 34px;
+  color: #2f77f8;
+  line-height: 340px;
+  text-align: center;
+}
+.wrap .main .content .contenter .titleCard i.middle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 100%;
+  height: 290px;
+  background-image: url('../images/title.png');
+  background-position: center center;
+}
+.wrap .main .content .contenter .titleCard i.bottom {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 140px;
+  height: 62px;
+  background: url('../images/title2.svg') no-repeat;
+  background-size: 140px 62px;
+}
+.wrap .main .content .contenter .titleCard i.top {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 140px;
+  height: 62px;
+  background: url('../images/title3.svg') no-repeat;
+  background-size: 140px 62px;
+}
+.wrap .main .content .contenter .chooseList {
+  max-width: 1623px;
+  padding: 10px 32px;
+  background-color: #fff;
+  border-bottom: solid 1px #ecedef;
+  position: fixed;
+  top: 0px;
+  left: 200px;
+  right: 0px;
+  z-index: 3;
+}
+.wrap .main .content .contenter .chooseList .fl:first-child {
+  width: 80px;
+  text-align: left;
+  position: absolute;
+  left: 32px;
+  top: 25px;
+}
+.wrap .main .content .contenter .chooseList .fl:nth-child(2) {
+  margin-left: 80px;
+  margin-right: 30px;
+  height: 50px;
+  overflow: hidden;
+  transition: height .5s;
+}
+.wrap .main .content .contenter .chooseList .fl:nth-child(2) span {
+  float: left;
+  padding: 0 16px;
+  margin: 5px 10px;
+  height: 40px;
+  line-height: 40px;
+  border: solid 1px #ecedef;
+  cursor: pointer;
+}
+.wrap .main .content .contenter .chooseList .fl:nth-child(2) span.active {
+  color: #fff;
+  background-color: #2f77f8;
+  border-color: #2f77f8;
+}
+.wrap .main .content .contenter .chooseList .openBtn {
+  line-height: 40px;
+  position: absolute;
+  right: 0px;
+  top: 15px;
+  padding-right: 20px;
+  cursor: pointer;
+}
+.wrap .main .content .contenter .chooseList .openBtn i {
+  display: inline-block;
+  margin-left: 5px;
+  width: 12px;
+  height: 8px;
+  background: url('../images/iocn-dropdown.svg') no-repeat;
+  background-size: 12px 8px;
+}
+.wrap .main .content .contenter .chooseList .openBtn.open i {
+  transform: rotate(180deg);
+}
+.wrap .main .content .contenter .mainContent,
+.wrap .main .content .contenter .detailContent {
+  margin-top: 120px;
+}
+.wrap .main .content .contenter .mainContent.preference,
+.wrap .main .content .contenter .detailContent.preference {
+  margin-top: 110px;
+}
+.wrap .main .content .contenter .mainContent .chartWrapper,
+.wrap .main .content .contenter .detailContent .chartWrapper {
+  border-radius: 6px;
+  border: solid 1px #ecedef;
+  background-color: #fff;
+  margin-bottom: 40px;
+  position: relative;
+}
+.wrap .main .content .contenter .mainContent .chartWrapper .chartHeader,
+.wrap .main .content .contenter .detailContent .chartWrapper .chartHeader {
+  height: 70px;
+}
+.wrap .main .content .contenter .mainContent .chartWrapper .chartHeader .tabMenu,
+.wrap .main .content .contenter .detailContent .chartWrapper .chartHeader .tabMenu {
+  height: 38px;
+  line-height: 22px;
+  position: absolute;
+  left: 12px;
+  top: 32px;
+  text-align: center;
+  color: #797991;
+}
+.wrap .main .content .contenter .mainContent .chartWrapper .chartHeader .tabMenu .tabItem,
+.wrap .main .content .contenter .detailContent .chartWrapper .chartHeader .tabMenu .tabItem {
+  float: left;
+  width: auto;
+  padding: 0  20px;
+  cursor: pointer;
+}
+.wrap .main .content .contenter .mainContent .chartWrapper .chartHeader .tabMenu .tabItem.active,
+.wrap .main .content .contenter .detailContent .chartWrapper .chartHeader .tabMenu .tabItem.active {
+  color: #20203a;
+}
+.wrap .main .content .contenter .mainContent .chartWrapper .chartHeader .tabMenu .tabItem.active span,
+.wrap .main .content .contenter .detailContent .chartWrapper .chartHeader .tabMenu .tabItem.active span {
+  padding-bottom: 16px;
+  position: relative;
+  display: inline-block;
+}
+.wrap .main .content .contenter .mainContent .chartWrapper .chartHeader .tabMenu .tabItem.active span:after,
+.wrap .main .content .contenter .detailContent .chartWrapper .chartHeader .tabMenu .tabItem.active span:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-color: #2f76f9;
+}
+.wrap .main .content .contenter .mainContent .chartWrapper .chartHeader .closeDate,
+.wrap .main .content .contenter .detailContent .chartWrapper .chartHeader .closeDate {
+  display: none;
+  height: 48px;
+  position: absolute;
+  right: 32px;
+  top: 2px;
+  line-height: 48px;
+  color: #797991;
+}
+.wrap .main .content .contenter .mainContent .chartWrapper .chartReturn,
+.wrap .main .content .contenter .detailContent .chartWrapper .chartReturn {
+  height: 36px;
+  line-height: 36px;
+  position: absolute;
+  z-index: 1;
+  top: 11%;
+  left: 30px;
+}
+.wrap .main .content .contenter .mainContent .chartWrapper .chartReturn .return,
+.wrap .main .content .contenter .detailContent .chartWrapper .chartReturn .return {
+  padding-left: 15px;
+  color: #2f77f8;
+  cursor: pointer;
+  position: relative;
+}
+.wrap .main .content .contenter .mainContent .chartWrapper .chartReturn .return .less_icon,
+.wrap .main .content .contenter .detailContent .chartWrapper .chartReturn .return .less_icon {
+  position: absolute;
+  left: 2px;
+  top: -7px;
+  width: 7px;
+  overflow: hidden;
+}
+.wrap .main .content .contenter .mainContent .chartWrapper .chartReturn .return .less_icon i,
+.wrap .main .content .contenter .detailContent .chartWrapper .chartReturn .return .less_icon i {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin-left: 2px;
+  border: 1px solid #2f77f8;
+  transform: rotate(-45deg);
+}
+.wrap .main .content .contenter .mainContent .chartWrapper .chartReturn .return:hover .less_icon i,
+.wrap .main .content .contenter .detailContent .chartWrapper .chartReturn .return:hover .less_icon i {
+  border-color: #2f77f8;
+}
+.wrap .main .content .contenter .mainContent .chartWrapper.user,
+.wrap .main .content .contenter .detailContent .chartWrapper.user {
+  border: 0 none;
+  border-radius: 0;
+  background-color: #f6f7fd;
+}
+.wrap .main .content .contenter .mainContent .chartWrapper.user .chartBox,
+.wrap .main .content .contenter .detailContent .chartWrapper.user .chartBox {
+  background-color: #fff;
+  border: solid 1px #ecedef;
+  position: relative;
+  border-radius: 6px;
+}
+.wrap .main .content .contenter .mainContent .chartWrapper.user .chartBox #Ranking,
+.wrap .main .content .contenter .detailContent .chartWrapper.user .chartBox #Ranking {
+  margin-right: 425px;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+.wrap .main .content .contenter .mainContent .chartWrapper.user .chartBox .chartTable .con,
+.wrap .main .content .contenter .detailContent .chartWrapper.user .chartBox .chartTable .con {
+  width: 400px;
+  border-top: 1px solid #d0d2dd;
+  color: #252834;
+}
+.wrap .main .content .contenter .mainContent .chartWrapper.user .chartBox .chartTable .con .tab,
+.wrap .main .content .contenter .detailContent .chartWrapper.user .chartBox .chartTable .con .tab {
+  position: relative;
+}
+.wrap .main .content .contenter .mainContent .chartWrapper.user .chartBox .chartTable .con .tab li,
+.wrap .main .content .contenter .detailContent .chartWrapper.user .chartBox .chartTable .con .tab li {
+  float: left;
+  line-height: 60px;
+  width: 50%;
+  text-align: center;
+  box-shadow: 1px 0px 0 0 #d0d2dd;
+  border-bottom: 1px solid #d0d2dd;
+  cursor: pointer;
+  color: #797991;
+  background-color: #f0f1f6;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+.wrap .main .content .contenter .mainContent .chartWrapper.user .chartBox .chartTable .con .tab li:first-child,
+.wrap .main .content .contenter .detailContent .chartWrapper.user .chartBox .chartTable .con .tab li:first-child {
+  border-right: 1px solid #d0d2dd;
+  border-left: 1px solid #d0d2dd;
+}
+.wrap .main .content .contenter .mainContent .chartWrapper.user .chartBox .chartTable .con .tab li.active,
+.wrap .main .content .contenter .detailContent .chartWrapper.user .chartBox .chartTable .con .tab li.active {
+  color: #252834;
+  background-color: #fff;
+}
+.wrap .main .content .contenter .mainContent .chartWrapper.user .chartBox .chartTable .con .tab .tabItembar,
+.wrap .main .content .contenter .detailContent .chartWrapper.user .chartBox .chartTable .con .tab .tabItembar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50%;
+  height: 2px;
+  background-color: #2f77f8;
+  transform: translateX(0);
+  transition: transform .6s;
+}
+.wrap .main .content .contenter .mainContent .chartWrapper.user .chartBox .chartTable .con .tab + div,
+.wrap .main .content .contenter .detailContent .chartWrapper.user .chartBox .chartTable .con .tab + div {
+  width: 401px;
+}
+.wrap .main .content .contenter .mainContent .chartWrapper.user .chartBox .chartTable .con .title,
+.wrap .main .content .contenter .detailContent .chartWrapper.user .chartBox .chartTable .con .title {
+  line-height: 50px;
+  border-left: 1px solid #d0d2dd;
+  border-right: 1px solid #d0d2dd;
+}
+.wrap .main .content .contenter .mainContent .chartWrapper.user .chartBox .chartTable .con .title li,
+.wrap .main .content .contenter .detailContent .chartWrapper.user .chartBox .chartTable .con .title li {
+  float: left;
+  width: 33%;
+  text-align: center;
+  color: #333;
+}
+.wrap .main .content .contenter .mainContent .chartWrapper.user .chartBox .chartTable .con .title li:first-child,
+.wrap .main .content .contenter .detailContent .chartWrapper.user .chartBox .chartTable .con .title li:first-child {
+  width: 20%;
+}
+.wrap .main .content .contenter .mainContent .chartWrapper.user .chartBox .chartTable .con .title li:nth-child(2),
+.wrap .main .content .contenter .detailContent .chartWrapper.user .chartBox .chartTable .con .title li:nth-child(2) {
+  width: 46%;
+}
+.wrap .main .content .contenter .mainContent .chartWrapper.user .chartBox .chartTable .con .list,
+.wrap .main .content .contenter .detailContent .chartWrapper.user .chartBox .chartTable .con .list {
+  height: 370px;
+  line-height: 40px;
+  overflow: hidden;
+}
+.wrap .main .content .contenter .mainContent .chartWrapper.user .chartBox .chartTable .con .list p,
+.wrap .main .content .contenter .detailContent .chartWrapper.user .chartBox .chartTable .con .list p {
+  overflow: hidden;
+  cursor: pointer;
+}
+.wrap .main .content .contenter .mainContent .chartWrapper.user .chartBox .chartTable .con .list p.active,
+.wrap .main .content .contenter .detailContent .chartWrapper.user .chartBox .chartTable .con .list p.active {
+  background-color: #f0f5ff;
+  color: #2f77f8;
+}
+.wrap .main .content .contenter .mainContent .chartWrapper.user .chartBox .chartTable .con .list p:hover,
+.wrap .main .content .contenter .detailContent .chartWrapper.user .chartBox .chartTable .con .list p:hover {
+  background-color: #f0f5ff;
+  color: #2f77f8;
+}
+.wrap .main .content .contenter .mainContent .chartWrapper.user .chartBox .chartTable .con .list p span,
+.wrap .main .content .contenter .detailContent .chartWrapper.user .chartBox .chartTable .con .list p span {
+  float: left;
+  width: 33%;
+  text-align: center;
+}
+.wrap .main .content .contenter .mainContent .chartWrapper.user .chartBox .chartTable .con .list p span:first-child,
+.wrap .main .content .contenter .detailContent .chartWrapper.user .chartBox .chartTable .con .list p span:first-child {
+  width: 20%;
+}
+.wrap .main .content .contenter .mainContent .chartWrapper.user .chartBox .chartTable .con .list p span:nth-child(2),
+.wrap .main .content .contenter .detailContent .chartWrapper.user .chartBox .chartTable .con .list p span:nth-child(2) {
+  width: 46%;
+}
+.wrap .main .content .contenter .mainContent .chartWrapper.user .chartBox .chartTable .slimScrollDiv,
+.wrap .main .content .contenter .detailContent .chartWrapper.user .chartBox .chartTable .slimScrollDiv {
+  box-shadow: 0 0 #fff;
+}
+.wrap .main .content .contenter .mainContent .chartWrapper.user .chartBox .chartTitle,
+.wrap .main .content .contenter .detailContent .chartWrapper.user .chartBox .chartTitle {
+  height: 24px;
+  padding-left: 20px;
+  font-weight: bold;
+}
+.wrap .main .content .contenter .mainContent .chartWrapper.user h2,
+.wrap .main .content .contenter .detailContent .chartWrapper.user h2 {
+  margin: 55px 0 10px;
+  position: relative;
+  font-size: 22px;
+  height: 36px;
+  line-height: 36px;
+}
+.wrap .main .content .contenter .mainContent .chartWrapper.user h2:after,
+.wrap .main .content .contenter .detailContent .chartWrapper.user h2:after {
+  content: '';
+  width: 148px;
+  height: 36px;
+  background: url('../images/Combined.svg') no-repeat;
+  background-size: 148px 36px;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.wrap .main .content .contenter .mainContent .chartWrapper .subMenu,
+.wrap .main .content .contenter .detailContent .chartWrapper .subMenu {
+  position: absolute;
+  top: 75px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-right: 0 none;
+}
+.wrap .main .content .contenter .mainContent .chartWrapper .subMenu span,
+.wrap .main .content .contenter .detailContent .chartWrapper .subMenu span {
+  float: left;
+  height: 40px;
+  line-height: 40px;
+  padding: 0 20px;
+  font-size: 14px;
+  border: 1px solid #ecedef;
+  border-right: 0 none;
+  cursor: pointer;
+}
+.wrap .main .content .contenter .mainContent .chartWrapper .subMenu span:first-child,
+.wrap .main .content .contenter .detailContent .chartWrapper .subMenu span:first-child {
+  border-radius: 4px 0 0 4px ;
+}
+.wrap .main .content .contenter .mainContent .chartWrapper .subMenu span:last-child,
+.wrap .main .content .contenter .detailContent .chartWrapper .subMenu span:last-child {
+  border-right: 1px solid #ecedef;
+  border-radius: 0 4px 4px 0;
+}
+.wrap .main .content .contenter .mainContent .chartWrapper .subMenu span.active,
+.wrap .main .content .contenter .detailContent .chartWrapper .subMenu span.active {
+  background-color: #2f77f8;
+  border-color: #2f77f8;
+  color: #fff;
+}
+.wrap .main .content .contenter .mainContent .chartWrapper .subMenu span.active + span,
+.wrap .main .content .contenter .detailContent .chartWrapper .subMenu span.active + span {
+  border-left: 0 none;
+}
+.wrap .main .content .contenter .mainContent .chartWrapper .chartBox,
+.wrap .main .content .contenter .detailContent .chartWrapper .chartBox {
+  position: relative;
+  height: 522px;
+  overflow: hidden;
+}
+.wrap .main .content .contenter .mainContent .chartWrapper .chartBox .mapTitle .china,
+.wrap .main .content .contenter .detailContent .chartWrapper .chartBox .mapTitle .china {
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  color: #999;
+  font-size: 12px;
+  z-index: 2;
+}
+.wrap .main .content .contenter .mainContent .chartWrapper .chartBox .mapTitle .china.clicked,
+.wrap .main .content .contenter .detailContent .chartWrapper .chartBox .mapTitle .china.clicked {
+  color: #2f77f8;
+  cursor: pointer;
+}
+.wrap .main .content .contenter .mainContent .chartWrapper .chartBox .mapTitle .province,
+.wrap .main .content .contenter .detailContent .chartWrapper .chartBox .mapTitle .province {
+  font-size: 12px;
+  color: #999;
+  font-weight: 900;
+  position: absolute;
+  left: 50px;
+  top: 20px;
+}
+.wrap .main .content .contenter .mainContent .chartWrapper .chartBox .legend,
+.wrap .main .content .contenter .detailContent .chartWrapper .chartBox .legend {
+  position: absolute;
+  left: 20px;
+  bottom: 50px;
+}
+.wrap .main .content .contenter .mainContent .chartWrapper .chartBox .legend li,
+.wrap .main .content .contenter .detailContent .chartWrapper .chartBox .legend li {
+  margin-bottom: 10px;
+  height: 20px;
+}
+.wrap .main .content .contenter .mainContent .chartWrapper .chartBox .legend li .icon,
+.wrap .main .content .contenter .detailContent .chartWrapper .chartBox .legend li .icon {
+  float: left;
+  width: 40px;
+  height: 20px;
+  background: #57a2e5;
+  margin-right: 5px;
+}
+.wrap .main .content .contenter .mainContent .chartWrapper .chartBox .legend li .name,
+.wrap .main .content .contenter .detailContent .chartWrapper .chartBox .legend li .name {
+  float: left;
+  height: 20px;
+  line-height: 20px;
+  font-size: 12px;
+}
+.wrap .main .content .contenter .mainContent .chartWrapper .chartBox .chartTable,
+.wrap .main .content .contenter .detailContent .chartWrapper .chartBox .chartTable {
+  width: 400px;
+  position: absolute;
+  right: 32px;
+  top: 0;
+}
+.wrap .main .content .contenter .mainContent .chartWrapper .chartBox .chartTable + div,
+.wrap .main .content .contenter .detailContent .chartWrapper .chartBox .chartTable + div {
+  margin-right: 435px;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+.wrap .main .content .contenter .mainContent .chartWrapper .chartBox .chartTable .chartTableTitle,
+.wrap .main .content .contenter .detailContent .chartWrapper .chartBox .chartTable .chartTableTitle {
+  margin-bottom: 10px;
+  color: #000;
+}
+.wrap .main .content .contenter .mainContent .chartWrapper .chartBox .chartTable .chartTableTitle span,
+.wrap .main .content .contenter .detailContent .chartWrapper .chartBox .chartTable .chartTableTitle span {
+  float: left;
+}
+.wrap .main .content .contenter .mainContent .chartWrapper .chartBox .chartTable .chartData span,
+.wrap .main .content .contenter .detailContent .chartWrapper .chartBox .chartTable .chartData span {
+  display: inline-block;
+  width: 50%;
+  line-height: 26px;
+}
+.wrap .main .content .contenter .mainContent .chartWrapper .chartBox .chartTable .chartData .chartDataTitle,
+.wrap .main .content .contenter .detailContent .chartWrapper .chartBox .chartTable .chartData .chartDataTitle {
+  font-size: 14px;
+  color: #252834;
+}
+.wrap .main .content .contenter .mainContent .chartWrapper .chartBox .chartTable .chartData .chartDataTitle span:last-child,
+.wrap .main .content .contenter .detailContent .chartWrapper .chartBox .chartTable .chartData .chartDataTitle span:last-child {
+  text-align: right;
+}
+.wrap .main .content .contenter .mainContent .chartWrapper .chartBox .chartTable .chartData .chartDataNum,
+.wrap .main .content .contenter .detailContent .chartWrapper .chartBox .chartTable .chartData .chartDataNum {
+  font-size: 14px;
+  color: #2f77f8;
+}
+.wrap .main .content .contenter .mainContent .chartWrapper .chartBox .chartTable .chartData .chartDataNum span:last-child,
+.wrap .main .content .contenter .detailContent .chartWrapper .chartBox .chartTable .chartData .chartDataNum span:last-child {
+  text-align: right;
+}
+.wrap .main .content .contenter .mainContent .chartWrapper .chartBox .chartTable .chartList,
+.wrap .main .content .contenter .detailContent .chartWrapper .chartBox .chartTable .chartList {
+  margin-top: 20px;
+  font-size: 14px;
+}
+.wrap .main .content .contenter .mainContent .chartWrapper .chartBox .chartTable .chartList .chartListTitle,
+.wrap .main .content .contenter .detailContent .chartWrapper .chartBox .chartTable .chartList .chartListTitle {
+  font-size: 16px;
+  color: #252834;
+  margin-bottom: 10px;
+}
+.wrap .main .content .contenter .mainContent .chartWrapper .chartBox .chartTable .chartList ul li,
+.wrap .main .content .contenter .detailContent .chartWrapper .chartBox .chartTable .chartList ul li {
+  display: block;
+  width: 100%;
+  height: 34px;
+  line-height: 34px;
+}
+.wrap .main .content .contenter .mainContent .chartWrapper .chartBox .chartTable .chartList ul li .chartTableText,
+.wrap .main .content .contenter .detailContent .chartWrapper .chartBox .chartTable .chartList ul li .chartTableText {
+  float: left;
+  text-align: left;
+}
+.wrap .main .content .contenter .mainContent .chartWrapper .chartBox .chartTable .chartList ul li .chartTableNum,
+.wrap .main .content .contenter .detailContent .chartWrapper .chartBox .chartTable .chartList ul li .chartTableNum {
+  float: right;
+  text-align: right;
+  color: #333;
+}
+.wrap .main .content .contenter .mainContent .chartWrapper .chartBox .chartTable .slimScrollDiv,
+.wrap .main .content .contenter .detailContent .chartWrapper .chartBox .chartTable .slimScrollDiv {
+  box-shadow: 0 0 #fff;
+}
+.wrap .main .content .contenter .mainContent .chartWrapper .modelCardRel,
+.wrap .main .content .contenter .detailContent .chartWrapper .modelCardRel {
+  width: 1541px;
+  height: 522px;
+  margin: auto;
+}
+.wrap .main .content .contenter .mainContent .chartWrapper .chartCanvas,
+.wrap .main .content .contenter .detailContent .chartWrapper .chartCanvas {
+  width: 1323px;
+  height: 100%;
+  margin: 0 auto;
+}
+.wrap .main .content .contenter .mainContent .chartWrapper .btns,
+.wrap .main .content .contenter .detailContent .chartWrapper .btns {
+  position: absolute;
+  right: 33px;
+  top: 3px;
+}
+.wrap .main .content .contenter .mainContent .chartWrapper .btns .btn,
+.wrap .main .content .contenter .detailContent .chartWrapper .btns .btn {
+  display: inline-block;
+  margin-left: 20px;
+  cursor: pointer;
+}
+.wrap .main .content .contenter .mainContent .chartWrapper .btns .btn.Doubt,
+.wrap .main .content .contenter .detailContent .chartWrapper .btns .btn.Doubt {
+  margin-left: 0;
+  z-index: 2;
+  width: 16px;
+  height: 16px;
+  background: url('../images/icon-Prompt.svg') no-repeat;
+  background-size: 16px 16px;
+}
+.wrap .main .content .contenter .mainContent .chartWrapper .btns .btn.Doubt:hover,
+.wrap .main .content .contenter .detailContent .chartWrapper .btns .btn.Doubt:hover {
+  background-image: url('../images/icon-Prompt-hover.svg');
+}
+.wrap .main .content .contenter .mainContent .chartWrapper .btns .tootip,
+.wrap .main .content .contenter .detailContent .chartWrapper .btns .tootip {
+  display: none;
+  width: 310px;
+  padding: 10px 15px;
+  position: absolute;
+  top: 27px;
+  right: -34px;
+  z-index: 3;
+  background: #353940;
+  border-radius: 4px;
+}
+.wrap .main .content .contenter .mainContent .chartWrapper .btns .tootip p,
+.wrap .main .content .contenter .detailContent .chartWrapper .btns .tootip p {
+  color: #fff;
+  font-size: 12px;
+  line-height: 20px;
+  margin-bottom: 10px;
+}
+.wrap .main .content .contenter .mainContent .chartWrapper .btns .tootip p span,
+.wrap .main .content .contenter .detailContent .chartWrapper .btns .tootip p span {
+  display: inline;
+  width: auto;
+  margin: 0;
+  background: none;
+}
+.wrap .main .content .contenter .mainContent .chartWrapper .btns .tootip .Triangle,
+.wrap .main .content .contenter .detailContent .chartWrapper .btns .tootip .Triangle {
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  top: -5px;
+  right: 40px;
+  background-color: #353940;
+  transform: rotate(45deg);
+}
+.wrap .main .content .contenter .mainContent .chartWrapper .competeRelationBtns,
+.wrap .main .content .contenter .detailContent .chartWrapper .competeRelationBtns {
+  top: 22px;
+}
+.wrap .main .content .contenter .mainContent .chartWrapper .chartLoading,
+.wrap .main .content .contenter .detailContent .chartWrapper .chartLoading {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: #fff;
+  z-index: 2;
+}
+.wrap .main .content .contenter .mainContent .chartWrapper .chartLoading .loadingBox img,
+.wrap .main .content .contenter .detailContent .chartWrapper .chartLoading .loadingBox img {
+  width: 120px;
+  height: 120px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+.wrap .main .content .contenter .mainContent .chartWrapper .chartLoading .noDataBox,
+.wrap .main .content .contenter .detailContent .chartWrapper .chartLoading .noDataBox,
+.wrap .main .content .contenter .mainContent .chartWrapper .chartLoading .errorBox,
+.wrap .main .content .contenter .detailContent .chartWrapper .chartLoading .errorBox {
+  width: 100px;
+  height: 120px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+.wrap .main .content .contenter .mainContent .chartWrapper .chartLoading .noDataBox img,
+.wrap .main .content .contenter .detailContent .chartWrapper .chartLoading .noDataBox img,
+.wrap .main .content .contenter .mainContent .chartWrapper .chartLoading .errorBox img,
+.wrap .main .content .contenter .detailContent .chartWrapper .chartLoading .errorBox img {
+  width: 90px;
+  height: 90px;
+}
+.wrap .main .content .contenter .mainContent .chartWrapper .chartLoading .noDataBox .info,
+.wrap .main .content .contenter .detailContent .chartWrapper .chartLoading .noDataBox .info,
+.wrap .main .content .contenter .mainContent .chartWrapper .chartLoading .errorBox .info,
+.wrap .main .content .contenter .detailContent .chartWrapper .chartLoading .errorBox .info {
+  color: #cdd5d8;
+  line-height: 50px;
+  text-align: center;
+}
+.wrap .main .content .contenter .mainContent .tableWrapper,
+.wrap .main .content .contenter .detailContent .tableWrapper {
+  background-color: #fff;
+  padding: 0 32px 0px;
+  border-radius: 6px;
+  border: solid 1px #ecedef;
+}
+.wrap .main .content .contenter .mainContent .tableWrapper .tableTitle,
+.wrap .main .content .contenter .detailContent .tableWrapper .tableTitle {
+  height: 62px;
+  line-height: 62px;
+  color: #252834;
+  font-weight: bold;
+}
+.wrap .main .content .contenter .mainContent .tableWrapper .tableTitle .title,
+.wrap .main .content .contenter .detailContent .tableWrapper .tableTitle .title {
+  float: left;
+}
+.wrap .main .content .contenter .mainContent .tableWrapper .tableTitle .title .count,
+.wrap .main .content .contenter .detailContent .tableWrapper .tableTitle .title .count {
+  display: inline;
+  margin: 15px 0;
+  text-align: center;
+  color: #797991;
+  font-weight: normal;
+}
+.wrap .main .content .contenter .mainContent .tableWrapper .tableTitle .load,
+.wrap .main .content .contenter .detailContent .tableWrapper .tableTitle .load {
+  float: right;
+  padding-left: 20px;
+  font-weight: normal;
+  position: relative;
+  cursor: pointer;
+  color: #797991;
+}
+.wrap .main .content .contenter .mainContent .tableWrapper .tableTitle .load .icon,
+.wrap .main .content .contenter .detailContent .tableWrapper .tableTitle .load .icon {
+  position: absolute;
+  left: 0;
+  top: 24px;
+  width: 18px;
+  height: 14px;
+  background: url('../images/icon-download.svg') no-repeat;
+  background-size: 18px 14px;
+}
+.wrap .main .content .contenter .mainContent .tableWrapper .tableBox,
+.wrap .main .content .contenter .detailContent .tableWrapper .tableBox {
+  position: relative;
+  border-bottom: 1px solid #fff;
+}
+.wrap .main .content .contenter .mainContent .tableWrapper .tableBox .tableRight_con,
+.wrap .main .content .contenter .detailContent .tableWrapper .tableBox .tableRight_con {
+  width: 100%;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  border-right: 1px solid #e0e0e0;
+}
+.wrap .main .content .contenter .mainContent .tableWrapper .tableBox .tableRight_con .tableLeft,
+.wrap .main .content .contenter .detailContent .tableWrapper .tableBox .tableRight_con .tableLeft {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  text-align: center;
+}
+.wrap .main .content .contenter .mainContent .tableWrapper .tableBox .tableRight_con .tableLeft .th,
+.wrap .main .content .contenter .detailContent .tableWrapper .tableBox .tableRight_con .tableLeft .th {
+  height: 52px;
+  line-height: 52px;
+  font-weight: bold;
+  background-color: #f9f9f9;
+  border-bottom: 1px solid #e0e0e0;
+  border-top: 1px solid #e0e0e0;
+  border-left: 1px solid #e0e0e0;
+}
+.wrap .main .content .contenter .mainContent .tableWrapper .tableBox .tableRight_con .tableLeft .td,
+.wrap .main .content .contenter .detailContent .tableWrapper .tableBox .tableRight_con .tableLeft .td {
+  height: 52px;
+  line-height: 52px;
+  border-bottom: 1px solid #e0e0e0;
+  border-left: 1px solid #e0e0e0;
+  background-color: #fff;
+}
+.wrap .main .content .contenter .mainContent .tableWrapper .tableBox .tableRight_con .tableLeft .td:last-child,
+.wrap .main .content .contenter .detailContent .tableWrapper .tableBox .tableRight_con .tableLeft .td:last-child {
+  border-bottom: 0 none;
+}
+.wrap .main .content .contenter .mainContent .tableWrapper .tableBox .tableRight_con .tableRight,
+.wrap .main .content .contenter .detailContent .tableWrapper .tableBox .tableRight_con .tableRight {
+  float: left;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.wrap .main .content .contenter .mainContent .tableWrapper .tableBox .tableRight_con .tableRight .tableHeader,
+.wrap .main .content .contenter .detailContent .tableWrapper .tableBox .tableRight_con .tableRight .tableHeader {
+  position: absolute;
+  left: 0;
+  top: 0;
+  border-bottom: 1px solid #e0e0e0;
+  border-top: 1px solid #e0e0e0;
+  background-color: #f9f9f9;
+}
+.wrap .main .content .contenter .mainContent .tableWrapper .tableBox .tableRight_con .tableRight .tableHeader .th,
+.wrap .main .content .contenter .detailContent .tableWrapper .tableBox .tableRight_con .tableRight .tableHeader .th {
+  float: left;
+  height: 52px;
+  line-height: 52px;
+  font-weight: bold;
+}
+.wrap .main .content .contenter .mainContent .tableWrapper .tableBox .tableRight_con .tableRight .listContent,
+.wrap .main .content .contenter .detailContent .tableWrapper .tableBox .tableRight_con .tableRight .listContent {
+  position: absolute;
+  top: 54px;
+  left: 0;
+}
+.wrap .main .content .contenter .mainContent .tableWrapper .tableBox .tableRight_con .tableRight .listContent ul,
+.wrap .main .content .contenter .detailContent .tableWrapper .tableBox .tableRight_con .tableRight .listContent ul {
+  border-bottom: 1px solid #e0e0e0;
+}
+.wrap .main .content .contenter .mainContent .tableWrapper .tableBox .tableRight_con .tableRight .listContent ul .td,
+.wrap .main .content .contenter .detailContent .tableWrapper .tableBox .tableRight_con .tableRight .listContent ul .td {
+  float: left;
+  height: 52px;
+  line-height: 52px;
+  background-color: #fff;
+}
+.wrap .main .content .contenter .mainContent .tableWrapper .tableBox .tableRight_con .tableRight .bar,
+.wrap .main .content .contenter .detailContent .tableWrapper .tableBox .tableRight_con .tableRight .bar {
+  width: 100%;
+  height: 10px;
+  background-color: #fff;
+  border: 1px solid #d8d9e2;
+  border-top-color: #fff;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+}
+.wrap .main .content .contenter .mainContent .tableWrapper .tableBox .tableRight_con .tableRight .bar .barBtn,
+.wrap .main .content .contenter .detailContent .tableWrapper .tableBox .tableRight_con .tableRight .bar .barBtn {
+  height: 10px;
+  width: 50px;
+  background-color: #d8d9e2;
+  border-radius: 5px;
+  cursor: pointer;
+  position: absolute;
+  top: 0px;
+  left: 0;
+}
+.wrap .main .content .contenter .mainContent .tableWrapper .tableBox table,
+.wrap .main .content .contenter .detailContent .tableWrapper .tableBox table {
+  width: 100%;
+  border: 1px solid #d0d2dd;
+  color: #252834;
+}
+.wrap .main .content .contenter .mainContent .tableWrapper .tableBox table tr:last-child td,
+.wrap .main .content .contenter .detailContent .tableWrapper .tableBox table tr:last-child td {
+  border-bottom: 0 none;
+}
+.wrap .main .content .contenter .mainContent .tableWrapper .tableBox table th,
+.wrap .main .content .contenter .detailContent .tableWrapper .tableBox table th,
+.wrap .main .content .contenter .mainContent .tableWrapper .tableBox table td,
+.wrap .main .content .contenter .detailContent .tableWrapper .tableBox table td {
+  background-color: #F0F1F7;
+  height: 52px;
+  text-align: center;
+  font-weight: bold;
+  border-bottom: 1px solid #f4f5f7;
+  font-size: 16px;
+}
+.wrap .main .content .contenter .mainContent .tableWrapper .tableBox table th,
+.wrap .main .content .contenter .detailContent .tableWrapper .tableBox table th {
+  border-bottom: 1px solid #d0d2dd;
+}
+.wrap .main .content .contenter .mainContent .tableWrapper .tableBox table td,
+.wrap .main .content .contenter .detailContent .tableWrapper .tableBox table td {
+  background-color: #fff;
+  font-weight: normal;
+}
+.wrap .main .content .contenter .mainContent .tableWrapper .tableBox table td.tdName,
+.wrap .main .content .contenter .detailContent .tableWrapper .tableBox table td.tdName {
+  cursor: pointer;
+  color: #2f77f8;
+}
+.wrap .main .content .contenter .mainContent .tableWrapper .tableBox table td.tdName:hover,
+.wrap .main .content .contenter .detailContent .tableWrapper .tableBox table td.tdName:hover {
+  color: #2f77f8;
+}
+.wrap .main .content .contenter .mainContent .tableWrapper .tableBox .green-black,
+.wrap .main .content .contenter .detailContent .tableWrapper .tableBox .green-black {
+  height: 32px;
+  margin: 40px auto;
+  text-align: center;
+}
+.wrap .main .content .contenter .mainContent .tableWrapper .tableBox .green-black span,
+.wrap .main .content .contenter .detailContent .tableWrapper .tableBox .green-black span {
+  display: inline-block;
+  height: 30px;
+  line-height: 30px;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+.wrap .main .content .contenter .mainContent .tableWrapper .tableBox .green-black #pagevalue + span,
+.wrap .main .content .contenter .detailContent .tableWrapper .tableBox .green-black #pagevalue + span {
+  border: 0 none;
+  margin-right: 0;
+}
+.wrap .main .content .contenter .mainContent .tableWrapper .tableBox .green-black #pagevalue,
+.wrap .main .content .contenter .detailContent .tableWrapper .tableBox .green-black #pagevalue {
+  width: 60px;
+  height: 28px;
+  margin: 0 5px;
+  text-align: center;
+  vertical-align: middle;
+  border-radius: 6px;
+  border: 1px solid #ecedef;
+  font-size: 14px;
+}
+.wrap .main .content .contenter .mainContent .tableWrapper .tableBox .green-black .current,
+.wrap .main .content .contenter .detailContent .tableWrapper .tableBox .green-black .current {
+  display: inline-block;
+  width: 30px;
+  text-align: center;
+  border-radius: 50%;
+  background-color: #2f77f8;
+  border: 1px solid #2f77f8;
+  color: #fff;
+  margin-right: 15px;
+}
+.wrap .main .content .contenter .mainContent .tableWrapper .tableBox .green-black .prev,
+.wrap .main .content .contenter .detailContent .tableWrapper .tableBox .green-black .prev,
+.wrap .main .content .contenter .mainContent .tableWrapper .tableBox .green-black .next,
+.wrap .main .content .contenter .detailContent .tableWrapper .tableBox .green-black .next {
+  display: inline-block;
+  width: 64px;
+  padding: 0 10px;
+  height: 28px;
+  line-height: 28px;
+  margin-right: 15px;
+  text-align: center;
+  border-radius: 4px;
+  cursor: pointer;
+  border: 0 none;
+}
+.wrap .main .content .contenter .mainContent .tableWrapper .tableBox .green-black .prev.current,
+.wrap .main .content .contenter .detailContent .tableWrapper .tableBox .green-black .prev.current,
+.wrap .main .content .contenter .mainContent .tableWrapper .tableBox .green-black .next.current,
+.wrap .main .content .contenter .detailContent .tableWrapper .tableBox .green-black .next.current {
+  background-color: #fff;
+  color: #333;
+  cursor: default;
+}
+.wrap .main .content .contenter .mainContent .tableWrapper .tableBox .green-black .prev:hover,
+.wrap .main .content .contenter .detailContent .tableWrapper .tableBox .green-black .prev:hover,
+.wrap .main .content .contenter .mainContent .tableWrapper .tableBox .green-black .next:hover,
+.wrap .main .content .contenter .detailContent .tableWrapper .tableBox .green-black .next:hover {
+  background-color: #2f77f8;
+  color: #fff;
+}
+.wrap .main .content .contenter .mainContent .tableWrapper .tableBox .green-black .prev.current:hover,
+.wrap .main .content .contenter .detailContent .tableWrapper .tableBox .green-black .prev.current:hover,
+.wrap .main .content .contenter .mainContent .tableWrapper .tableBox .green-black .next.current:hover,
+.wrap .main .content .contenter .detailContent .tableWrapper .tableBox .green-black .next.current:hover {
+  background-color: #fff;
+  color: #333;
+}
+.wrap .main .content .contenter .mainContent .tableWrapper .tableBox .green-black .NormalText,
+.wrap .main .content .contenter .detailContent .tableWrapper .tableBox .green-black .NormalText {
+  margin: 0;
+  padding: 0;
+  color: #999;
+  border: 0 none;
+  outline: 0 none;
+}
+.wrap .main .content .contenter .mainContent .tableWrapper .tableBox .green-black a,
+.wrap .main .content .contenter .detailContent .tableWrapper .tableBox .green-black a {
+  display: inline-block;
+  padding: 0 10px;
+  height: 30px;
+  line-height: 30px;
+  margin-right: 15px;
+  text-align: center;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.wrap .main .content .contenter .mainContent .tableWrapper .tableBox .green-black a#search,
+.wrap .main .content .contenter .detailContent .tableWrapper .tableBox .green-black a#search {
+  height: 28px;
+  line-height: 28px;
+  margin-left: 5px;
+}
+.wrap .main .content .footer {
+  height: 83px;
+  margin-top: 15px;
+  padding-top: 20px;
+  color: #797991;
+}
+.wrap .main .content .footer a {
+  color: #797991;
+}
+.wrap .main .content .footer p {
+  line-height: 30px;
+  text-align: center;
+}
+.wrap .loading {
+  display: none;
+  position: fixed;
+  left: 240px;
+  right: 40px;
+  top: 210px;
+  bottom: 0;
+  z-index: 3;
+  background-color: #fff;
+}
+.wrap .loading .loadBox {
+  display: none;
+  width: 120px;
+  height: 120px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+.wrap .loading .errBox {
+  display: block;
+  width: 300px;
+  height: 160px;
+  padding: 25px 5px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  border-radius: 4px;
+  text-align: center;
+}
+.wrap .loading .errBox .info {
+  padding: 10px;
+  color: #666;
+}
+.wrap .loading .errBox .reload {
+  display: block;
+  width: 108px;
+  height: 40px;
+  margin: 10px auto 0;
+  color: #fff;
+  background-color: #2f77f8;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.wrap .layer {
+  display: none;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 4;
+  background: rgba(0, 0, 0, 0.5);
+  font-size: 14px;
+}
+.wrap .layerCon {
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #fff;
+  border-radius: 4px;
+  overflow: hidden;
+  z-index: 5;
+  font-size: 14px;
+}
+.wrap .layerCon.layer1 {
+  position: fixed;
+  width: 510px;
+}
+.wrap .layerCon.layer3 {
+  position: fixed;
+  width: 510px;
+}
+.wrap .layerCon.layer4 {
+  width: 510px;
+  position: fixed;
+}
+.wrap .layerCon.layer4 .selectProduct div {
+  width: 108px;
+  float: left;
+}
+.wrap .layerCon.layer4 .selectProduct div label {
+  margin-right: 26px;
+}
+.wrap .layerCon .layerTitle {
+  height: 46px;
+  padding: 0 20px;
+  line-height: 46px;
+  background-color: #f8f8f8;
+  color: #333;
+}
+.wrap .layerCon .layerTitle .close {
+  margin-top: 15px;
+  width: 12px;
+  height: 12px;
+  background: url('../images/bg.png') 0 -133px no-repeat;
+  cursor: pointer;
+}
+.wrap .layerCon .selected {
+  margin: 0 38px;
+  padding: 15px 0;
+  border-bottom: 1px solid #ecedef;
+  color: #2f77f8;
+  min-height: 38px;
+  line-height: 26px;
+}
+.wrap .layerCon .selected div {
+  width: 330px;
+}
+.wrap .layerCon .selected div .selectItem {
+  display: inline-block;
+  padding: 0 10px;
+  height: 26px;
+  padding: 0 5px;
+  margin: 5px 8px;
+  color: #333;
+  border: 1px solid #ecedef;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.wrap .layerCon .selected div .selectItem:hover {
+  border-color: red;
+}
+.wrap .layerCon .selected div .selectItem:hover i {
+  width: 10px;
+  height: 10px;
+  background: url('../images/bg.png') 0 -164px no-repeat;
+}
+.wrap .layerCon .selected div .selectItem i {
+  float: right;
+  margin-top: 10px;
+  width: 10px;
+  height: 10px;
+  background: url('../images/bg.png') -30px -164px no-repeat;
+}
+.wrap .layerCon .selected .btn {
+  width: 48px;
+  height: 26px;
+  margin-top: 6px;
+  line-height: 26px;
+  text-align: center;
+  color: #fff;
+  background-color: #2f77f8;
+  cursor: pointer;
+  border-radius: 4px;
+}
+.wrap .layerCon .options {
+  padding: 20px 38px 40px;
+}
+.wrap .layerCon .options label {
+  margin-right: 32px;
+  padding-left: 22px;
+  position: relative;
+  cursor: pointer;
+  height: 35px;
+  line-height: 35px;
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  tetx-overflow: ellipsis;
+}
+.wrap .layerCon .options label:before {
+  content: '';
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: #fff;
+  border-radius: 4px;
+  border: 1px solid #ecedef;
+}
+.wrap .layerCon .options label:after {
+  content: '';
+  color: #fff;
+  font-weight: bold;
+  position: absolute;
+  left: 3px;
+  top: 5px;
+  width: 10px;
+  height: 8px;
+  background: url('../images/bg.png') 0 -193px no-repeat;
+}
+.wrap .layerCon .options label.half:before {
+  border: 1px solid #2f77f8;
+  background: #2f77f8;
+}
+.wrap .layerCon .options label.half:after {
+  content: '';
+  width: 12px;
+  height: 2px;
+  background-color: #fff;
+  left: 3px;
+  top: 7px;
+}
+.wrap .layerCon .options input[type=checkbox] {
+  display: none;
+}
+.wrap .layerCon .options input[type=checkbox]:checked + label:before {
+  border: 1px solid #2f77f8;
+  background: #2f77f8;
+}
+.wrap .layerCon .options input[type=checkbox]:checked {
+  color: red;
+}
+.wrap .layerCon .options .selectProvince {
+  color: #199df8;
+}
+.wrap .layerCon.layer2 {
+  width: 700px;
+  top: 50px;
+}
+.wrap .layerCon.layer2 .selected div {
+  width: 510px;
+}
+.wrap .layerCon.layer2 .options {
+  padding: 20px 20px 40px;
+}
+.wrap .layerCon.layer2 .options .subOptions {
+  display: none;
+  position: relative;
+  width: 640px;
+  padding: 0 0 0 18px;
+  margin-top: 0;
+  border-radius: 4px;
+  background: #f5f5f5;
+}
+.wrap .layerCon.layer2 .options .subOptions .optionItem {
+  width: 160px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 10px 0 0 0;
+}
+.wrap .layerCon.layer2 .options div.clearfix {
+  padding-left: 20px;
+}
+.wrap .layerCon.layer2 .options div.clearfix .optionItem {
+  float: left;
+  width: 160px;
+  margin: 10px 0 0 0;
+  line-height: 16px;
+  position: relative;
+}
+.wrap .layerCon.layer2 .options div.clearfix .optionItem i {
+  margin: 4px 0 0 2px;
+  width: 11px;
+  height: 6px;
+  background: url('../images/bg.png') 0 0 no-repeat;
+  cursor: pointer;
+}
+.wrap .layerCon.layer2 .options div.clearfix .optionItem span {
+  cursor: pointer;
+}
+.wrap .layerCon.layer2 .options div.clearfix .optionItem .triggleCon {
+  height: 15px;
+  padding: 0;
+  overflow: hidden;
+}
+.wrap .layerCon.layer2 .options div.clearfix .optionItem .triggleCon .triggle {
+  display: none;
+  position: absolute;
+  top: 27px;
+  left: 0;
+  z-index: 0;
+  width: 20px;
+  height: 27px;
+  background: #f8f8f8;
+  transform: rotate(45deg);
+}
+.wrap .layerCon.layer2 .options div.clearfix .optionItem label {
+  margin-right: 5px;
+}
+@media screen and (max-width: 1440px) {
+  .wrap .main .sideBar .menuList {
+    height: 664px;
+  }
+  .wrap .main .sideBar .menuList ul li.navItem a {
+    height: 34px;
+    line-height: 34px;
+  }
+  .wrap .main .sideBar .userArea {
+    height: 50px;
+    line-height: 50px;
+  }
+  .wrap .main .sideBar .userArea ul li.line {
+    margin: 20px 10px;
+  }
+  .wrap .main .content .contenter .chooseList .fl:nth-child(2) span {
+    margin: 5px 12px;
+  }
+  .wrap .main .content .contenter .mainContent .chartWrapper .chartBox .modelCardRel,
+  .wrap .main .content .contenter .detailContent .chartWrapper .chartBox .modelCardRel {
+    width: 1063px;
+    height: 522px;
+    margin: auto;
+  }
+}
+@media screen and (max-width: 1366px) {
+  .wrap {
+    font-size: 14px;
+  }
+  .wrap input {
+    font-size: 12px;
+  }
+  .wrap .main .sideBar {
+    width: 144px;
+  }
+  .wrap .main .sideBar .logo {
+    width: 144px;
+    height: 58px;
+    line-height: 58px;
+  }
+  .wrap .main .sideBar .logo img {
+    width: 120px;
+    margin: 17px auto;
+  }
+  .wrap .main .sideBar .menuList {
+    height: 540px;
+  }
+  .wrap .main .sideBar .menuList ul li.navItem a {
+    height: 28px;
+    line-height: 28px;
+    padding: 0 0 0 32px;
+  }
+  .wrap .main .sideBar .menuList ul li.navItem a.firstNav {
+    margin-top: 7px;
+  }
+  .wrap .main .sideBar .menuList ul li.navItem a.secondNav i {
+    width: 14px;
+    height: 14px;
+    top: 9px;
+    right: 6px;
+  }
+  .wrap .main .sideBar .menuList ul li.navItem a.secondNav i img {
+    width: 11px;
+    height: 5px;
+    margin: 4px auto;
+  }
+  .wrap .main .sideBar .menuList ul li.navItem a.thirdNav {
+    font-size: 12px;
+  }
+  .wrap .main .sideBar .menuList ul li.navItem a .icon {
+    width: 12px;
+    height: 12px;
+    background-size: 12px 12px;
+    left: 14px;
+    top: 8px;
+  }
+  .wrap .main .sideBar .menuList ul li.navItem ul li {
+    padding: 0;
+  }
+  .wrap .main .sideBar .menuList ul li.navItem:nth-child(2) .icon {
+    width: 14px;
+    background-size: 14px 14px;
+  }
+  .wrap .main .sideBar .userArea {
+    height: 30px;
+    line-height: 30px;
+    font-size: 12px;
+  }
+  .wrap .main .sideBar .userArea ul li.line {
+    width: 2px;
+    height: 10px;
+    margin: 14px 10px;
+  }
+  .wrap .main .content {
+    margin-left: 144px;
+    padding: 0 28px;
+  }
+  .wrap .main .content .contenter .searchWrapper {
+    height: 58px;
+    left: 144px;
+    padding: 12px 0  5px 28px;
+    font-size: 12px;
+  }
+  .wrap .main .content .contenter .searchWrapper li .text {
+    line-height: 32px;
+  }
+  .wrap .main .content .contenter .searchWrapper li .selectBox {
+    width: 166px;
+    height: 34px;
+  }
+  .wrap .main .content .contenter .searchWrapper li .selectBox .selectText {
+    width: 154px;
+    height: 32px;
+    line-height: 34px;
+    padding: 0 5px;
+  }
+  .wrap .main .content .contenter .searchWrapper li .selectBox.selectDateBox {
+    width: 180px;
+  }
+  .wrap .main .content .contenter .searchWrapper li .selectBox.selectDateBox input {
+    width: 168px;
+  }
+  .wrap .main .content .contenter .searchWrapper li .selectBox.w160 {
+    width: 130px;
+  }
+  .wrap .main .content .contenter .searchWrapper li .selectBox.w160 .selectText {
+    width: 118px;
+  }
+  .wrap .main .content .contenter .searchWrapper li .selectBox .icon {
+    top: 13px;
+    right: 10px;
+  }
+  .wrap .main .content .contenter .searchWrapper li .selectBox .selectList {
+    top: 40px;
+  }
+  .wrap .main .content .contenter .searchWrapper li .selectBox .selectList li {
+    height: 34px;
+    padding: 0 5px;
+    line-height: 34px;
+  }
+  .wrap .main .content .contenter .searchWrapper li .addArea {
+    width: 154px;
+    height: 32px;
+    line-height: 32px;
+    padding: 0 12px;
+  }
+  .wrap .main .content .contenter .searchWrapper li .addArea i {
+    right: 12px;
+    top: 12px;
+    width: 12px;
+    height: 12px;
+    background: url('../images/bg.png') 0px -25px no-repeat;
+    background-size: 20px;
+  }
+  .wrap .main .content .contenter .searchWrapper li .addArea .areas {
+    width: 104px;
+    height: 34px;
+    line-height: 34px;
+  }
+  .wrap .main .content .contenter .searchWrapper li .addArea .areas i {
+    right: 10px;
+    top: 10px;
+  }
+  .wrap .main .content .contenter .searchWrapper li .addArea.w160 {
+    width: 104px;
+  }
+  .wrap .main .content .contenter .searchWrapper li .addArea.w160 .areas {
+    width: 104px;
+  }
+  .wrap .main .content .contenter .searchWrapper li .selectUnit {
+    width: auto;
+    height: 34px;
+  }
+  .wrap .main .content .contenter .searchWrapper li .selectUnit span {
+    width: 30px;
+    padding: 0 5px;
+    height: 32px;
+    line-height: 32px;
+  }
+  .wrap .main .content .contenter .searchWrapper li .timeBox {
+    width: 149px;
+    height: 40px;
+    margin-left: 37px;
+    line-height: 40px;
+  }
+  .wrap .main .content .contenter .searchWrapper li.fr {
+    line-height: 32px;
+    font-size: 12px;
+  }
+  .wrap .main .content .contenter .searchWrapper li.fr .closeDate {
+    height: 32px;
+  }
+  .wrap .main .content .contenter .searchWrapper li.fr .pdf {
+    margin-left: 30px;
+    line-height: 32px;
+    padding-left: 25px;
+  }
+  .wrap .main .content .contenter .searchWrapper li.fr .pdf i {
+    left: 0;
+    top: 10px;
+  }
+  .wrap .main .content .contenter .searchWrapper li.fr .load {
+    padding-left: 25px;
+  }
+  .wrap .main .content .contenter .searchWrapper li.fr .load i {
+    left: 0;
+    top: 10px;
+  }
+  .wrap .main .content .contenter .titleCard {
+    height: 208px;
+    margin: 92px 0 0;
+  }
+  .wrap .main .content .contenter .titleCard h1 {
+    height: 208px;
+    font-size: 26px;
+    line-height: 248px;
+  }
+  .wrap .main .content .contenter .titleCard i.middle {
+    height: 208px;
+    background-size: 1166px 208px;
+  }
+  .wrap .main .content .contenter .chooseList {
+    min-width: 1100px;
+    left: 144px;
+  }
+  .wrap .main .content .contenter .chooseList .fl:first-child {
+    width: 70px;
+  }
+  .wrap .main .content .contenter .chooseList .fl:nth-child(2) {
+    margin-left: 70px;
+    height: 40px;
+  }
+  .wrap .main .content .contenter .chooseList .fl:nth-child(2) span {
+    padding: 0 12px;
+    margin: 5px 7px;
+    height: 30px;
+    line-height: 30px;
+  }
+  .wrap .main .content .contenter .chooseList .openBtn {
+    line-height: 30px;
+    top: 15px;
+  }
+  .wrap .main .content .contenter .mainContent,
+  .wrap .main .content .contenter .detailContent {
+    margin-top: 84px;
+  }
+  .wrap .main .content .contenter .mainContent.preference,
+  .wrap .main .content .contenter .detailContent.preference {
+    margin-top: 90px;
+  }
+  .wrap .main .content .contenter .mainContent .chartWrapper,
+  .wrap .main .content .contenter .detailContent .chartWrapper {
+    margin-bottom: 28px;
+  }
+  .wrap .main .content .contenter .mainContent .chartWrapper .chartHeader,
+  .wrap .main .content .contenter .detailContent .chartWrapper .chartHeader {
+    height: 50px;
+  }
+  .wrap .main .content .contenter .mainContent .chartWrapper .chartHeader .tabMenu,
+  .wrap .main .content .contenter .detailContent .chartWrapper .chartHeader .tabMenu {
+    height: 28px;
+    line-height: 16px;
+    top: 18px;
+  }
+  .wrap .main .content .contenter .mainContent .chartWrapper .chartHeader .tabMenu .tabItem,
+  .wrap .main .content .contenter .detailContent .chartWrapper .chartHeader .tabMenu .tabItem {
+    padding: 0  14px;
+  }
+  .wrap .main .content .contenter .mainContent .chartWrapper .chartHeader .closeDate,
+  .wrap .main .content .contenter .detailContent .chartWrapper .chartHeader .closeDate {
+    height: 34px;
+    right: 32px;
+    top: 2px;
+    line-height: 34px;
+    font-size: 12px;
+  }
+  .wrap .main .content .contenter .mainContent .chartWrapper .chartReturn,
+  .wrap .main .content .contenter .detailContent .chartWrapper .chartReturn {
+    height: 36px;
+    line-height: 36px;
+  }
+  .wrap .main .content .contenter .mainContent .chartWrapper .chartReturn .return,
+  .wrap .main .content .contenter .detailContent .chartWrapper .chartReturn .return {
+    padding-left: 15px;
+    font-size: 12px;
+  }
+  .wrap .main .content .contenter .mainContent .chartWrapper .chartReturn .return .less_icon,
+  .wrap .main .content .contenter .detailContent .chartWrapper .chartReturn .return .less_icon {
+    top: -10px;
+  }
+  .wrap .main .content .contenter .mainContent .chartWrapper .chartReturn .return .less_icon i,
+  .wrap .main .content .contenter .detailContent .chartWrapper .chartReturn .return .less_icon i {
+    width: 7px;
+    height: 6px;
+  }
+  .wrap .main .content .contenter .mainContent .chartWrapper.user .chartBox #Ranking,
+  .wrap .main .content .contenter .detailContent .chartWrapper.user .chartBox #Ranking {
+    margin-right: 312px;
+  }
+  .wrap .main .content .contenter .mainContent .chartWrapper.user .chartBox .chartTable .con,
+  .wrap .main .content .contenter .detailContent .chartWrapper.user .chartBox .chartTable .con {
+    width: 286px;
+  }
+  .wrap .main .content .contenter .mainContent .chartWrapper.user .chartBox .chartTable .con .tab li,
+  .wrap .main .content .contenter .detailContent .chartWrapper.user .chartBox .chartTable .con .tab li {
+    line-height: 42px;
+  }
+  .wrap .main .content .contenter .mainContent .chartWrapper.user .chartBox .chartTable .con .tab + div,
+  .wrap .main .content .contenter .detailContent .chartWrapper.user .chartBox .chartTable .con .tab + div {
+    width: 287px;
+  }
+  .wrap .main .content .contenter .mainContent .chartWrapper.user .chartBox .chartTable .con .title,
+  .wrap .main .content .contenter .detailContent .chartWrapper.user .chartBox .chartTable .con .title {
+    line-height: 42px;
+  }
+  .wrap .main .content .contenter .mainContent .chartWrapper.user .chartBox .chartTable .con .list,
+  .wrap .main .content .contenter .detailContent .chartWrapper.user .chartBox .chartTable .con .list {
+    height: 290px;
+    line-height: 30px;
+  }
+  .wrap .main .content .contenter .mainContent .chartWrapper.user h2,
+  .wrap .main .content .contenter .detailContent .chartWrapper.user h2 {
+    margin: 40px 0 8px;
+    font-size: 18px;
+    height: 26px;
+    line-height: 26px;
+  }
+  .wrap .main .content .contenter .mainContent .chartWrapper .subMenu,
+  .wrap .main .content .contenter .detailContent .chartWrapper .subMenu {
+    top: 52px;
+  }
+  .wrap .main .content .contenter .mainContent .chartWrapper .subMenu span,
+  .wrap .main .content .contenter .detailContent .chartWrapper .subMenu span {
+    height: 30px;
+    line-height: 30px;
+    padding: 0 14px;
+    font-size: 12px;
+  }
+  .wrap .main .content .contenter .mainContent .chartWrapper .chartBox,
+  .wrap .main .content .contenter .detailContent .chartWrapper .chartBox {
+    height: 400px;
+  }
+  .wrap .main .content .contenter .mainContent .chartWrapper .chartBox .mapTitle .china,
+  .wrap .main .content .contenter .detailContent .chartWrapper .chartBox .mapTitle .china {
+    left: 20px;
+    top: 20px;
+    font-size: 12px;
+  }
+  .wrap .main .content .contenter .mainContent .chartWrapper .chartBox .mapTitle .province,
+  .wrap .main .content .contenter .detailContent .chartWrapper .chartBox .mapTitle .province {
+    left: 50px;
+    top: 20px;
+  }
+  .wrap .main .content .contenter .mainContent .chartWrapper .chartBox .legend,
+  .wrap .main .content .contenter .detailContent .chartWrapper .chartBox .legend {
+    left: 20px;
+    bottom: 50px;
+  }
+  .wrap .main .content .contenter .mainContent .chartWrapper .chartBox .legend li,
+  .wrap .main .content .contenter .detailContent .chartWrapper .chartBox .legend li {
+    margin-bottom: 10px;
+    height: 20px;
+  }
+  .wrap .main .content .contenter .mainContent .chartWrapper .chartBox .legend li .icon,
+  .wrap .main .content .contenter .detailContent .chartWrapper .chartBox .legend li .icon {
+    width: 30px;
+    height: 14px;
+  }
+  .wrap .main .content .contenter .mainContent .chartWrapper .chartBox .legend li .name,
+  .wrap .main .content .contenter .detailContent .chartWrapper .chartBox .legend li .name {
+    height: 14px;
+    line-height: 14px;
+  }
+  .wrap .main .content .contenter .mainContent .chartWrapper .chartBox .chartTable,
+  .wrap .main .content .contenter .detailContent .chartWrapper .chartBox .chartTable {
+    width: 286px;
+    right: 32px;
+    top: 0;
+  }
+  .wrap .main .content .contenter .mainContent .chartWrapper .chartBox .chartTable + div,
+  .wrap .main .content .contenter .detailContent .chartWrapper .chartBox .chartTable + div {
+    margin-right: 360px;
+  }
+  .wrap .main .content .contenter .mainContent .chartWrapper .chartBox .chartTable .chartTableTitle,
+  .wrap .main .content .contenter .detailContent .chartWrapper .chartBox .chartTable .chartTableTitle {
+    margin-bottom: 10px;
+  }
+  .wrap .main .content .contenter .mainContent .chartWrapper .chartBox .chartTable .chartData .chartDataTitle,
+  .wrap .main .content .contenter .detailContent .chartWrapper .chartBox .chartTable .chartData .chartDataTitle {
+    font-size: 12px;
+  }
+  .wrap .main .content .contenter .mainContent .chartWrapper .chartBox .chartTable .chartData .chartDataNum,
+  .wrap .main .content .contenter .detailContent .chartWrapper .chartBox .chartTable .chartData .chartDataNum {
+    font-size: 12px;
+  }
+  .wrap .main .content .contenter .mainContent .chartWrapper .chartBox .chartTable .chartData span,
+  .wrap .main .content .contenter .detailContent .chartWrapper .chartBox .chartTable .chartData span {
+    width: 50%;
+    line-height: 26px;
+  }
+  .wrap .main .content .contenter .mainContent .chartWrapper .chartBox .chartTable .chartList,
+  .wrap .main .content .contenter .detailContent .chartWrapper .chartBox .chartTable .chartList {
+    font-size: 12px;
+    margin-top: 20px;
+  }
+  .wrap .main .content .contenter .mainContent .chartWrapper .chartBox .chartTable .chartList .chartListTitle,
+  .wrap .main .content .contenter .detailContent .chartWrapper .chartBox .chartTable .chartList .chartListTitle {
+    font-size: 14px;
+  }
+  .wrap .main .content .contenter .mainContent .chartWrapper .chartBox .chartTable .chartList ul li,
+  .wrap .main .content .contenter .detailContent .chartWrapper .chartBox .chartTable .chartList ul li {
+    height: 26px;
+    line-height: 26px;
+  }
+  .wrap .main .content .contenter .mainContent .chartWrapper .chartBox .modelCardRel,
+  .wrap .main .content .contenter .detailContent .chartWrapper .chartBox .modelCardRel {
+    width: 1084px;
+    height: 400px;
+    margin: auto;
+  }
+  .wrap .main .content .contenter .mainContent .chartWrapper .btns,
+  .wrap .main .content .contenter .detailContent .chartWrapper .btns {
+    right: 33px;
+    top: 4px;
+  }
+  .wrap .main .content .contenter .mainContent .chartWrapper .chartLoading .loadingBox img,
+  .wrap .main .content .contenter .detailContent .chartWrapper .chartLoading .loadingBox img {
+    width: 86px;
+    height: 86px;
+  }
+  .wrap .main .content .contenter .mainContent .chartWrapper .chartLoading .noDataBox,
+  .wrap .main .content .contenter .detailContent .chartWrapper .chartLoading .noDataBox,
+  .wrap .main .content .contenter .mainContent .chartWrapper .chartLoading .errorBox,
+  .wrap .main .content .contenter .detailContent .chartWrapper .chartLoading .errorBox {
+    width: 70px;
+    height: 86px;
+  }
+  .wrap .main .content .contenter .mainContent .chartWrapper .chartLoading .noDataBox img,
+  .wrap .main .content .contenter .detailContent .chartWrapper .chartLoading .noDataBox img,
+  .wrap .main .content .contenter .mainContent .chartWrapper .chartLoading .errorBox img,
+  .wrap .main .content .contenter .detailContent .chartWrapper .chartLoading .errorBox img {
+    width: 64px;
+    height: 64px;
+  }
+  .wrap .main .content .contenter .mainContent .chartWrapper .chartLoading .noDataBox .info,
+  .wrap .main .content .contenter .detailContent .chartWrapper .chartLoading .noDataBox .info,
+  .wrap .main .content .contenter .mainContent .chartWrapper .chartLoading .errorBox .info,
+  .wrap .main .content .contenter .detailContent .chartWrapper .chartLoading .errorBox .info {
+    line-height: 36px;
+  }
+  .wrap .main .content .contenter .mainContent .tableWrapper,
+  .wrap .main .content .contenter .detailContent .tableWrapper {
+    padding: 0 22px 0px;
+  }
+  .wrap .main .content .contenter .mainContent .tableWrapper .tableTitle,
+  .wrap .main .content .contenter .detailContent .tableWrapper .tableTitle {
+    height: 44px;
+    line-height: 44px;
+  }
+  .wrap .main .content .contenter .mainContent .tableWrapper .tableTitle .load,
+  .wrap .main .content .contenter .detailContent .tableWrapper .tableTitle .load {
+    font-size: 12px;
+  }
+  .wrap .main .content .contenter .mainContent .tableWrapper .tableTitle .load .icon,
+  .wrap .main .content .contenter .detailContent .tableWrapper .tableTitle .load .icon {
+    top: 16px;
+  }
+  .wrap .main .content .contenter .mainContent .tableWrapper .tableBox table th,
+  .wrap .main .content .contenter .detailContent .tableWrapper .tableBox table th,
+  .wrap .main .content .contenter .mainContent .tableWrapper .tableBox table td,
+  .wrap .main .content .contenter .detailContent .tableWrapper .tableBox table td {
+    height: 38px;
+    font-size: 14px;
+  }
+  .wrap .main .content .contenter .mainContent .tableWrapper .tableBox .green-black,
+  .wrap .main .content .contenter .detailContent .tableWrapper .tableBox .green-black {
+    height: 22px;
+    margin: 28px auto;
+  }
+  .wrap .main .content .contenter .mainContent .tableWrapper .tableBox .green-black span,
+  .wrap .main .content .contenter .detailContent .tableWrapper .tableBox .green-black span {
+    height: 20px;
+    line-height: 20px;
+  }
+  .wrap .main .content .contenter .mainContent .tableWrapper .tableBox .green-black #pagevalue,
+  .wrap .main .content .contenter .detailContent .tableWrapper .tableBox .green-black #pagevalue {
+    width: 42px;
+    height: 22px;
+    font-size: 12px;
+  }
+  .wrap .main .content .contenter .mainContent .tableWrapper .tableBox .green-black .current,
+  .wrap .main .content .contenter .detailContent .tableWrapper .tableBox .green-black .current {
+    width: 20px;
+  }
+  .wrap .main .content .contenter .mainContent .tableWrapper .tableBox .green-black .prev,
+  .wrap .main .content .contenter .detailContent .tableWrapper .tableBox .green-black .prev,
+  .wrap .main .content .contenter .mainContent .tableWrapper .tableBox .green-black .next,
+  .wrap .main .content .contenter .detailContent .tableWrapper .tableBox .green-black .next {
+    width: 46px;
+    padding: 0 5px;
+    height: 28px;
+    line-height: 28px;
+  }
+  .wrap .main .content .contenter .mainContent .tableWrapper .tableBox .green-black a,
+  .wrap .main .content .contenter .detailContent .tableWrapper .tableBox .green-black a {
+    padding: 0 5px;
+    height: 22px;
+    line-height: 22px;
+  }
+  .wrap .main .content .contenter .mainContent .tableWrapper .tableBox .green-black a#search,
+  .wrap .main .content .contenter .detailContent .tableWrapper .tableBox .green-black a#search {
+    height: 20px;
+    line-height: 20px;
+  }
+  .wrap .main .content .footer {
+    height: 60px;
+  }
+  .wrap .main .content .footer p {
+    line-height: 22px;
+  }
+  .wrap .loading {
+    left: 172px;
+    right: 28px;
+  }
+  .wrap .loading .loadBox {
+    width: 86px;
+    height: 86px;
+  }
+  .wrap .loading .errBox {
+    width: 214px;
+    height: 114px;
+    padding: 18px 5px;
+  }
+  .wrap .loading .errBox .info {
+    padding: 5px;
+  }
+  .wrap .loading .errBox .reload {
+    width: 78px;
+    height: 30px;
+    margin: 10px auto 0;
+    line-height: 30px;
+  }
+  .wrap .layer {
+    font-size: 12px;
+  }
+  .wrap .layerCon {
+    font-size: 12px;
+  }
+  .wrap .layerCon.layer1 {
+    position: fixed;
+    width: 510px;
+  }
+  .wrap .layerCon.layer3 {
+    position: fixed;
+    width: 510px;
+  }
+  .wrap .layerCon.layer4 {
+    width: 510px;
+    position: fixed;
+  }
+  .wrap .layerCon.layer4 .selectProduct div {
+    width: 108px;
+    float: left;
+  }
+  .wrap .layerCon.layer4 .selectProduct div label {
+    margin-right: 26px;
+  }
+  .wrap .layerCon .layerTitle {
+    height: 46px;
+    padding: 0 20px;
+    line-height: 46px;
+    background-color: #f8f8f8;
+    color: #333;
+  }
+  .wrap .layerCon .layerTitle .close {
+    margin-top: 15px;
+    width: 12px;
+    height: 12px;
+    background: url('../images/bg.png') 0 -133px no-repeat;
+    cursor: pointer;
+  }
+  .wrap .layerCon .selected {
+    margin: 0 38px;
+    padding: 15px 0;
+    border-bottom: 1px solid #ecedef;
+    color: #2f77f8;
+    min-height: 38px;
+    line-height: 26px;
+  }
+  .wrap .layerCon .selected div {
+    width: 330px;
+  }
+  .wrap .layerCon .selected div .selectItem {
+    display: inline-block;
+    padding: 0 10px;
+    height: 26px;
+    padding: 0 5px;
+    margin: 5px 8px;
+    color: #333;
+    border: 1px solid #ecedef;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  .wrap .layerCon .selected div .selectItem:hover {
+    border-color: red;
+  }
+  .wrap .layerCon .selected div .selectItem:hover i {
+    width: 10px;
+    height: 10px;
+    background: url('../images/bg.png') 0 -164px no-repeat;
+  }
+  .wrap .layerCon .selected div .selectItem i {
+    float: right;
+    margin-top: 10px;
+    width: 10px;
+    height: 10px;
+    background: url('../images/bg.png') -30px -164px no-repeat;
+  }
+  .wrap .layerCon .selected .btn {
+    width: 48px;
+    height: 26px;
+    margin-top: 6px;
+    line-height: 26px;
+    text-align: center;
+    color: #fff;
+    background-color: #2f77f8;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  .wrap .layerCon .options {
+    padding: 20px 38px 40px;
+  }
+  .wrap .layerCon .options label {
+    margin-right: 32px;
+    padding-left: 22px;
+    position: relative;
+    cursor: pointer;
+    height: 35px;
+    line-height: 35px;
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+    tetx-overflow: ellipsis;
+  }
+  .wrap .layerCon .options label:before {
+    content: '';
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: #fff;
+    border-radius: 4px;
+    border: 1px solid #ecedef;
+  }
+  .wrap .layerCon .options label:after {
+    content: '';
+    color: #fff;
+    font-weight: bold;
+    position: absolute;
+    left: 3px;
+    top: 5px;
+    width: 10px;
+    height: 8px;
+    background: url('../images/bg.png') 0 -193px no-repeat;
+  }
+  .wrap .layerCon .options label.half:before {
+    border: 1px solid #2f77f8;
+    background: #2f77f8;
+  }
+  .wrap .layerCon .options label.half:after {
+    content: '';
+    width: 12px;
+    height: 2px;
+    background-color: #fff;
+    left: 3px;
+    top: 7px;
+  }
+  .wrap .layerCon .options input[type=checkbox] {
+    display: none;
+  }
+  .wrap .layerCon .options input[type=checkbox]:checked + label:before {
+    border: 1px solid #2f77f8;
+    background: #2f77f8;
+  }
+  .wrap .layerCon .options input[type=checkbox]:checked {
+    color: red;
+  }
+  .wrap .layerCon .options .selectProvince {
+    color: #199df8;
+  }
+  .wrap .layerCon.layer2 {
+    width: 700px;
+    top: 50px;
+  }
+  .wrap .layerCon.layer2 .selected div {
+    width: 510px;
+  }
+  .wrap .layerCon.layer2 .options {
+    padding: 20px 20px 40px;
+  }
+  .wrap .layerCon.layer2 .options .subOptions {
+    display: none;
+    position: relative;
+    width: 640px;
+    padding: 0 0 0 18px;
+    margin-top: 0;
+    border-radius: 4px;
+    background: #f5f5f5;
+  }
+  .wrap .layerCon.layer2 .options .subOptions .optionItem {
+    width: 160px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: 10px 0 0 0;
+  }
+  .wrap .layerCon.layer2 .options div.clearfix {
+    padding-left: 20px;
+  }
+  .wrap .layerCon.layer2 .options div.clearfix .optionItem {
+    float: left;
+    width: 160px;
+    margin: 10px 0 0 0;
+    line-height: 16px;
+    position: relative;
+  }
+  .wrap .layerCon.layer2 .options div.clearfix .optionItem i {
+    margin: 4px 0 0 2px;
+    width: 11px;
+    height: 6px;
+    background: url('../images/bg.png') 0 0 no-repeat;
+    cursor: pointer;
+  }
+  .wrap .layerCon.layer2 .options div.clearfix .optionItem span {
+    cursor: pointer;
+  }
+  .wrap .layerCon.layer2 .options div.clearfix .optionItem .triggleCon {
+    height: 15px;
+    padding: 0;
+    overflow: hidden;
+  }
+  .wrap .layerCon.layer2 .options div.clearfix .optionItem .triggleCon .triggle {
+    display: none;
+    position: absolute;
+    top: 27px;
+    left: 0;
+    z-index: 0;
+    width: 20px;
+    height: 27px;
+    background: #f8f8f8;
+    transform: rotate(45deg);
+  }
+  .wrap .layerCon.layer2 .options div.clearfix .optionItem label {
+    margin-right: 5px;
+  }
+}

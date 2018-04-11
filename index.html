@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>营销顾问业务报表</title>
+    <link rel="shortcut icon" href="www.ico.la_c62186fe5373af6f5604ca9c8bc39ba4_32X32.ico">
+    <link rel="stylesheet" href="css/scroll.css">
+    <script type='text/javascript' src='js/jquery.1.11.3.min.js'></script>
+    <script type="text/javascript" src="js/echarts.min.js"></script>
+    <script type='text/javascript' src='js/juicer-min.js'></script>
+    <script type="text/javascript" src="js/map/js/china.js"></script>
+    <script type="text/javascript" src="js/jquery.pagination.js"></script>
+    <script type="text/javascript" src="js/layer/layer.js"></script>
+    <script type="text/javascript" src="js/laydate/laydate.js"></script>
+    <script type="text/javascript" src="js/jquery.slimscroll.min.js"></script>
+    <script type="text/javascript" src="js/html2canvas.js"></script>
+    <script type="text/javascript" src="js/jsPdf.debug.js"></script>
+    <script type="text/javascript">
+        var filesArr = ['anhui', 'aomen', 'beijing', 'chongqing', 'fujian', 'gansu', 'guangdong', 'guangxi', 'guizhou', 'hainan', 'hebei', 'heilongjiang', 'henan', 'hubei', 'hunan', 'jiangsu', 'jiangxi', 'jilin', 'liaoning', 'neimenggu', 'ningxia', 'qinghai', 'shandong', 'shanghai', 'shanxi','shanxi1', 'sichuan', 'taiwan', 'tianjin', 'xianggang', 'xinjiang', 'xizang', 'yunnan', 'zhejiang'];
+        $(filesArr).each(function(index, item) {
+            document.writeln("<s" + "cript type='text/javascript' src='/js/map/js/province/"+item+".js?r=" + Math.random() + "'></scr" + "ipt>");
+        });
+        document.writeln("<l" + "ink rel='stylesheet' type='text/css' href='css/reset.css?r='" + Math.random() + "/>");
+        document.writeln("<l" + "ink rel='stylesheet' type='text/css' href='css/index1.css?r='" + Math.random() + "/>");
+        document.writeln("<s" + "cript type='text/javascript' src='js/common.js?r=" + Math.random() + "'></scr" + "ipt>");
+        document.writeln("<s" + "cript type='text/javascript' src='js/index.js?r=" + Math.random() + "'></scr" + "ipt>");
+        document.writeln("<s" + "cript type='text/javascript' src='js/setTimeOption.js?r=" + Math.random() + "'></scr" + "ipt>");
+        document.writeln("<s" + "cript type='text/javascript' src='js/barLine.js?r=" + Math.random() + "'></scr" + "ipt>");
+        document.writeln("<s" + "cript type='text/javascript' src='js/urlObj.js?r=" + Math.random() + "'></scr" + "ipt>");
+    </script>
+</head>
+
+<body>
+    <div class="wrap">
+        <!-- 头部 -->
+        <!-- <div class="header clearfix">
+            <div class="logo"><img src="images/logo.svg" alt=""></div>
+            <div class="logoBar">
+                <ul>
+                    <li ><img src="images/userIcon.svg" alt=""><span class="Realname"></span></li>
+                    <li class="line"></li>
+                    <li class="signOut"><a href="http://bi.xingyuanauto.com/exit.aspx">退出</a></li>
+                </ul>
+            </div>
+        </div> -->
+        <div class='pic'></div>
+        <!-- 主体 -->
+        <div class="main">
+            <!-- 侧边栏模板 -->
+            <div class="sideBar" onselectstart="return false;" style="-moz-user-select:none;">
+                <div class="logo"><img src="images/logo.svg" alt=""></div>
+                <div class="menuList"></div>
+                <div class='userArea'>
+                    <ul class="clearfix">
+                        <li ><span class="Realname"></span></li>
+                        <li class="line"></li>
+                        <li class="signOut"><a href="">退出</a></li>
+                    </ul>
+                </div>
+                
+            </div>
+            <script type='text/template' id='sideBar'>
+                <ul>
+                    {@each msg as it1} {@if it1.SubModule.length>0}
+                    <li class='navItem'>
+                        <a src-id="${it1.Url}" class='firstNav' module-id="${it1.ModuleID}">
+                            <i class="icon" data-src='${it1.ModuleID}'></i>${it1.ModuleName}
+                        </a>
+                        <ul class='seconds'>
+                            {@each it1.SubModule as it2} {@if it2.SubModule.length>0}
+                            <li>
+                                <a src-id="${it2.Url}" class='secondNav' module-id="${it2.ModuleID}">${it2.ModuleName}
+                                    <i> </i>
+                                    <i><img src="images/icon44.png" alt=""></i>
+                                </a>
+                                <ul class='third'>
+                                    {@each it2.SubModule as it3}
+                                    <li>
+                                        <a src-id="${it3.Url}" class='thirdNav isLink' module-id="${it3.ModuleID}">${it3.ModuleName}</a>
+                                    </li>
+                                    {@/each}
+                                </ul>
+                            </li>
+                            {@else}
+                            <li>
+                                <a src-id="${it2.Url}" class='secondNav isLink' module-id="${it2.ModuleID}">${it2.ModuleName}</a>
+                            </li>
+                            {@/if} {@/each}
+                        </ul>
+                    </li>
+                    {@else}
+                    <li class='navItem'>
+                        <a src-id="${it1.Url}" class='firstNav isLink' module-id="${it1.ModuleID}">
+                            <i class="icon" data-src='${it1.ModuleID}'></i>${it1.ModuleName}</a>
+                    </li>
+                    {@/if} {@/each}
+                </ul>
+            </script>
+            <div class="content">
+                <div class="contenter"></div>
+                <div class="footer">
+                    <p>
+                        <a href="http://www.xingyuanauto.com/" target="_blank" style="">关于行圆</a>&nbsp;&nbsp; |&nbsp;&nbsp;
+                        <a href="http://www.qichedaquan.com/" target="_blank">汽车大全</a> &nbsp;&nbsp; | &nbsp;&nbsp; 联系我们： auto-cloud@xingyuanauto.com
+                    </p>
+                    <p>
+                        京ICP备17011360号-1 @2016-2018 bi.xingyuanauto.com All Rights Reserved. 北京行圆汽车信息技术有限公司所有
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="loading" style='display: block;top:0;'>
+            <div class="loadBox"  style='display: block;'>
+                <img src="images/loading1.gif" alt="" width="120">
+            </div>
+            <div class="errBox" style='display: none;'>
+                <img src="images/reload.png" alt="" width="65">
+                <p class="info">数据加载出错了，请重新尝试一下吧。</p>
+                <span class="reload">重新加载</span>
+            </div>
+        </div>
+        <div class="layer" style="z-index: 20;"></div>
+        <!--选择大区-->
+        <div class="layerCon layer1" style='display: none;z-index: 20; '>
+            <div class="layerTitle">
+                <span class='fl text'>大区</span>
+                <span class='fr close closeRegion'></span>
+            </div>
+            <div class="clearfix selected">
+                <span class='fl' style="margin-top: 6px">已选择：</span>
+                <div class='fl selectAreaBox'>
+                </div>
+                <span class="fr btn regionBtn">确定</span>
+            </div>
+            <div class="options selectArea">
+                <input type="checkbox" name="">
+                <label class="regionItem">东北大区</label>
+                <input type="checkbox" name="">
+                <label class="regionItem"> 东部大区</label>
+                <input type="checkbox" name="">
+                <label class="regionItem"> 西部大区</label>
+                <input type="checkbox" name="">
+                <label class="regionItem"> 中部大区</label>
+            </div>
+        </div>
+        <!--选择城市级别-->
+        <div class="layerCon layer3" style='display: none; z-index: 20;'>
+            <div class="layerTitle">
+                <span class='fl text'>城市级别</span>
+                <span class='fr close closeCityLevel'></span>
+            </div>
+            <div class="clearfix selected">
+                <span class='fl' style="margin-top: 6px">已选择：</span>
+                <div class='fl cityBox'>
+                </div>
+                <span class="fr btn cityBtn">确定</span>
+            </div>
+            <div class="options cityList">
+                <input type="checkbox" name="">
+                <label class="cityItem">一级城市</label>
+                <input type="checkbox" name="">
+                <label class="cityItem"> 二级城市</label>
+                <input type="checkbox" name="">
+                <label class="cityItem"> 三级城市</label>
+                <input type="checkbox" name="">
+                <label class="cityItem"> 四级城市</label>
+                <input type="checkbox" name="">
+                <label class="cityItem"> 五级城市</label>
+                <input type="checkbox" name="">
+                <label class="cityItem"> 六级城市</label>
+            </div>
+        </div>
+        <!--选择省份城市-->
+        <div class="layerCon layer2" style="display: none;top: 23%;z-index: 20;">
+            <div class="layerTitle">
+                <span class='fl text'>省份城市</span>
+                <span class='fr close closeCity'></span>
+            </div>
+            <div class="clearfix selected">
+                <span class='fl' style="margin-top: 6px">已选择：</span>
+                <div class='fl provinceCityBox'>
+                </div>
+                <span class="fr btn provinceBtn">确定</span>
+            </div>
+            <div class="clearfix options provinceTable">
+            </div>
+            <script type='text/template' id='subOptions'>
+                <div class="clearfix subOptions">
+                    {@each cityArr as it,index}
+                    <input type="checkbox" name="" id="subOption_${index}">
+                    <label for="subOption_${index}">${it}</label>
+                    {@/each}
+                </div>
+            </script>
+        </div>
+        <!--选择产地类型-->
+        <div class="layerCon layer4" style='display: none;z-index: 20;'>
+            <div class="layerTitle">
+                <span class='fl text titleName'>产地类型</span>
+                <span class='fr close closeProduct closeDivision'></span>
+            </div>
+            <div class="clearfix selected">
+                <span class='fl' style="margin-top: 6px">已选择：</span>
+                <div class='fl selectProductBox'>
+                </div>
+                <span class="fr btn productTypeBtn " >确定</span>
+            </div>
+            <div class="options selectProduct clearfix">
+                <input type="checkbox" name="">
+                <label class="productItem">自主</label>
+                <input type="checkbox" name="">
+                <label class="productItem">合资</label>
+                <input type="checkbox" name="">
+                <label class="productItem">进口</label>
+            </div>
+        </div>
+    </div>
+    <input type="hidden" name="" class="data_obj">
+    <input type="hidden" name="" class="detail_data">
+    <input type="hidden" name="" class="tootip_data">
+    <input type="hidden" name="" class="min_time">
+    <input type="hidden" name="" class="record_time">
+    <input type="hidden" name="" class="record_page">
+    <input type="hidden" name="" class="record_tag">
+    <input type="hidden" name="" class="record_province">
+    <input type="hidden" name="" class="minTime_Day">
+    <input type="hidden" name="" class="save_province">
+    <input type="hidden" name="" class="save_province_id">
+    <div style='display: none;'><canvas id='pdf'></canvas></div>
+</body>
+<script type="text/template" id="provinceList">
+    {@each arr as item,i}
+    <div class='clearfix'>
+        {@each item as it,index}
+        <div class='fl optionItem'>
+            <input type="checkbox" name="" id="option${i}_${index}">
+            <label class="fl option" for="option${i}_${index}" data-city=${it.data}>
+            </label>
+            <span class='fl'>${it.name}</span><i class='fl'></i>
+            <div class='fl triggleCon'>
+                <div class="triggle"></div>
+            </div>
+        </div>
+        
+        
+        {@/each}
+    </div>
+    {@/each}
+</script>
+<script type="text/template" id="provinceList1">
+    {@each arr as item,i}
+    <div class='clearfix'>
+        {@each item as it,index}
+        <input type="checkbox" name="" id="option${i}_${index}">
+        <label class="option" for="option${i}_${index}" data-city=${it.data}>
+            <div class='fl triggleCon'>
+                <div class="triggle"></div>
+            </div>
+            <span class='fl'>${it.name}</span><i class='fl'></i>
+        </label>
+        {@/each}
+    </div>
+    {@/each}
+</script>
+<script type="text/template" id="mediaTypeList">
+    {@each arr as item,index}
+    <span>${item}</span>
+    {@/each}
+</script>
+</html>

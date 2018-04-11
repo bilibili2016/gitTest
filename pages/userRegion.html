@@ -1,0 +1,95 @@
+<!-- 区域特征 -->
+<script src="http://glog.qcdqcdn.com" type="text/javascript"></script>
+<div class="searchWrapper" style='padding-bottom: 0'>
+    <ul class='clearfix'>
+        <li class='fl clearfix' style='margin-right: 0;'>
+            <div class="fl text">指标：</div>
+            <div class="selectBox selectUnit selectCarOrBrand" style='margin-right: 15px;h'>
+                <span class='active'>品牌</span>
+                <span>车型</span>
+            </div>
+            <div class="fl selectBox" style='margin-right: 15px;'>
+                <i class='icon'></i>
+                <input type="text" class='selectText queryInput carOrBrand' value=""/>
+                <ul class='selectList brandList'></ul>
+            </div>
+        </li>
+        <li class="fr">
+            <div class='load'><i></i>下载明细</div>
+            <iframe id="ifile" src="" style="display:none"></iframe>
+        </li>
+        <li class="fr">
+            <div class="btns">
+                <div class='btn Doubt'>
+                    <div class="tootip"></div>
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>
+<div class="mainContent">
+    <input type="hidden" class="mapData">
+    <div class="chartWrapper user">
+        <div class="chartBox tableMap" style='padding-top: 20px;margin-bottom: 2%'>
+            <div class="mapTitle">
+                <span class='china'>中国</span>
+                <span class='province'></span>
+            </div>
+            <div id="Ranking" style="height: 100%;">
+            </div>
+            <div class='chartTable' style="height: 100%;margin-right: 0;margin-top:0;top:25px">
+                <div class="con">
+                    <ul class="clearfix tab">
+                        <li class='active'><span>省份排行</span></li>
+                        <li><span>城市排行</span></li>
+                        <span class="tabItembar"></span>
+                        <span class="tabBottom"></span>
+                    </ul>
+                    <div class='tableList'></div>
+                </div>
+            </div>
+            <div></div>
+        </div>
+        <script type='text/template' id='chartTable'>
+            <div class="title">
+                <ul class='clearfix'>
+                    <li>排名</li>
+                    <li>省份</li>
+                    <li>占比</li>
+                </ul>
+            </div>
+            <div class="list">
+                <div class="list_con1" style='position: relative;'>
+                    {@each province as item,index}
+                    <p>
+                        <span>${parseInt(index)+1}</span>
+                        <span class='name'>${item.name}</span>
+                        <span>${item.value}%</span>
+                    </p>
+                    {@/each}
+                </div>
+                <div class="list_con2" style='position: relative;display: none;'>
+                    {@each city as item,index}
+                    <p>
+                        <span>${parseInt(index)+1}</span>
+                        <span class='name'>${item.name}</span>
+                        <span>${item.value}%</span>
+                    </p>
+                    {@/each}
+                </div>
+            </div>
+        </script>
+        <div class="clearfix" style="margin-top: 0">
+            <div class='fl chartBox' id="catarc_area" style="width: 49%;"></div>
+            <div class='fr chartBox' id="catarc_city_level"
+                 style="width: 49%;"></div>
+        </div>
+    </div>
+</div>
+<script type="text/template" id="carAndBrand">
+    {@each brandList as item} {@if type==2}
+    <li title="${item.SerialName}">${item.SerialName}</li>
+    {@else}
+    <li title="${item.BrandName}">${item.BrandName}</li>
+    {@/if} {@/each}
+</script>

@@ -1,0 +1,357 @@
+<!--车型卡片-->
+<script src="http://glog.qcdqcdn.com" type="text/javascript"></script>
+
+<div class="searchWrapper" style='padding-bottom: 0'>
+    <ul class='clearfix'>
+        <li class='fl clearfix'>
+            <div class="fl text">指标：</div>
+            <div class="selectBox selectUnit selectCarOrBrand" style='margin-right: 15px;'>
+                <span class='active'>品牌</span>
+                <span>车型</span>
+            </div>
+            <div class="fl selectBox" style='margin-right: 15px;'>
+                <i class='icon'></i>
+                <input type="text" class='selectText queryInput carOrBrandOfCard'  value=""/>
+                <ul class='selectList brandList'></ul>
+            </div>
+        </li>
+        <li class='fl clearfix'>
+            <div class="fl text">周期：</div>
+            <div class='fl selectBox selectDateBox'>
+                <i class='icon'></i>
+                <input type="text" class='selectText selectDate' id="time1" readonly value="最近12个月"/>
+                <ul class='selectList dateList'>
+                    <li data-id="2" date-num="6month" >最近6个月</li>
+                    <li data-id="2" date-num="12month" >最近12个月</li>
+                </ul>
+            </div>
+        </li>
+        <li class="fr">
+            <!-- <div class="fl closeDate">(数据截止<span class="lastDate"></span>)</div> -->
+            <div class="fl pdf"><i></i>导出PDF <input type="hidden" name="" value='0'></div>
+            <form action="" style='display: none;' method='post'>
+                <input type="submit" value="Submit" />
+                <input type="hidden" name='png' value='' class='png'>
+                <input type="hidden" name='name' value='' class='name'>
+            </form>
+        </li>
+    </ul>
+</div>
+<div class="titleCard">
+    <h1><span class='brandOrSerial'></span>数据分析</h1>
+    <!-- <img src="../images/title.png" alt="" class='middle'> -->
+    <i class="middle"></i>
+    <i class='bottom'></i>
+    <i class='top'></i>
+</div>
+<div class="mainContent" style="margin-top: 40px">
+    <input type="hidden" class="mapData1">
+    <input type="hidden" class="mapData2">
+    <div class="chartWrapper user">
+        <h2>
+            <span><i>01</i>&nbsp;&nbsp;
+                <span class='brandOrSerial'></span>用户基础属性
+            </span>
+        </h2>
+        <div class="chartBox clearfix" style="height: 1345px">
+            <div class="chartTitle" style='padding-top: 20px;'>性别及年龄结构（%）</div>
+            <div style="width:100%;height: 28%;margin-bottom: 3%">
+                <!--用户性别-->
+                <div class="fl" id="genderDistributionDiv"
+                     style="width:50%;height: 100%;"></div>
+                <!--年龄-->
+                <div class="fr" id="ageDiv"
+                     style="width:50%;height: 100%;"></div>
+            </div>
+            <div class="chartTitle">婚姻状态及家庭构成</div>
+            <div style="width:100%;height: 25%;margin-bottom: 3%">
+                <!--婚姻状态-->
+                <div class='fl' id="maritalStatus" style="width:50%;height:
+                100%;"></div>
+                <!--家庭结构-->
+                <div class='fr' id="familyStructure" style="width:50%;height:
+                 100%;"></div>
+            </div>
+            <div class="chartTitle">人生阶段及社会阶层</div>
+            <div style="width:100%;height: 33%;margin-bottom: 4%">
+               <!--人生阶段-->
+               <div class='fl' id="lifeStages"
+                    style="width:50%;height: 100%;"></div>
+               <!--社会阶层-->
+               <div class='fr' id="socialBracket" style="width:50%;height:
+               100%;"></div>
+           </div>
+        </div>
+        <h2><span><i>02</i>&nbsp;&nbsp;<span class='brandOrSerial'></span>用户高级属性</span></h2>
+        <div class="chartBox clearfix" style="height: 1485px">
+            <div class="chartTitle" style='padding-top: 20px;'>个人性格及价值观</div>
+            <div style="width: 100%;height: 29%;margin-bottom: 3%">
+               <!--个人性格-->
+               <div class='fl' id="personChara1"
+                    style="width:50%;height: 98%;margin-top: 1%"></div>
+               <!--价值观-->
+               <div class='fr' id="personChara2"
+                    style="width:50%;height: 98%;margin-top: 1%"></div>
+           </div>
+            <!--兴趣爱好-->
+            <div class="chartTitle">兴趣偏好TOP15</div>
+            <div id="personChara3" style="width:100%;height: 29%;margin-bottom: 3%"></div>
+            <!--媒介偏好-->
+            <div class="chartTitle">媒体偏好TOP15</div>
+            <div id="internetBehavior"
+                 style="width:100%;height: 29%;;margin-bottom: 3%"></div>
+        </div>
+        <h2 class="top3" style='display: none;'><span><i>03</i>&nbsp;&nbsp;<span class='brandOrSerial'></span>竞品分析</span></h2>
+        <div class="chartBox top3" style="height: 1750px;display: none;">
+            <!--核心竞品-->
+            <div class="chartTitle" style='padding-top: 20px;'>对比车型</div>
+            <div style='width:100%;height: 30%;margin-bottom: 2%;position:
+            relative;' id="">
+                <div id="competeRelation1"
+                     style="width: 100%;height: 100%;margin: auto;"></div>
+                <div class="chartLoading">
+                    <div class="loadingBox"><img src="../images/loading1.gif" alt=""></div>
+                    <div class="noDataBox" style='display: none;'>
+                        <img src="../images/no_data.png" alt="">
+                        <p class="info">暂无数据</p>
+                    </div>
+                </div>
+            </div>
+            <!--竞争关系-->
+            <div class="chartTitle">对比关系</div>
+            <div style="width:100%;height: 30%;position: relative;padding-bottom: 30px">
+                <div id="competePattern" style='height:100%'></div>
+                <div class="chartLoading">
+                    <div class="loadingBox"><img src="../images/loading1.gif" alt=""></div>
+                    <div class="noDataBox" style='display: none;'>
+                        <img src="../images/no_data.png" alt="">
+                        <p class="info">暂无数据</p>
+                    </div>
+                </div>
+                <div class="comment"
+                 style="position: absolute;right: 67px;bottom: 30px;color:#999;font-size: 12px;">滚动鼠标，可放大图表区域
+                </div>
+            </div>
+            
+            <!--竞争重合-->
+            <div class="chartTitle">竞争重合</div>
+            <div style='width:100%;height: 30%;position: relative;padding-bottom: 30px'>
+                <div id="competePatternDou" style="height:100%;"></div>
+                <div class="chartLoading">
+                    <div class="loadingBox"><img src="../images/loading1.gif" alt=""></div>
+                    <div class="noDataBox" style='display: none;'>
+                        <img src="../images/no_data.png" alt="">
+                        <p class="info">暂无数据</p>
+                    </div>
+                </div>
+                <div class="comment"
+                 style="position: absolute;right: 67px;bottom: 30px;color:#999;font-size: 12px;">滚动鼠标，可放大图表区域
+                </div>
+            </div>
+            
+        </div>
+        <h2 class="top4"><span><i>03</i>&nbsp;&nbsp;<span class='brandOrSerial'></span>竞争走势</span></h2>
+        <div class="chartBox" style="height: 2055px">
+            <div class="chartTitle" style='padding-top: 20px;'>关注走势</div>
+            <div style="width:100%;height: 29%;margin-bottom: 3%;position: relative;">
+                <div id="attentionTrend" style='height: 100%;'></div>
+                <div class="chartLoading">
+                    <div class="loadingBox"><img src="../images/loading1.gif" alt=""></div>
+                    <div class="noDataBox" style='display: none;'>
+                        <img src="../images/no_data.png" alt="">
+                        <p class="info">暂无数据</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="chartTitle">预购走势</div>
+            <div style="width:100%;height: 31%;margin-bottom: 3%;position: relative;">
+                <div id="purchaseTrend" style='height: 100%'></div>
+                <div class="chartLoading">
+                    <div class="loadingBox"><img src="../images/loading1.gif" alt=""></div>
+                    <div class="noDataBox" style='display: none;'>
+                        <img src="../images/no_data.png" alt="">
+                        <p class="info">暂无数据</p>
+                    </div>
+                </div>
+            </div>
+            <div class="chartTitle">销量走势</div>
+            <div style="width:100%;height: 31%;margin-bottom: 3%;position: relative;">
+                <div id="salesTrend" style='height: 100%'></div>
+                <div class="chartLoading">
+                    <div class="loadingBox"><img src="../images/loading1.gif" alt=""></div>
+                    <div class="noDataBox" style='display: none;'>
+                        <img src="../images/no_data.png" alt="">
+                        <p class="info">暂无数据</p>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <h2 class="top5"><span><i>04</i>&nbsp;&nbsp;<span class='brandOrSerial'></span>区域特征</span></h2>
+        <div class="chartBox" style='height: 2170px;'>
+            <div class="chartTitle" style='padding-top: 20px;'>销量分布地图</div>
+            <div class="distribute" style="width:100%;height: 22%;margin-bottom: 3%;position: relative;" >
+                <div class="mapTitle">
+                    <span class='china' style='top:100px;'>中国</span>
+                    <span class='province' style='top:100px;'></span>
+                </div>
+                <div class="chart1" style='height:100%;'></div>
+                <div class="chartLoading">
+                    <div class="loadingBox"><img src="../images/loading1.gif" alt=""></div>
+                    <div class="noDataBox" style='display: none;'>
+                        <img src="../images/no_data.png" alt="">
+                        <p class="info">暂无数据</p>
+                    </div>
+                </div>
+            </div>
+            <!--大区销量占比-->
+            <div class="chartTitle">分大区销量百分比</div>
+            <div style="width:100%;height: 22%;margin-bottom: 3%;position: relative;">
+                <div id="areaRatio" style='height: 100%'></div>
+                <div class="chartLoading">
+                    <div class="loadingBox"><img src="../images/loading1.gif" alt=""></div>
+                    <div class="noDataBox" style='display: none;'>
+                        <img src="../images/no_data.png" alt="">
+                        <p class="info">暂无数据</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!--城市销量占比-->
+            <div class="chartTitle">分城市级别销量百分比</div>
+            <div style="width:100%;height: 22%;margin-bottom: 3%;position: relative;">
+                <div id="cityRatio" style='height: 100%'></div>
+                <div class="chartLoading">
+                    <div class="loadingBox"><img src="../images/loading1.gif" alt=""></div>
+                    <div class="noDataBox" style='display: none;'>
+                        <img src="../images/no_data.png" alt="">
+                        <p class="info">暂无数据</p>
+                    </div>
+                </div>
+            </div>
+            <div class="chartTitle">竞争表现</div>
+            <div class="performance" style='height:22%;position: relative;'>
+                <div class="mapTitle">
+                    <span class='china' style='top:100px;'>中国</span>
+                    <span class='province' style='top:100px;'></span>
+                </div>
+                <ul class="legend" style='display: none;'>
+                    <li><i class="icon" style='background: #c8002c'></i> <span class="name">优</span></li>
+                    <li><i class="icon" style='background: #f08c00'></i> <span class="name">良</span></li>
+                    <li><i class="icon" style='background: #9bbb36'></i> <span class="name">较差</span></li>
+                    <li><i class="icon" style='background: #2e8798'></i> <span class="name">差</span></li>
+                    <li><i class="icon" style='background: #eee'></i> <span class="name">暂无数据</span></li>
+                </ul>
+                <!-- <div class='chartTable' style="height: 100%;top:-5px;"></div> -->
+                <div class="chart3" style='height:100%;width:100%'></div>
+                <div class="chartLoading">
+                    <div class="loadingBox"><img src="../images/loading1.gif" alt=""></div>
+                    <div class="noDataBox" style='display: none;'>
+                        <img src="../images/no_data.png" alt="">
+                        <p class="info">暂无数据</p>
+                    </div>
+                    <div class="errorBox" style='display: none;'>
+                        <img src="../images/no_data.png" alt="">
+                        <p class="info">加载出错，刷新试试</p>
+                    </div>
+                </div>
+            </div>
+            <script type='text/template' id='chartTable'>
+                <div class="clearfix chartTableTitle">
+                    <span>${Situation.Name.split('-')[0]}</span>
+                  <!--   <span>${Situation.Name.split('-')[1]}/</span>
+                    <span>${Situation.Name.split('-')[2]}</span> -->
+                </div>
+                <div class="chartData">
+                    <p class='chartDataTitle'><span>销量(辆)</span><span>${Situation.Name.split('-')[1]}${Situation.Name.split('-')[2]}排名</span></p>
+                    <p class='chartDataNum'><span>${Situation.Sales}</span><span>${Situation.RankingNum}</span></p>
+                </div>
+                <div class="chartList">
+                    <div class="chartListTitle">${Situation.Name.split('-')[1]}销量（辆）排行榜</div>
+                    <ul>
+                        {@each list as item}
+                        <li>
+                            <span class="chartTableText">${item[1]}</span>
+                            <span class="chartTableNum">${item[2]}</span></li>
+                        {@/each}
+                    </ul>
+                </div>
+            </script>
+        </div>
+    </div>
+</div>
+
+<script type="text/template" id="carAndBrand">
+    {@each brandList as item} {@if type==2}
+    <li title="${item.SerialName}">${item.SerialName}</li>
+    {@else}
+    <li title="${item.BrandName}">${item.BrandName}</li>
+    {@/if} {@/each}
+</script>
+<!-- <script>
+    //请求品牌
+    var allCarType4={};
+    $.ajax({
+        type:'get',
+        url:urlObj.getAllBrand,
+        xhrFields: {
+            withCredentials: true
+        },
+        async:false,
+        success:function (res) {
+            if(res.Message =='Success'){
+                allCarType4=res.Data.Brand;
+                $('.carOrBrandOfCard').attr('data-brand',JSON.stringify(allCarType4));
+                var tpl = $('#carAndBrand').html();
+                var content = juicer(tpl,{brandList:allCarType4,type:1});
+                $('.cardBrandList').html(content);
+                var li_height = $('.cardBrandList').find('li').outerHeight(true);
+                var boxHeight = $('.cardBrandList li').length*li_height>160?160:$('.userBrandList li').length*li_height;
+                var boxWidth = $('.carOrBrandOfCard').parent('.selectBox').width();
+                $('.cardBrandList').slimScroll({height:boxHeight+'px',width:boxWidth+'px'})
+            }
+        },
+        error:function (err) {
+            console.log(err);
+        }
+    });
+    //请求车型
+    var getAllBrand4={};
+    $.ajax({
+        type:'get',
+        url:urlObj.getAllCarType,
+        xhrFields: {
+            withCredentials: true
+        },
+        async:false,
+        success:function (res) {
+            if(res.Message =='Success'){
+                getAllBrand4=res.Data.Brand;
+                $('.carOrBrandOfCard').attr('data-model',JSON.stringify(getAllBrand4));
+            }
+        },
+        error:function (err) {
+            console.log(err);
+        }
+    });
+    $('.carOrBrandOfCard').val($('.cardBrandList li').eq(0).text());
+    var data_obj = JSON.parse($('.data_obj').val());
+    var tootip_data = JSON.parse($('.tootip_data').val());
+    data_obj.carBrand=$('.carOrBrandOfCard').val();
+    $('.data_obj').val(JSON.stringify(data_obj));
+
+
+    if(allCarType4.length==0){
+       showLayer(true,tootip_data,'noAuthor');
+    }else{
+        $('.top3').hide();
+        $('.top4').html("<span>03&nbsp;&nbsp;&nbsp;<span class='brandOrSerial'></span>的指数走势</span>");
+        $('.top5').html("<span>04&nbsp;&nbsp;&nbsp;<span class='brandOrSerial'></span>的区域特征</span>");        
+        getData(data_obj,judegPage,'',tootip_data,1);
+    }
+    
+    // 设置背景图
+    // var bg_w = $('.titleCard').width();
+    // $('.titleCard').css('background-size',bg_w+'px 290px');
+</script>

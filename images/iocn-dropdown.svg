@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="13px" height="8px" viewBox="0 0 13 8" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>Combined Shape Copy 2</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="14.6446609%" y1="14.6446609%" x2="85.3553391%" y2="85.3553391%" id="linearGradient-1">
+            <stop stop-color="#3EA6FB" offset="0%"></stop>
+            <stop stop-color="#067BDA" offset="99.7010523%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="堆积图" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-1114.000000, -144.000000)">
+        <g id="选项-copy-3" transform="translate(244.000000, 128.000000)" fill="url(#linearGradient-1)">
+            <g id="Group-7" transform="translate(670.000000, 0.000000)">
+                <path d="M206.389087,20.9748737 L211.363961,16 L212.778175,17.4142136 L206.414214,23.7781746 L206.389087,23.7530483 L206.363961,23.7781746 L200,17.4142136 L201.414214,16 L206.389087,20.9748737 Z" id="Combined-Shape-Copy-2"></path>
+            </g>
+        </g>
+    </g>
+</svg>

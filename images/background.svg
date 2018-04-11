@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1558px" height="505px" viewBox="0 0 1558 505" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>background</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="63" width="1558" height="442"></rect>
+        <rect id="path-2" x="0" y="0" width="1558" height="440"></rect>
+        <radialGradient cx="50%" cy="50%" fx="50%" fy="50%" r="97.6004464%" id="radialGradient-4">
+            <stop stop-color="#FFFFFF" offset="0%"></stop>
+            <stop stop-color="#E3EDFF" offset="100%"></stop>
+        </radialGradient>
+        <radialGradient cx="48.1834888%" cy="47.0493481%" fx="48.1834888%" fy="47.0493481%" r="100%" id="radialGradient-5">
+            <stop stop-color="#FFFFFF" offset="0%"></stop>
+            <stop stop-color="#DDE9FF" offset="100%"></stop>
+        </radialGradient>
+        <radialGradient cx="52.4676681%" cy="50%" fx="52.4676681%" fy="50%" r="77.1518821%" gradientTransform="translate(0.524677,0.500000),rotate(91.832892),scale(1.000000,1.011275),translate(-0.524677,-0.500000)" id="radialGradient-6">
+            <stop stop-color="#F1F6FF" offset="0%"></stop>
+            <stop stop-color="#CBDDFF" offset="100%"></stop>
+        </radialGradient>
+    </defs>
+    <g id="核心竞品图" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-281.000000, -280.000000)">
+        <g id="Group" transform="translate(281.000000, 280.000000)">
+            <g id="background">
+                <rect id="Rectangle-23" fill="#FFFFFF" x="0" y="0" width="1558" height="504"></rect>
+                <g id="Rectangle-23">
+                    <use fill="#F9FBFF" fill-rule="evenodd" xlink:href="#path-1"></use>
+                    <rect stroke="#D0D2DD" stroke-width="1" x="0.5" y="63.5" width="1557" height="441"></rect>
+                </g>
+                <g id="Oval-3" transform="translate(0.000000, 64.000000)">
+                    <mask id="mask-3" fill="white">
+                        <use xlink:href="#path-2"></use>
+                    </mask>
+                    <g id="Mask"></g>
+                    <circle id="Oval-6" stroke-opacity="0.06" stroke="#3077F9" fill="url(#radialGradient-4)" mask="url(#mask-3)" cx="779" cy="220" r="450"></circle>
+                    <circle stroke-opacity="0.08" stroke="#699EFF" fill="url(#radialGradient-5)" mask="url(#mask-3)" cx="779" cy="220" r="300"></circle>
+                    <circle id="Oval-2" stroke-opacity="0.1" stroke="#3077F9" fill="url(#radialGradient-6)" mask="url(#mask-3)" cx="779" cy="220" r="150"></circle>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

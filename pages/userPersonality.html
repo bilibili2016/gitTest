@@ -1,0 +1,155 @@
+<!--人格特质-->
+<script src="http://glog.qcdqcdn.com" type="text/javascript"></script>
+<div class="searchWrapper">
+    <ul class='clearfix'>
+        <li class='fl clearfix' style='margin-right: 0;'>
+            <div class="fl text">指标：</div>
+            <div class="selectBox selectUnit selectCarOrBrand" style='margin-right: 15px;'>
+                <span class='active'>品牌</span>
+                <span>车型</span>
+            </div>
+            <div class="fl selectBox" style='margin-right: 15px;'>
+                <i class='icon'></i>
+                <input type="text" class='selectText queryInput carOrBrand' value=""/>
+                <ul class='selectList brandList'></ul>
+            </div>
+        </li>
+        <li class="fr">
+            <div class='load'><i></i>下载明细</div>
+            <iframe id="ifile" src="" style="display:none"></iframe>
+        </li>
+        <li class="fr">
+            <div class="btns">
+                <div class='btn Doubt'>
+                    <div class="tootip"></div>
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>
+<div class='mainContent'>
+    <div class="chartWrapper">
+        <div class='chartHeader'>
+            <div class="tabMenu">
+                <li class='tabItem active'><span>心理特征</span></li>
+                <li class='tabItem'><span>兴趣爱好</span></li>
+                <!-- <li class='tabItem'><span>价值观</span></li> -->
+                <span class="tabItembar"></span>
+                <span class="tabBottom"></span>
+            </div>
+            <div class="subMenu clearfix"></div>
+            <!-- <div class="closeDate">(数据截止<span class="lastDate"></span>)</div> -->
+        </div>
+
+        <div class="chartBox" style="padding: 0;">
+            <div id="personChara1" class='fl' style="width:50%;height: 85%;margin-top: 3%"></div>
+            <div id="personChara2" class='fl' style="width:50%;height: 85%;margin-top: 3%"></div>
+            <div id='RankingDetail' style="width:100%;height: 100%;display: none;"></div>
+           <!--  <div class="btns">
+                <div class='btn Doubt'>
+                    <div class="tootip"></div>
+                </div>
+            </div> -->
+            <!-- <div class="comment"
+                 style="position: absolute;right: 67px;bottom: 30px;color:#999">* 滚动鼠标，可放大图表区域
+            </div> -->
+        </div>
+    </div>
+    <div class="tableWrapper clearfix">
+        <div class="tableTitle">
+            <div class="title">明细数据&nbsp;<span class="count">(共 <i class="num"></i> 条数据)</span></div>
+        </div>
+        <div class="tableBox">
+            <table>
+                <thead class="tableHeader"></thead>
+                <tbody class="listContent"></tbody>
+            </table>
+            <div class="green-black pageContainer" id='pageContainer1'  onselectstart="return false;" style="-moz-user-select:none;"></div>
+        </div>
+    </div>
+</div>
+<script type='text/template' id='tableTpl'>
+    {@each values as item}
+        <tr>
+            {@each item as it}
+            <td>${it}</td>
+            {@/each}
+        </tr>
+    {@/each}
+</script>
+<script type='text/template' id='tableHeaderTpl'>
+    <tr>
+        {@each Header as item}
+        <th width="${parseInt(100/Header.length)}%">${item}</th>
+        {@/each}
+    </tr>
+</script>
+<script type="text/template" id="carAndBrand">
+    {@each brandList as item}
+    {@if type==2}
+    <li title="${item.SerialName}">${item.SerialName}</li>
+    {@else}
+    <li title="${item.BrandName}">${item.BrandName}</li>
+    {@/if}
+    {@/each}
+</script>
+<!-- <script>
+    //请求品牌
+    var allCarType3={};
+    $.ajax({
+        type:'get',
+        url:urlObj.getAllBrand,
+        xhrFields: {
+            withCredentials: true
+        },
+        async:false,
+        success:function (res) {
+            if(res.Message =='Success'){
+                allCarType3=res.Data.Brand;
+                $('.carOrBrand').attr('data-brand',JSON.stringify(allCarType3));
+                var tpl = $('#carAndBrand').html();
+                var content = juicer(tpl,{brandList:allCarType3,type:1});
+                $('.userBrandList').html(content);
+                var li_height = $('.userBrandList').find('li').outerHeight(true);
+                var boxHeight = $('.userBrandList li').length*li_height>160?160:$('.userBrandList li').length*li_height;
+                var boxWidth = $('.carOrBrand').parent('.selectBox').width();
+                $('.userBrandList').slimScroll({height:boxHeight+'px',width:boxWidth+'px'});
+            }
+        },
+        error:function (err) {
+            console.log(err);
+        }
+    });
+    //请求车型
+    var getAllBrand3={};
+    $.ajax({
+        type:'get',
+        url:urlObj.getAllCarType,
+        xhrFields: {
+            withCredentials: true
+        },
+        async:false,
+        success:function (res) {
+            if(res.Message =='Success'){
+                getAllBrand3=res.Data.Brand;
+                $('.carOrBrand').attr('data-model',JSON.stringify(getAllBrand3));
+            }
+        },
+        error:function (err) {
+            console.log(err);
+        }
+    });
+    $('.carOrBrand').val($('.userBrandList li').eq(0).text());
+    var data_obj = JSON.parse($('.data_obj').val());
+    var tootip_data = JSON.parse($('.tootip_data').val());
+    data_obj.carBrand=$('.carOrBrand').val();
+    $('.data_obj').val(JSON.stringify(data_obj));
+
+
+    if(allCarType3.length==0){
+        showLayer(true,tootip_data,'noAuthor');
+    }else{
+        getData(data_obj,judegPage,drawTable,tootip_data,1);
+    }
+
+</script>

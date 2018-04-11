@@ -1,0 +1,1270 @@
+@charset "UTF-8";
+.wrap {
+  min-width: 1366px;
+  height: 100%;
+  font-size: 14px;
+}
+.wrap .header {
+  width: 100%;
+  height: 58px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 11;
+  background: #17222d;
+}
+.wrap .header .logo {
+  float: left;
+  width: 180px;
+  padding: 12px 0 10px 20px;
+  border-bottom: 1px solid #2b2d35;
+}
+.wrap .header .logoBar ul {
+  float: right;
+  margin-right: 20px;
+  line-height: 58px;
+}
+.wrap .header .logoBar ul li {
+  float: left;
+  color: #97a1b2;
+}
+.wrap .header .logoBar ul .line {
+  width: 1px;
+  height: 15px;
+  background: #97a1b2;
+  margin: 20px 14px 0;
+}
+.wrap .header .logoBar ul .signOut a {
+  color: #ff5a22;
+}
+.wrap .main {
+  width: 100%;
+  margin-top: 58px;
+  overflow-y: auto;
+}
+.wrap .main .sideBar {
+  width: 200px;
+  padding-top: 15px;
+  position: fixed;
+  top: 58px;
+  bottom: 0;
+  left: 0;
+  background-color: #1b2936;
+}
+.wrap .main .sideBar ul {
+  height: 100%;
+}
+.wrap .main .sideBar ul li a {
+  display: block;
+  width: 98px;
+  height: 36px;
+  line-height: 36px;
+  overflow-y: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  color: #97a1b2;
+  position: relative;
+  overflow: hidden;
+}
+.wrap .main .sideBar ul li a.firstNav {
+  padding: 0 32px 0 50px;
+  font-size: 16px;
+  cursor: default;
+}
+.wrap .main .sideBar ul li a.secondNav {
+  padding: 0 32px 0 70px;
+  font-size: 14px;
+  position: relative;
+}
+.wrap .main .sideBar ul li a.secondNav i {
+  position: absolute;
+  top: 15px;
+  left: 50px;
+  width: 10px;
+  height: 6px;
+  background: url('../images/bg.png') 0 0 no-repeat;
+  transform: rotate(-90deg);
+}
+.wrap .main .sideBar ul li a.secondNav.active:hover,
+.wrap .main .sideBar ul li a.secondNav.active {
+  color: #fff;
+}
+.wrap .main .sideBar ul li a.secondNav.active:hover i,
+.wrap .main .sideBar ul li a.secondNav.active i {
+  transform: rotate(0);
+}
+.wrap .main .sideBar ul li a.secondNav.isLink:hover {
+  color: #199df8;
+}
+.wrap .main .sideBar ul li a.secondNav.active.isLink {
+  color: #199df8;
+  background-color: #263b4e;
+}
+.wrap .main .sideBar ul li a.thirdNav {
+  padding: 0 32px 0 70px;
+  font-size: 14px;
+}
+.wrap .main .sideBar ul li a.thirdNav.isLink:hover {
+  color: #199df8;
+}
+.wrap .main .sideBar ul li a.thirdNav.active.isLink {
+  color: #199df8;
+  background-color: #263b4e;
+}
+.wrap .main .sideBar ul li a .icon {
+  width: 18px;
+  height: 18px;
+  background-size: 18px 18px;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 22px;
+  top: 10px;
+}
+.wrap .main .sideBar ul li ul.third {
+  display: none;
+}
+.wrap .main .sideBar ul li ul li {
+  padding: 0;
+}
+.wrap .main .content {
+  height: 100%;
+  margin-left: 200px;
+  padding: 16px 20px 0;
+  background-color: #f5f5f5;
+  overflow: hidden;
+}
+.wrap .main .content .contenter .searchWrapper {
+  height: 38px;
+  padding: 15px;
+  background-color: #fff;
+  margin-bottom: 15px;
+}
+.wrap .main .content .contenter .searchWrapper li {
+  margin-right: 42px;
+  font-size: 14px;
+}
+.wrap .main .content .contenter .searchWrapper li .text {
+  margin-right: 8px;
+  line-height: 36px;
+  font-size: 14px;
+}
+.wrap .main .content .contenter .searchWrapper li .selectBox {
+  float: left;
+  width: 130px;
+  height: 34px;
+  padding: 0 10px 0 10px;
+  border-radius: 4px;
+  border: 1px solid #e0e0e0;
+  cursor: pointer;
+  position: relative;
+  font-size: 14px;
+}
+.wrap .main .content .contenter .searchWrapper li .selectBox .selectText {
+  display: block;
+  width: 118px;
+  height: 100%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  line-height: 38px;
+  border: 0 none;
+  outline: 0 none;
+  font-size: 14px;
+  cursor: pointer;
+}
+.wrap .main .content .contenter .searchWrapper li .selectBox .icon {
+  position: absolute;
+  top: 16px;
+  right: 10px;
+  width: 10px;
+  height: 6px;
+  background: url('../images/bg.png') center center no-repeat;
+  background-position: 0 0;
+}
+.wrap .main .content .contenter .searchWrapper li .selectBox .slimScrollDiv {
+  display: none;
+  margin-left: -10px;
+  z-index: 10;
+}
+.wrap .main .content .contenter .searchWrapper li .selectBox .slimScrollDiv .brandList,
+.wrap .main .content .contenter .searchWrapper li .selectBox .slimScrollDiv .carTypeList_compete,
+.wrap .main .content .contenter .searchWrapper li .selectBox .slimScrollDiv .carTypeList1,
+.wrap .main .content .contenter .searchWrapper li .selectBox .slimScrollDiv .brandList1,
+.wrap .main .content .contenter .searchWrapper li .selectBox .slimScrollDiv .userBrandList,
+.wrap .main .content .contenter .searchWrapper li .selectBox .slimScrollDiv .cardBrandList,
+.wrap .main .content .contenter .searchWrapper li .selectBox .slimScrollDiv .brandList2 {
+  display: block;
+  border: 0 none;
+  top: 0;
+  left: 0;
+}
+.wrap .main .content .contenter .searchWrapper li .selectBox .slimScrollDiv .brandList li,
+.wrap .main .content .contenter .searchWrapper li .selectBox .slimScrollDiv .carTypeList_compete li,
+.wrap .main .content .contenter .searchWrapper li .selectBox .slimScrollDiv .carTypeList1 li,
+.wrap .main .content .contenter .searchWrapper li .selectBox .slimScrollDiv .brandList1 li,
+.wrap .main .content .contenter .searchWrapper li .selectBox .slimScrollDiv .userBrandList li,
+.wrap .main .content .contenter .searchWrapper li .selectBox .slimScrollDiv .cardBrandList li,
+.wrap .main .content .contenter .searchWrapper li .selectBox .slimScrollDiv .brandList2 li {
+  width: 130px;
+}
+.wrap .main .content .contenter .searchWrapper li .selectBox .selectList {
+  display: none;
+  width: 185px;
+  max-height: 200px;
+  overflow-x: hidden;
+  position: absolute;
+  left: -1px;
+  top: 34px;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  background-color: #fff;
+  font-size: 14px;
+}
+.wrap .main .content .contenter .searchWrapper li .selectBox .selectList li {
+  width: 196px;
+  height: 32px;
+  padding: 0 10px;
+  line-height: 32px;
+  margin-right: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.wrap .main .content .contenter .searchWrapper li .selectBox .selectList li:hover {
+  background-color: #199df8;
+  color: #fff;
+}
+@media screen and (max-width: 1366px) {
+  .wrap .main .content .contenter .searchWrapper li .selectBox {
+    height: 36px;
+  }
+}
+.wrap .main .content .contenter .searchWrapper li .addArea {
+  width: 150px;
+  height: 38px;
+  line-height: 36px;
+  text-align: center;
+  border: 1px solid #e0e0e0;
+  background-color: #f8f8f8;
+  border-radius: 4px;
+  cursor: pointer;
+  position: relative;
+}
+.wrap .main .content .contenter .searchWrapper li .addArea i {
+  vertical-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  color: #999;
+}
+.wrap .main .content .contenter .searchWrapper li .addArea .areas {
+  width: 130px;
+  padding-right: 20px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  line-height: 36px;
+  font-size: 14px;
+}
+.wrap .main .content .contenter .searchWrapper li .addArea .areas i {
+  position: absolute;
+  right: 4px;
+  top: -2px;
+  vertical-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  color: #999;
+}
+.wrap .main .content .contenter .searchWrapper li .selectUnit {
+  width: auto;
+  padding: 0;
+  border: 0 none;
+  border-radius: 4px;
+  overflow: hidden;
+}
+.wrap .main .content .contenter .searchWrapper li .selectUnit span {
+  float: left;
+  padding: 0 10px;
+  height: 34px;
+  line-height: 34px;
+  text-align: center;
+  border: 1px solid #e0e0e0;
+  border-right: 0 none;
+  cursor: pointer;
+}
+.wrap .main .content .contenter .searchWrapper li .selectUnit span:last-child {
+  border-right: 1px solid #e0e0e0;
+}
+.wrap .main .content .contenter .searchWrapper li .selectUnit span.active {
+  background-color: #199df8;
+  border-color: #199df8;
+  color: #fff;
+}
+.wrap .main .content .contenter .searchWrapper li .selectUnit .borderClear {
+  border: 0 none;
+}
+.wrap .main .content .contenter .searchWrapper li .timeBox {
+  float: left;
+  width: 149px;
+  height: 45px;
+  margin-left: 37px;
+  line-height: 45px;
+  text-align: center;
+  color: #199df8;
+  background-color: #e8f5fe;
+}
+.wrap .main .content .contenter .chartWrapper {
+  background-color: #fff;
+  margin-bottom: 15px;
+  position: relative;
+}
+.wrap .main .content .contenter .chartWrapper .chartHeader {
+  height: 47px;
+  background-color: #fafafa;
+}
+.wrap .main .content .contenter .chartWrapper .chartHeader .tabMenu {
+  height: 47px;
+  line-height: 48px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  text-align: center;
+  border-top: 1px solid #fafafa;
+}
+.wrap .main .content .contenter .chartWrapper .chartHeader .tabMenu .tabItem {
+  float: left;
+  width: 120px;
+  height: 44px;
+  line-height: 42px;
+  border-right: 1px solid #e0e0e0;
+  border-bottom: 1px solid #e0e0e0;
+  cursor: pointer;
+  z-index: 10;
+}
+.wrap .main .content .contenter .chartWrapper .chartHeader .tabMenu .tabItem span {
+  display: block;
+  height: 100%;
+  background-color: #fafafa;
+  z-index: 999;
+}
+.wrap .main .content .contenter .chartWrapper .chartHeader .tabMenu .tabItem.active {
+  color: #199df8;
+  border-bottom: 0 none;
+}
+.wrap .main .content .contenter .chartWrapper .chartHeader .tabMenu .tabItem.active span {
+  background-color: #fff;
+}
+.wrap .main .content .contenter .chartWrapper .chartHeader .tabMenu .tabItembar {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 121px;
+  height: 2px;
+  background-color: #199df8;
+  transition: 600ms;
+  /*.tabItembarLine{
+                                    position: absolute;
+                                    left: 0;
+                                    top:0;
+                                    width:121px;
+                                    height: 2px;
+                                    background-color: @theme_color;
+                                }*/
+}
+.wrap .main .content .contenter .chartWrapper .chartHeader .tabMenu .tabBottom {
+  position: absolute;
+  left: 0;
+  bottom: 1px;
+  width: 120px;
+  height: 2px;
+  background-color: #fff;
+  transition: 600ms;
+}
+.wrap .main .content .contenter .chartWrapper .chartHeader .closeDate {
+  height: 48px;
+  position: absolute;
+  right: 32px;
+  top: 2px;
+  font-size: 14px;
+  line-height: 48px;
+  color: #999999;
+}
+.wrap .main .content .contenter .chartWrapper .chartReturn {
+  height: 36px;
+  line-height: 36px;
+  position: absolute;
+  z-index: 5;
+  top: 11%;
+  left: 10px;
+}
+.wrap .main .content .contenter .chartWrapper .chartReturn .return {
+  padding-left: 15px;
+  font-size: 16px;
+  color: #199df8;
+  cursor: pointer;
+  position: relative;
+}
+.wrap .main .content .contenter .chartWrapper .chartReturn .return .less_icon {
+  position: absolute;
+  left: 2px;
+  top: -7px;
+  width: 7px;
+  overflow: hidden;
+}
+.wrap .main .content .contenter .chartWrapper .chartReturn .return .less_icon i {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin-left: 2px;
+  border: 1px solid #199df8;
+  transform: rotate(-45deg);
+}
+.wrap .main .content .contenter .chartWrapper .chartReturn .return:hover .less_icon i {
+  border-color: #199df8;
+}
+.wrap .main .content .contenter .chartWrapper .chartReturn .detailName {
+  margin-left: 10px;
+  font-size: 16px;
+  font-weight: bold;
+}
+@media screen and (max-width: 1440px) {
+  .wrap .main .content .contenter .chartWrapper .chartReturn {
+    top: 12%;
+  }
+}
+@media screen and (max-width: 1366px) {
+  .wrap .main .content .contenter .chartWrapper .chartReturn {
+    top: 13%;
+  }
+}
+.wrap .main .content .contenter .chartWrapper .subMenu {
+  position: absolute;
+  top: 70px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-right: 0 none;
+  border-radius: 4px;
+}
+.wrap .main .content .contenter .chartWrapper .subMenu span {
+  float: left;
+  height: 30px;
+  line-height: 30px;
+  padding: 0 20px;
+  font-size: 12px;
+  border: 1px solid #e0e0e0;
+  border-right: 0 none;
+  cursor: pointer;
+}
+.wrap .main .content .contenter .chartWrapper .subMenu span:last-child {
+  border-right: 1px solid #e0e0e0;
+}
+.wrap .main .content .contenter .chartWrapper .subMenu span.active {
+  background-color: #199df8;
+  border-color: #199df8;
+  color: #fff;
+}
+.wrap .main .content .contenter .chartWrapper .chartBox {
+  position: relative;
+  height: 522px;
+  overflow: hidden;
+}
+.wrap .main .content .contenter .chartWrapper .chartBox .mapTitle .china {
+  position: absolute;
+  left: 20px;
+  top: 2px;
+  color: #999;
+  font-size: 12px;
+  z-index: 2;
+}
+.wrap .main .content .contenter .chartWrapper .chartBox .mapTitle .china.clicked {
+  color: #199df8;
+  cursor: pointer;
+}
+.wrap .main .content .contenter .chartWrapper .chartBox .mapTitle .province {
+  font-size: 12px;
+  color: #999;
+  font-weight: 1000;
+  position: absolute;
+  left: 50px;
+  top: 2px;
+}
+.wrap .main .content .contenter .chartWrapper .chartBox .legend {
+  position: absolute;
+  left: 20px;
+  bottom: 50px;
+}
+.wrap .main .content .contenter .chartWrapper .chartBox .legend .icon {
+  display: inline-block;
+  width: 20px;
+  height: 10px;
+  border-radius: 4px;
+  background: #57a2e5;
+  margin-right: 5px;
+}
+.wrap .main .content .contenter .chartWrapper .chartBox .legend .name {
+  font-size: 12px;
+}
+.wrap .main .content .contenter .chartWrapper .chartBox .chartTable {
+  max-width: 430px;
+  margin-right: 70px;
+  margin: 16px 0;
+}
+.wrap .main .content .contenter .chartWrapper .chartBox .chartTable .chartTableTitle {
+  margin-bottom: 20px;
+  font-size: 16px;
+  color: #000;
+}
+.wrap .main .content .contenter .chartWrapper .chartBox .chartTable .chartTableTitle span {
+  float: left;
+}
+.wrap .main .content .contenter .chartWrapper .chartBox .chartTable .chartData span {
+  display: inline-block;
+  min-width: 140px;
+  max-width: 50%;
+  line-height: 26px;
+}
+.wrap .main .content .contenter .chartWrapper .chartBox .chartTable .chartData .chartDataTitle {
+  color: #999;
+}
+.wrap .main .content .contenter .chartWrapper .chartBox .chartTable .chartData .chartDataNum {
+  color: #199df8;
+}
+.wrap .main .content .contenter .chartWrapper .chartBox .chartTable .chartList {
+  margin-top: 20px;
+}
+.wrap .main .content .contenter .chartWrapper .chartBox .chartTable .chartList .chartListTitle {
+  color: #999;
+}
+.wrap .main .content .contenter .chartWrapper .chartBox .chartTable .chartList ul li {
+  display: block;
+  width: 100%;
+  height: 34px;
+  line-height: 34px;
+}
+.wrap .main .content .contenter .chartWrapper .chartBox .chartTable .chartList ul li .chartTableText {
+  float: left;
+  text-align: left;
+}
+.wrap .main .content .contenter .chartWrapper .chartBox .chartTable .chartList ul li .chartTableNum {
+  float: right;
+  text-align: right;
+  color: #333;
+}
+.wrap .main .content .contenter .chartWrapper .chartBox .chartTable .con {
+  max-width: 360px;
+}
+.wrap .main .content .contenter .chartWrapper .chartBox .chartTable .con .tab {
+  position: relative;
+  border: 1px solid #e0e0e0;
+  border-bottom: 0 none;
+}
+.wrap .main .content .contenter .chartWrapper .chartBox .chartTable .con .tab li {
+  float: left;
+  line-height: 50px;
+  width: 50%;
+  text-align: center;
+  box-shadow: 1px 0px 0 0 #e0e0e0;
+  border-bottom: 1px solid #e0e0e0;
+  cursor: pointer;
+}
+.wrap .main .content .contenter .chartWrapper .chartBox .chartTable .con .tab li.active {
+  color: #199df8;
+}
+.wrap .main .content .contenter .chartWrapper .chartBox .chartTable .con .tab .tabItembar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 2px;
+  background-color: #199df8;
+  transform: translateX(0);
+  transition: transform .6s;
+}
+.wrap .main .content .contenter .chartWrapper .chartBox .chartTable .con .tab .tabBottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50%;
+  height: 2px;
+  background-color: #fff;
+  transform: translateX(0);
+  transition: transform .6s;
+}
+.wrap .main .content .contenter .chartWrapper .chartBox .chartTable .con .title {
+  line-height: 40px;
+  border-left: 1px solid #e0e0e0;
+  border-right: 1px solid #e0e0e0;
+}
+.wrap .main .content .contenter .chartWrapper .chartBox .chartTable .con .title ul li {
+  float: left;
+  width: 23%;
+  text-align: center;
+  color: #333;
+}
+.wrap .main .content .contenter .chartWrapper .chartBox .chartTable .con .title ul li:nth-child(1) {
+  width: 20%;
+}
+.wrap .main .content .contenter .chartWrapper .chartBox .chartTable .con .title ul li:nth-child(2) {
+  width: 56%;
+}
+.wrap .main .content .contenter .chartWrapper .chartBox .chartTable .con .list {
+  min-height: 100px;
+  max-height: 416px;
+  line-height: 40px;
+  overflow: hidden;
+}
+.wrap .main .content .contenter .chartWrapper .chartBox .chartTable .con .list p {
+  overflow: hidden;
+  cursor: pointer;
+}
+.wrap .main .content .contenter .chartWrapper .chartBox .chartTable .con .list p.active {
+  color: #fff;
+  background: rgba(49, 157, 245, 0.8);
+}
+.wrap .main .content .contenter .chartWrapper .chartBox .chartTable .con .list p:hover {
+  color: #fff;
+  background: rgba(49, 157, 245, 0.8);
+}
+.wrap .main .content .contenter .chartWrapper .chartBox .chartTable .con .list p span {
+  float: left;
+  width: 23%;
+  text-align: center;
+}
+.wrap .main .content .contenter .chartWrapper .chartBox .chartTable .con .list p span:nth-child(1) {
+  width: 20%;
+}
+.wrap .main .content .contenter .chartWrapper .chartBox .chartTable .con .list p span:nth-child(2) {
+  width: 56%;
+}
+.wrap .main .content .contenter .chartWrapper .chartCanvas {
+  width: 1323px;
+  height: 100%;
+  margin: 0 auto;
+}
+.wrap .main .content .contenter .chartWrapper .btns {
+  position: absolute;
+  right: 33px;
+  top: 2px;
+}
+.wrap .main .content .contenter .chartWrapper .btns .btn {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-left: 20px;
+  background: url('../images/bg.png') no-repeat;
+  cursor: pointer;
+}
+.wrap .main .content .contenter .chartWrapper .btns .btn.Doubt {
+  margin-left: 0;
+  z-index: 2;
+  background-position: 0 -96px;
+}
+.wrap .main .content .contenter .chartWrapper .btns .btn.Doubt:hover {
+  background-position: -30px -96px;
+}
+.wrap .main .content .contenter .chartWrapper .btns .btn.downLoad {
+  background-position: 0 -62px;
+}
+.wrap .main .content .contenter .chartWrapper .btns .btn.downLoad:hover {
+  background-position: -30px -62px;
+}
+.wrap .main .content .contenter .chartWrapper .btns .tootip {
+  display: none;
+  width: 310px;
+  padding: 10px;
+  position: absolute;
+  top: 27px;
+  right: -34px;
+  z-index: 3;
+  background: #353940;
+  border-radius: 4px;
+}
+.wrap .main .content .contenter .chartWrapper .btns .tootip p {
+  color: #fff;
+  font-size: 12px;
+  line-height: 20px;
+  margin-bottom: 10px;
+}
+.wrap .main .content .contenter .chartWrapper .btns .tootip p span {
+  display: inline;
+  width: auto;
+  margin: 0;
+  background: none;
+}
+.wrap .main .content .contenter .chartWrapper .btns .tootip p span.title {
+  color: #199df8;
+}
+.wrap .main .content .contenter .chartWrapper .btns .tootip .Triangle {
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  top: -5px;
+  right: 40px;
+  background-color: #353940;
+  transform: rotate(45deg);
+}
+.wrap .main .content .contenter .chartWrapper .competeRelationBtns {
+  top: 24px;
+}
+@media screen and (max-width: 1440px) {
+  .wrap .main .content .contenter .chartWrapper .chartBox {
+    height: 426px;
+  }
+  .wrap .main .content .contenter .chartWrapper .chartBox.tableMap {
+    height: 490px;
+  }
+  .wrap .main .content .contenter .chartWrapper .chartCanvas {
+    width: 426px;
+    height: 100%;
+    margin: 0 auto;
+  }
+  .wrap .main .content .contenter .chartWrapper .competeRelationBtns {
+    top: px;
+  }
+}
+@media screen and (max-width: 1366px) {
+  .wrap .main .content .contenter .chartWrapper .chartBox {
+    height: 357px;
+  }
+  .wrap .main .content .contenter .chartWrapper .chartBox.tableMap {
+    height: 490px;
+  }
+  .wrap .main .content .contenter .chartWrapper .chartCanvas {
+    width: 357px;
+    height: 100%;
+    margin: 0 auto;
+  }
+  .wrap .main .content .contenter .chartWrapper .competeRelationBtns {
+    top: 18px;
+  }
+}
+.wrap .main .content .contenter .tableWrapper {
+  background-color: #fff;
+  padding: 0 32px 10px;
+  border: 1px solid #fff;
+}
+.wrap .main .content .contenter .tableWrapper .tableTitle {
+  height: 84px;
+  line-height: 84px;
+  font-size: 16px;
+  font-weight: bold;
+}
+.wrap .main .content .contenter .tableWrapper .tableTitle .title {
+  float: left;
+}
+.wrap .main .content .contenter .tableWrapper .tableTitle .title .count {
+  display: inline;
+  margin: 15px 0;
+  text-align: center;
+  color: #999;
+  font-weight: normal;
+  font-size: 14px;
+}
+.wrap .main .content .contenter .tableWrapper .tableTitle .load {
+  float: right;
+  padding-left: 20px;
+  font-size: 14px;
+  font-weight: normal;
+  position: relative;
+  cursor: pointer;
+  color: #999;
+}
+.wrap .main .content .contenter .tableWrapper .tableTitle .load .icon {
+  width: 18px;
+  height: 18px;
+  position: absolute;
+  left: 0;
+  top: 33px;
+  background: url('../images/bg.png') 0 -62px no-repeat;
+}
+.wrap .main .content .contenter .tableWrapper .tableTitle .load:hover {
+  color: #199df8;
+}
+.wrap .main .content .contenter .tableWrapper .tableTitle .load:hover .icon {
+  background-position: -30px -62px;
+}
+.wrap .main .content .contenter .tableWrapper .tableBox {
+  position: relative;
+  border-bottom: 1px solid #fff;
+}
+.wrap .main .content .contenter .tableWrapper .tableBox .tableLeft {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  text-align: center;
+}
+.wrap .main .content .contenter .tableWrapper .tableBox .tableLeft .th {
+  height: 54px;
+  line-height: 54px;
+  font-weight: bold;
+  background-color: #f9f9f9;
+  border: 1px solid #e0e0e0;
+  border-right: 0 none;
+}
+.wrap .main .content .contenter .tableWrapper .tableBox .tableLeft .td {
+  height: 52px;
+  line-height: 52px;
+  border-bottom: 1px solid #e0e0e0;
+  border-left: 1px solid #e0e0e0;
+  background-color: #fff;
+}
+.wrap .main .content .contenter .tableWrapper .tableBox .tableRight {
+  width: 100%;
+  float: left;
+  margin-top: -1px;
+  text-align: center;
+  border-right: 1px solid #e0e0e0;
+  overflow: hidden;
+  position: relative;
+}
+.wrap .main .content .contenter .tableWrapper .tableBox .tableRight .tableHeader {
+  position: absolute;
+  left: 0;
+  top: 0;
+  transition: left .5s;
+  border-bottom: 1px solid #e0e0e0;
+  border-top: 1px solid #e0e0e0;
+}
+.wrap .main .content .contenter .tableWrapper .tableBox .tableRight .tableHeader .th {
+  float: left;
+  height: 54px;
+  line-height: 54px;
+  font-weight: bold;
+  background-color: #f9f9f9;
+}
+.wrap .main .content .contenter .tableWrapper .tableBox .tableRight .listContent {
+  position: absolute;
+  top: 56px;
+  left: 0;
+  transition: left .5s;
+}
+.wrap .main .content .contenter .tableWrapper .tableBox .tableRight .listContent ul .td {
+  float: left;
+  height: 52px;
+  line-height: 52px;
+  border-bottom: 1px solid #e0e0e0;
+  background-color: #fff;
+}
+.wrap .main .content .contenter .tableWrapper .tableBox .slideLeft,
+.wrap .main .content .contenter .tableWrapper .tableBox .slideRight {
+  width: 46px;
+  height: 46px;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  left: 12%;
+  bottom: 0;
+  z-index: 3;
+  border-radius: 50%;
+  cursor: pointer;
+  display: none;
+}
+.wrap .main .content .contenter .tableWrapper .tableBox .slideLeft:hover,
+.wrap .main .content .contenter .tableWrapper .tableBox .slideRight:hover {
+  box-shadow: 0px 0px 6px 0px #333;
+}
+.wrap .main .content .contenter .tableWrapper .tableBox .slideRight {
+  left: auto;
+  right: 0;
+}
+.wrap .main .content .contenter .tableWrapper .tableBox table {
+  width: 100%;
+  border: 1px solid #e0e0e0;
+  border-bottom: 0 none;
+}
+.wrap .main .content .contenter .tableWrapper .tableBox table th,
+.wrap .main .content .contenter .tableWrapper .tableBox table td {
+  background-color: #f9f9f9;
+  height: 52px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 14px;
+  border-bottom: 1px solid #e0e0e0;
+}
+.wrap .main .content .contenter .tableWrapper .tableBox table td {
+  color: #333;
+  background-color: #fff;
+  font-weight: normal;
+}
+.wrap .main .content .contenter .tableWrapper .tableBox table td.tdName {
+  cursor: pointer;
+  color: #199df8;
+}
+.wrap .main .content .contenter .tableWrapper .tableBox table td.tdName:hover {
+  color: #199df8;
+}
+.wrap .main .content .contenter .tableWrapper .tableBox .green-black {
+  float: right;
+  margin: 30px 0;
+}
+.wrap .main .content .contenter .tableWrapper .tableBox .green-black span {
+  display: inline-block;
+  height: 28px;
+  line-height: 28px;
+  padding: 0 10px;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  margin-right: 20px;
+}
+.wrap .main .content .contenter .tableWrapper .tableBox .green-black #pagevalue + span {
+  border: 0 none;
+  margin-right: 0;
+}
+.wrap .main .content .contenter .tableWrapper .tableBox .green-black #pagevalue {
+  width: 40px;
+  height: 28px;
+  margin: 0 5px;
+  text-align: center;
+  vertical-align: middle;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+}
+.wrap .main .content .contenter .tableWrapper .tableBox .green-black .current {
+  display: inline-block;
+  padding: 0 10px;
+  font-size: 16px;
+  text-align: center;
+  border-radius: 4px;
+  background-color: #199df8;
+  border: 1px solid #199df8;
+  color: #fff;
+  margin-right: 15px;
+}
+.wrap .main .content .contenter .tableWrapper .tableBox .green-black .prev,
+.wrap .main .content .contenter .tableWrapper .tableBox .green-black .next {
+  display: inline-block;
+  padding: 0 10px;
+  height: 28px;
+  line-height: 28px;
+  margin-right: 15px;
+  text-align: center;
+  font-size: 14px;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.wrap .main .content .contenter .tableWrapper .tableBox .green-black .prev.current,
+.wrap .main .content .contenter .tableWrapper .tableBox .green-black .next.current {
+  background-color: #fff;
+  color: #333;
+  cursor: default;
+}
+.wrap .main .content .contenter .tableWrapper .tableBox .green-black .prev:hover,
+.wrap .main .content .contenter .tableWrapper .tableBox .green-black .next:hover {
+  background-color: #199df8;
+  color: #fff;
+}
+.wrap .main .content .contenter .tableWrapper .tableBox .green-black .prev.current:hover,
+.wrap .main .content .contenter .tableWrapper .tableBox .green-black .next.current:hover {
+  background-color: #fff;
+  color: #333;
+}
+.wrap .main .content .contenter .tableWrapper .tableBox .green-black .NormalText {
+  color: #999;
+  border: 0 none;
+}
+.wrap .main .content .contenter .tableWrapper .tableBox .green-black a {
+  display: inline-block;
+  padding: 0 10px;
+  height: 30px;
+  margin-right: 15px;
+  line-height: 30px;
+  font-size: 16px;
+  text-align: center;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.wrap .main .content .contenter .tableWrapper .tableBox .green-black a#search {
+  padding: 0 10px;
+  height: 28px;
+  line-height: 28px;
+  margin-left: 5px;
+  font-size: 14px;
+}
+.wrap .main .content .contenter .tableWrapper .tableBox .green-black a#search:hover {
+  color: #fff;
+  background-color: #199df8;
+  border: 1px solid #199df8;
+}
+.wrap .main .content .footer {
+  height: 83px;
+  margin-top: 15px;
+  padding-top: 20px;
+  background-color: #fff;
+}
+.wrap .main .content .footer p {
+  line-height: 30px;
+  text-align: center;
+}
+.wrap .loading {
+  display: none;
+  position: fixed;
+  left: 220px;
+  right: 20px;
+  top: 210px;
+  bottom: 0;
+  z-index: 9;
+  background-color: #fff;
+}
+.wrap .loading .loadBox {
+  display: none;
+  width: 120px;
+  height: 120px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+.wrap .loading .errBox {
+  display: block;
+  width: 300px;
+  height: 160px;
+  padding: 25px 5px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  border-radius: 4px;
+  text-align: center;
+}
+.wrap .loading .errBox .info {
+  padding: 10px;
+  color: #666;
+}
+.wrap .loading .errBox .reload {
+  display: block;
+  width: 108px;
+  height: 40px;
+  margin: 10px auto 0;
+  color: #fff;
+  background-color: #199df8;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.wrap .layer {
+  display: none;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 4;
+  background: rgba(0, 0, 0, 0.5);
+}
+.wrap .layerCon {
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #fff;
+  border-radius: 4px;
+  overflow: hidden;
+  z-index: 5;
+}
+.wrap .layerCon.layer1 {
+  position: fixed;
+  width: 510px;
+}
+.wrap .layerCon.layer3 {
+  position: fixed;
+  width: 510px;
+}
+.wrap .layerCon.layer4 {
+  width: 510px;
+  position: fixed;
+}
+.wrap .layerCon.layer4 .selectProduct div {
+  width: 108px;
+  float: left;
+}
+.wrap .layerCon.layer4 .selectProduct div label {
+  margin-right: 26px;
+}
+.wrap .layerCon .layerTitle {
+  height: 46px;
+  padding: 0 20px;
+  line-height: 46px;
+  background-color: #f8f8f8;
+  font-size: 16px;
+  color: #333;
+}
+.wrap .layerCon .layerTitle .close {
+  margin-top: 15px;
+  width: 12px;
+  height: 12px;
+  background: url('../images/bg.png') 0 -133px no-repeat;
+  cursor: pointer;
+}
+.wrap .layerCon .selected {
+  margin: 0 38px;
+  padding: 15px 0;
+  border-bottom: 1px solid #e0e0e0;
+  color: #199df8;
+  min-height: 38px;
+  line-height: 26px;
+}
+.wrap .layerCon .selected div {
+  width: 330px;
+}
+.wrap .layerCon .selected div .selectItem {
+  display: inline-block;
+  padding: 0 10px;
+  height: 26px;
+  padding: 0 5px;
+  margin: 5px 8px;
+  color: #333;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.wrap .layerCon .selected div .selectItem:hover {
+  border-color: red;
+}
+.wrap .layerCon .selected div .selectItem:hover i {
+  width: 10px;
+  height: 10px;
+  background: url('../images/bg.png') 0 -164px no-repeat;
+}
+.wrap .layerCon .selected div .selectItem i {
+  float: right;
+  margin-top: 10px;
+  width: 10px;
+  height: 10px;
+  background: url('../images/bg.png') -30px -164px no-repeat;
+}
+.wrap .layerCon .selected .btn {
+  width: 48px;
+  height: 26px;
+  margin-top: 6px;
+  line-height: 26px;
+  text-align: center;
+  color: #fff;
+  background-color: #199df8;
+  cursor: pointer;
+  border-radius: 4px;
+}
+.wrap .layerCon .options {
+  padding: 20px 38px 40px;
+}
+.wrap .layerCon .options label {
+  margin-right: 32px;
+  padding-left: 22px;
+  position: relative;
+  cursor: pointer;
+  height: 35px;
+  line-height: 35px;
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  tetx-overflow: ellipsis;
+}
+.wrap .layerCon .options label:before {
+  content: '';
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: #fff;
+  border-radius: 4px;
+  border: 1px solid #e0e0e0;
+}
+.wrap .layerCon .options label:after {
+  content: '';
+  color: #fff;
+  font-weight: bold;
+  position: absolute;
+  left: 3px;
+  top: 5px;
+  width: 10px;
+  height: 8px;
+  background: url('../images/bg.png') 0 -193px no-repeat;
+}
+.wrap .layerCon .options input[type=checkbox] {
+  display: none;
+}
+.wrap .layerCon .options input[type=checkbox]:checked + label:before {
+  border: 1px solid #199df8;
+  background: #199df8;
+}
+.wrap .layerCon .options input[type=checkbox]:checked {
+  color: red;
+}
+.wrap .layerCon .options .selectProvince {
+  color: #199df8;
+}
+.wrap .layerCon.layer2 {
+  width: 700px;
+  top: 50px;
+}
+.wrap .layerCon.layer2 .selected div {
+  width: 520px;
+}
+.wrap .layerCon.layer2 .options {
+  padding: 20px 20px 40px;
+}
+.wrap .layerCon.layer2 .options .subOptions {
+  display: none;
+  position: relative;
+  width: 640px;
+  padding: 10px 0 0 18px;
+  margin-top: 0;
+  box-shadow: 0px 0px 0px 1px #e0e0e0;
+  border-radius: 4px;
+  background: #f8f8f8;
+}
+.wrap .layerCon.layer2 .options .subOptions label {
+  width: 132px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 10px 0 0 0;
+}
+.wrap .layerCon.layer2 .options div {
+  padding-left: 20px;
+}
+.wrap .layerCon.layer2 .options div label {
+  float: left;
+  width: 132px;
+  margin: 10px 0 0 0;
+  line-height: 16px;
+  position: relative;
+}
+.wrap .layerCon.layer2 .options div label i {
+  margin: 4px 0 0 2px;
+  width: 11px;
+  height: 6px;
+  background: url('../images/bg.png') 0 0 no-repeat;
+}
+.wrap .layerCon.layer2 .options div label .triggleCon {
+  height: 15px;
+  padding: 0;
+  overflow: hidden;
+}
+.wrap .layerCon.layer2 .options div label .triggleCon .triggle {
+  display: none;
+  position: absolute;
+  top: 27px;
+  left: 0;
+  z-index: 2;
+  width: 0px;
+  height: 27px;
+  box-shadow: -1px -1px #e0e0e0;
+  background: #f8f8f8;
+  transform: rotate(45deg);
+}
+.wrap .detailClass {
+  background-color: #ccc;
+}
+@media screen and (max-width: 1366px) {
+  .wrap .main .content {
+    padding-right: 36px;
+  }
+}

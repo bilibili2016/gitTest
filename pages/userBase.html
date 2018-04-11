@@ -1,0 +1,83 @@
+<!-- 基础属性 -->
+<script src="http://glog.qcdqcdn.com" type="text/javascript"></script>
+<div class="searchWrapper" style='padding-bottom: 0;'>
+    <ul class='clearfix'>
+        <li class='fl clearfix' style='margin-right: 0;'>
+            <div class="fl text">指标：</div>
+            <div class="selectBox selectUnit selectCarOrBrand" style='margin-right: 15px;'>
+                <span class='active'>品牌</span>
+                <span>车型</span>
+            </div>
+            <div class="fl selectBox" style='margin-right: 15px;'>
+                <i class='icon'></i>
+                <input type="text" class='selectText queryInput carOrBrand'  value=""/>
+                <ul class='selectList brandList'></ul>
+            </div>
+        </li>
+        <li class='fr'>
+            <div class='load'><i></i>下载明细</div>
+            <iframe id="ifile" src="" style="display:none"></iframe>
+        </li>
+        <li class="fr">
+            <div class="btns">
+                <div class='btn Doubt'>
+                    <div class="tootip"></div>
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>
+
+<div class='mainContent'>
+    <div class="clearfix chartWrapper user">
+        <div class="fl chartBox"
+             style="width: 49%;margin-bottom: 2%">
+            <div id="genderDistributionDiv"
+                 style="width:100%;height: 100%;"></div>
+            <!-- <div class="btns">
+                <div class='btn Doubt'>
+                    <div class="tootip">
+                        <i class='Triangle'></i>
+                        <p><span class="title">销量走势：</span><span class="text">销量是终端渠道的实际交易量，不同于上牌量和上险量，同一辆车的购车、上牌和上险可能发生在不同城市，此处统计为购车城市</span></p>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+        <div class="fr chartBox" style="width: 49%;margin-bottom: 2%">
+            <div id="ageDiv" style="width:100%;height: 100%;"></div>
+        </div>
+        <div class="chartBox" style="width: 100%;margin-bottom: 2%">
+            <div id="eduDiv" style="width:100%;height: 100%;position:
+               absolute;top: 0;right: 0;"></div>
+        </div>
+
+       <!--  <div class="chartBox" style="width: 100%;margin-top: 0">
+            <div id="professionDiv" style="width:100%;height: 100%;"></div>
+        </div> -->
+    </div>
+</div>
+<script type='text/template' id='tableTpl'>
+    {@each values as item}
+        <tr>
+            {@each item as it}
+            <td>${it}</td>
+            {@/each}
+        </tr>
+    {@/each}
+</script>
+<script type='text/template' id='tableHeaderTpl'>
+    <tr>
+        {@each Header as item}
+        <th width="${parseInt(100/Header.length)}%">${item}</th>
+        {@/each}
+    </tr>
+</script>
+<script type="text/template" id="carAndBrand">
+    {@each brandList as item}
+    {@if type==2}
+    <li title="${item.SerialName}">${item.SerialName}</li>
+    {@else}
+    <li title="${item.BrandName}">${item.BrandName}</li>
+    {@/if}
+    {@/each}
+</script>
